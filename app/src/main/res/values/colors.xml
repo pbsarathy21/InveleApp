@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#C90828</color>
+    <color name="colorPrimaryDark">#a3011c</color>
+    <color name="colorProject">#f6f6f6</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="grayWhite">#e2e0e2</color>
+    <color name="white">#ffffff</color>
+    <color name="textColor">#5b5c5b</color>
+    <color name="greyBackground">#f4f4f4</color>
+    <color name="invelebg">#f9f9f9</color>
+    <color name="black">#000000</color>
+    <color name="shadowColor">#f9f9f9</color>
+
+    <!-- fitme Activity -->
+
+    <color name="ash_color">#eeeeee</color>
+
+</resources>

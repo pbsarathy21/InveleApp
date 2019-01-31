@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="accountInfo"
+            type="com.ninositsolution.inveleapp.account_information.AccountInformationVM"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height">
+
+        <ImageView
+            android:id="@+id/account_header_back"
+            android:layout_width="36dp"
+            android:layout_height="32dp"
+            android:onClick="@{()->accountInfo.onBackClicked()}"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_arrow_back_24dp"
+            tools:ignore="ContentDescription" />
+
+
+        <TextView
+            android:layout_toEndOf="@+id/account_header_back"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:id="@+id/search_header"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/account_info"
+            android:textSize="@dimen/_16sdp"
+            tools:ignore="RelativeOverlap" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#e0e0e0"/>
+
+        <RelativeLayout
+            android:id="@+id/add_mobile"
+            android:onClick="@{()->accountInfo.onAddMobileClicked()}"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_44sdp"
+            android:padding="@dimen/_8sdp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_32sdp"
+                android:text="@string/add_mobile"
+                android:textSize="@dimen/text_settings"
+                tools:ignore="RelativeOverlap" />
+
+            <ImageView
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_margin="@dimen/_4sdp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/mobile_icon"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#e0e0e0"/>
+
+        <RelativeLayout
+            android:id="@+id/change_email"
+            android:onClick="@{()->accountInfo.onChangeEmailClicked()}"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_44sdp"
+            android:padding="@dimen/_8sdp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_32sdp"
+                android:text="@string/change_email"
+                android:textSize="@dimen/text_settings"
+                tools:ignore="RelativeOverlap" />
+
+            <ImageView
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_margin="@dimen/_4sdp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/message"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#e0e0e0"/>
+
+        <RelativeLayout
+            android:id="@+id/change_password"
+            android:onClick="@{()->accountInfo.onChangePasswordClicked()}"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_44sdp"
+            android:padding="@dimen/_8sdp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_32sdp"
+                android:text="@string/change_password"
+                android:textSize="@dimen/text_settings"
+                tools:ignore="RelativeOverlap" />
+
+            <ImageView
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_margin="@dimen/_4sdp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/padlock"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#e0e0e0"/>
+
+    </LinearLayout>
+
+</layout>
