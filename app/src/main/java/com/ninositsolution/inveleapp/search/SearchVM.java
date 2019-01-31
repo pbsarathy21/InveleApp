@@ -28,7 +28,7 @@ public class SearchVM {
 
         arrayList = searchModel.populateSearchList();
 
-        SearchAdapter searchAdapter = new SearchAdapter(context, arrayList);
+        SearchAdapter searchAdapter = new SearchAdapter(context, arrayList, iSearch);
 
         iSearch.loadSearchAdapter(searchAdapter);
     }

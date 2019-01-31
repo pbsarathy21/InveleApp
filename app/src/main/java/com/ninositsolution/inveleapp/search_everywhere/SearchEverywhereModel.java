@@ -6,4 +6,7 @@ package com.ninositsolution.inveleapp.search_everywhere;
  * ben@ninositsolution.com
  */
 public class SearchEverywhereModel {
+
+    public SearchEverywhereModel() {
+    }
 }

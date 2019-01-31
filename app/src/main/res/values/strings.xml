@@ -200,6 +200,14 @@
 
     <string name="recent_header">Recently Viewed</string>
 
+    <!--Search Everywhere activity-->
+
+    <string name="search_everywhere_header">Formal Shirts</string>
+    <string name="everywhere">Everywhere</string>
+    <string name="relevance">Relevance</string>
+    <string name="price">Price</string>
+    <string name="filter">Filter By</string>
+
     <!--Day Spinner-->
 
     <string-array name="day">

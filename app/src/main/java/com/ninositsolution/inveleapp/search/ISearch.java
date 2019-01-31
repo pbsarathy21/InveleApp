@@ -13,4 +13,5 @@ public interface ISearch {
     void onEverywhereClicked();
     void onNearbyClicked();
     void loadSearchAdapter(SearchAdapter searchAdapter);
+    void searchClicked();
 }

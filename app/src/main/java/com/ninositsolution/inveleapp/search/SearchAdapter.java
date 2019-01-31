@@ -21,10 +21,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
     private Context context;
     private ArrayList<String> searchTextList = new ArrayList<>();
+    private ISearch iSearch;
 
-    public SearchAdapter(Context context, ArrayList<String> searchTextList) {
+    public SearchAdapter(Context context, ArrayList<String> searchTextList, ISearch iSearch) {
         this.context = context;
         this.searchTextList = searchTextList;
+        this.iSearch = iSearch;
         notifyDataSetChanged();
     }
 
@@ -39,6 +41,13 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
     public void onBindViewHolder(@NonNull SearchViewHolder searchViewHolder, int i) {
 
         searchViewHolder.textView.setText(searchTextList.get(i));
+
+        searchViewHolder.textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iSearch.searchClicked();
+            }
+        });
 
     }
 

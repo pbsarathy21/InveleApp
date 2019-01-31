@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.ninositsolution.inveleapp.R;
 import com.ninositsolution.inveleapp.databinding.ActivitySearchBinding;
 import com.ninositsolution.inveleapp.home.HomeActivity;
+import com.ninositsolution.inveleapp.search_everywhere.SearchEverywhereActivity;
 
 public class SearchActivity extends AppCompatActivity implements ISearch{
 
@@ -81,5 +82,10 @@ public class SearchActivity extends AppCompatActivity implements ISearch{
         binding.searchRecyclerview.setLayoutManager(new LinearLayoutManager(this));
         binding.searchRecyclerview.setAdapter(searchAdapter);
 
+    }
+
+    @Override
+    public void searchClicked() {
+        startActivity(new Intent(this, SearchEverywhereActivity.class));
     }
 }
