@@ -11,7 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".recently_viewed.RecentlyViewedActivity"></activity>
+        <activity
+            android:name=".product_detail_page.ProductDetailActivity"
+            android:label="@string/title_activity_product_detail"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".recently_viewed.RecentlyViewedActivity" />
         <activity android:name=".search_everywhere.SearchEverywhereActivity" />
         <activity android:name=".personal_information.PersonalInformationActivity" />
         <activity android:name=".address_book.AddressBookActivity" />

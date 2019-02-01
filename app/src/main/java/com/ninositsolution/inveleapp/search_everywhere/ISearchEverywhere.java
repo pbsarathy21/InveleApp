@@ -11,4 +11,7 @@ public interface ISearchEverywhere {
 
     void onBackClicked();
     void setRecyclerAdapter(RecentlyViewedAdapter recyclerAdapter);
+    void onPriceClicked();
+    void onLowClicked();
+    void onHighClicked();
 }

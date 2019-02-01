@@ -207,6 +207,16 @@
     <string name="relevance">Relevance</string>
     <string name="price">Price</string>
     <string name="filter">Filter By</string>
+    <string name="low">Low to High</string>
+    <string name="high">High to Low</string>
+
+    <!--Product Detail activity-->
+
+    <string name="add_cart">Add to cart</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="user_view">User View</string>
+    <string name="product_desc">Product Description</string>
+
 
     <!--Day Spinner-->
 
@@ -276,5 +286,6 @@
         <item>2010</item>
         <item>2011</item>
     </string-array>
+    <string name="title_activity_product_detail">ProductDetailActivity</string>
 
 </resources>

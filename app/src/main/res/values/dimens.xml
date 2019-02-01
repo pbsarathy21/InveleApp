@@ -34,7 +34,7 @@
     <!-- Category child size-->
 
     <dimen name="catChildSize">@dimen/_10sdp</dimen>
-
+    <dimen name="fab_margin">16dp</dimen>
 
 
 </resources>

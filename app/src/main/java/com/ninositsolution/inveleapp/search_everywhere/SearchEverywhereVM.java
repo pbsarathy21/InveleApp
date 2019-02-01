@@ -37,4 +37,19 @@ public class SearchEverywhereVM {
     {
         iSearchEverywhere.onBackClicked();
     }
+
+    public void onPriceClicked()
+    {
+        iSearchEverywhere.onPriceClicked();
+    }
+
+    public void onLowClicked()
+    {
+        iSearchEverywhere.onLowClicked();
+    }
+
+    public void onHighClicked()
+    {
+        iSearchEverywhere.onHighClicked();
+    }
 }

@@ -116,65 +116,14 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <RelativeLayout
+                        <RatingBar
+                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5" />
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5"
-                                android:layout_marginStart="14dp"/>
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5"
-                                android:layout_marginStart="28dp"/>
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5"
-                                android:layout_marginStart="42dp"/>
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5"
-                                android:layout_marginStart="56dp"/>
-
-                        </RelativeLayout>
+                            android:layout_height="wrap_content"
+                            android:numStars="5"
+                            android:rating="3.5"
+                            android:theme="@style/RatingBar"
+                            style="?android:attr/ratingBarStyleSmall"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -271,66 +220,14 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <RelativeLayout
+                        <RatingBar
+                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5" />
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5"
-                                android:layout_marginStart="14dp"/>
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5"
-                                android:layout_marginStart="28dp"/>
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5"
-                                android:layout_marginStart="42dp"/>
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5"
-                                android:layout_marginStart="56dp"/>
-
-                        </RelativeLayout>
-
+                            android:layout_height="wrap_content"
+                            android:numStars="5"
+                            android:rating="3.5"
+                            android:theme="@style/RatingBar"
+                            style="?android:attr/ratingBarStyleSmall"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -435,66 +332,14 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <RelativeLayout
+                        <RatingBar
+                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5" />
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5"
-                                android:layout_marginStart="14dp"/>
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5"
-                                android:layout_marginStart="28dp"/>
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5"
-                                android:layout_marginStart="42dp"/>
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5"
-                                android:layout_marginStart="56dp"/>
-
-                        </RelativeLayout>
-
+                            android:layout_height="wrap_content"
+                            android:numStars="5"
+                            android:rating="3.5"
+                            android:theme="@style/RatingBar"
+                            style="?android:attr/ratingBarStyleSmall"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -590,65 +435,14 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <RelativeLayout
+                        <RatingBar
+                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5" />
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5"
-                                android:layout_marginStart="14dp"/>
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5"
-                                android:layout_marginStart="28dp"/>
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5"
-                                android:layout_marginStart="42dp"/>
-
-                            <RatingBar
-                                style="@style/foodRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:isIndicator="false"
-                                android:numStars="5"
-                                android:rating="4.5"
-                                android:scaleX="0.5"
-                                android:scaleY="0.5"
-                                android:layout_marginStart="56dp"/>
-
-                        </RelativeLayout>
+                            android:layout_height="wrap_content"
+                            android:numStars="5"
+                            android:rating="3.5"
+                            android:theme="@style/RatingBar"
+                            style="?android:attr/ratingBarStyleSmall"/>
 
                         <TextView
                             android:layout_width="wrap_content"
