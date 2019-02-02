@@ -217,6 +217,30 @@
     <string name="user_view">User View</string>
     <string name="product_desc">Product Description</string>
 
+    <!--Arun's work-->
+
+    <string name="float_name">Name</string>
+    <string name="float_contact">Contact Number</string>
+    <string name="float_postal">Postal Code</string>
+    <string name="float_address">Address</string>
+    <string name="float_floor">Floor/Unit Number</string>
+    <string name="textView_shipping">shipping Address </string>
+    <string name="textView_billing">Billing Address</string>
+    <string name="button_save">Save</string>
+    <string name="button_update">Update</string>
+    <string name="product_name">Oneplus 6t Mclaren edition</string>
+    <string name="price_textView">Price:</string>
+    <string name="prices">$215</string>
+    <string name="summary_textView">Summary of Your Review</string>
+    <string name="hint_summary">Summary of review</string>
+    <string name="review_textView">Review</string>
+    <string name="hint_review">write your review here...</string>
+    <string name="button_label">Choose file</string>
+    <string name="no_file">No file chosen</string>
+    <string name="submit_button">submit</string>
+    <string name="textView_facebook">Facebook</string>
+    <string name="textView_twitter">Twitter</string>
+    <string name="textview_instagram">Instagram</string>
 
     <!--Day Spinner-->
 

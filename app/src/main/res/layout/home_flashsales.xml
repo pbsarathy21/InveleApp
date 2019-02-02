@@ -88,6 +88,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/flash_rate"
@@ -98,6 +99,7 @@
                             android:layout_height="match_parent" />
 
                         <TextView
+                            android:textStyle="bold"
                             android:id="@+id/flash_delete_rate1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -192,6 +194,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/flash_rate"
@@ -202,6 +205,7 @@
                             android:layout_height="match_parent" />
 
                         <TextView
+                            android:textStyle="bold"
                             android:id="@+id/flash_delete_rate2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -304,6 +308,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/flash_rate"
@@ -314,6 +319,7 @@
                             android:layout_height="match_parent" />
 
                         <TextView
+                            android:textStyle="bold"
                             android:id="@+id/flash_delete_rate3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -407,6 +413,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/flash_rate"
@@ -417,6 +424,7 @@
                             android:layout_height="match_parent" />
 
                         <TextView
+                            android:textStyle="bold"
                             android:id="@+id/flash_delete_rate4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -436,13 +444,13 @@
                         android:orientation="horizontal">
 
                         <RatingBar
-                            android:layout_gravity="center_vertical"
+                            style="?android:attr/ratingBarStyleSmall"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="26dp"
+                            android:layout_gravity="center_vertical"
                             android:numStars="5"
                             android:rating="3.5"
-                            android:theme="@style/RatingBar"
-                            style="?android:attr/ratingBarStyleSmall"/>
+                            android:theme="@style/RatingBar" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -464,6 +472,7 @@
                             android:layout_height="match_parent" />
 
                         <TextView
+                            android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/heart" />
@@ -475,7 +484,6 @@
 
 
             </LinearLayout>
-
 
 
         </LinearLayout>

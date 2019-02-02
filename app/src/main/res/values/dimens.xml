@@ -36,5 +36,7 @@
     <dimen name="catChildSize">@dimen/_10sdp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
+    <dimen name="edit_padding">@dimen/_16sdp</dimen>
+
 
 </resources>

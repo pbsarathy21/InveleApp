@@ -12,6 +12,7 @@ import com.ninositsolution.inveleapp.account_information.AccountInformationActiv
 import com.ninositsolution.inveleapp.address_book.AddressBookActivity;
 import com.ninositsolution.inveleapp.databinding.ActivitySettingsBinding;
 import com.ninositsolution.inveleapp.personal_information.PersonalInformationActivity;
+import com.ninositsolution.inveleapp.social_media.SocialMediaActivity;
 
 public class SettingsActivity extends AppCompatActivity implements ISettings{
 
@@ -47,7 +48,8 @@ public class SettingsActivity extends AppCompatActivity implements ISettings{
 
     @Override
     public void onSocialMediaClicked() {
-        Toast.makeText(this, "Under Production", Toast.LENGTH_SHORT).show();
+        /*Toast.makeText(this, "Under Production", Toast.LENGTH_SHORT).show();*/
+        startActivity(new Intent(this, SocialMediaActivity.class));
     }
 
     @Override

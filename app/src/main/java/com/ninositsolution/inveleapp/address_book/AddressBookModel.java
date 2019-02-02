@@ -6,4 +6,7 @@ package com.ninositsolution.inveleapp.address_book;
  * ben@ninositsolution.com
  */
 public class AddressBookModel {
+
+    public AddressBookModel() {
+    }
 }

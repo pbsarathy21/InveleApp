@@ -6,4 +6,8 @@ package com.ninositsolution.inveleapp.address_book;
  * ben@ninositsolution.com
  */
 public interface IAddressBook {
+
+    void onAddAddressClicked();
+    void onBackClicked();
+    void onEditClicked();
 }

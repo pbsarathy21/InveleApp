@@ -11,10 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".social_media.SocialMediaActivity"></activity>
+        <activity android:name=".edit_address.EditAddressActivity" />
+        <activity android:name=".add_address.AddAddressActivity" />
         <activity
             android:name=".product_detail_page.ProductDetailActivity"
             android:label="@string/title_activity_product_detail"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".recently_viewed.RecentlyViewedActivity" />
         <activity android:name=".search_everywhere.SearchEverywhereActivity" />
         <activity android:name=".personal_information.PersonalInformationActivity" />

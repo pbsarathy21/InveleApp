@@ -61,6 +61,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/flash_rate"
@@ -71,6 +72,7 @@
                             android:layout_height="match_parent" />
 
                         <TextView
+                            android:textStyle="bold"
                             android:id="@+id/delete_rate_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -167,6 +169,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/flash_rate"
@@ -177,6 +180,7 @@
                             android:layout_height="match_parent" />
 
                         <TextView
+                            android:textStyle="bold"
                             android:id="@+id/delete_rate_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

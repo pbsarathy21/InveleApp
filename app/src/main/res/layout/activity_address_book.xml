@@ -29,6 +29,7 @@
                     android:layout_height="@dimen/toolbar_height">
 
                     <ImageView
+                        android:onClick="@{()->addressBook.onBackClicked()}"
                         android:id="@+id/account_header_back"
                         android:layout_width="36dp"
                         android:layout_height="32dp"
@@ -127,6 +128,7 @@
                         android:textColor="@android:color/white"/>
 
                     <RelativeLayout
+                        android:onClick="@{()->addressBook.onEditClicked()}"
                         android:id="@+id/address_edit"
                         android:layout_width="@dimen/_32sdp"
                         android:layout_height="@dimen/_32sdp"
@@ -354,6 +356,7 @@
                     android:layout_height="@dimen/_16sdp" />
 
                 <Button
+                    android:onClick="@{()->addressBook.onAddAddressClicked()}"
                     android:id="@+id/add_address_button"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="@dimen/_4sdp"
