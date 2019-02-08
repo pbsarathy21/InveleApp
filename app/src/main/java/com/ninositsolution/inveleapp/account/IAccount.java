@@ -20,5 +20,9 @@ public interface IAccount {
     void onMyAccountClickedClicked();
     void onHelpDeskClicked();
     void onContactUSClicked();
+    void onCartClicked();
+    void onOrdersClicked();
+    void onReviewsClicked();
+    void onCancelClicked();
 
 }

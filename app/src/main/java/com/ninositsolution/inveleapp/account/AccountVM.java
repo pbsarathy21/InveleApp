@@ -85,4 +85,24 @@ public class AccountVM {
     {
         iAccount.onContactUSClicked();
     }
+
+    public void onCartClicked()
+    {
+        iAccount.onCartClicked();
+    }
+
+    public void onOrdersClicked()
+    {
+        iAccount.onOrdersClicked();
+    }
+
+    public void onReviewsClicked()
+    {
+        iAccount.onReviewsClicked();
+    }
+
+    public void onCancelClicked()
+    {
+        iAccount.onCancelClicked();
+    }
 }

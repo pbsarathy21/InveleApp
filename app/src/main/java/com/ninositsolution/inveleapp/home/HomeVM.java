@@ -41,4 +41,9 @@ public class HomeVM {
     {
         iHome.onSearchClicked();
     }
+
+    public void onItemClicked()
+    {
+        iHome.onItemClicked();
+    }
 }

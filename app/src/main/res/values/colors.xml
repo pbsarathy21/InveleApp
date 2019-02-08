@@ -25,4 +25,12 @@
 
     <color name="view_color">#EDEDED</color>
 
+    <color name="cancel_split_line">#aaaaaa</color>
+
+    <color name="shipmentStatus">#65d074</color>
+
+    <color name="cart_edit_color">#7f7f7f</color>
+
+    <color name="layout_split">#e5e5e5</color>
+
 </resources>

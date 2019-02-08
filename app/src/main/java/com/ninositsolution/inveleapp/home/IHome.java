@@ -10,4 +10,5 @@ public interface IHome {
     void onWishlistClicked();
     void onCartClicked();
     void onSearchClicked();
+    void onItemClicked();
 }

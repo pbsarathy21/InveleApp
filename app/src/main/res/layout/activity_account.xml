@@ -158,6 +158,7 @@
                <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                   android:onClick="@{()->account.onCartClicked()}"
                 android:layout_height="wrap_content">
 
                 <ImageView
@@ -180,6 +181,7 @@
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
+                    android:onClick="@{()->account.onOrdersClicked()}"
                     android:layout_height="wrap_content">
 
                     <ImageView
@@ -202,6 +204,7 @@
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_weight="0.8"
+                    android:onClick="@{()->account.onReviewsClicked()}"
                     android:layout_height="wrap_content">
 
                     <ImageView
@@ -224,6 +227,7 @@
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_weight="1.2"
+                    android:onClick="@{()->account.onCancelClicked()}"
                     android:layout_height="wrap_content">
 
                     <ImageView

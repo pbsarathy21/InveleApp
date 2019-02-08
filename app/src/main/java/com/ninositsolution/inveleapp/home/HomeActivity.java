@@ -12,9 +12,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ninositsolution.inveleapp.R;
@@ -22,7 +24,9 @@ import com.ninositsolution.inveleapp.account.AccountActivity;
 import com.ninositsolution.inveleapp.cart.CartActivity;
 import com.ninositsolution.inveleapp.categories.CategoryActivity;
 import com.ninositsolution.inveleapp.databinding.ActivityHomeBinding;
+import com.ninositsolution.inveleapp.databinding.HomeTrendingBinding;
 import com.ninositsolution.inveleapp.login.LoginActivity;
+import com.ninositsolution.inveleapp.product_detail_page.ProductDetailActivity;
 import com.ninositsolution.inveleapp.search.SearchActivity;
 import com.ninositsolution.inveleapp.wishlist.WishlistActivity;
 
@@ -32,6 +36,8 @@ import java.util.TimerTask;
 public class HomeActivity extends AppCompatActivity implements IHome{
 
     ActivityHomeBinding binding;
+
+    RelativeLayout itemLayout;
 
     private int dotsCount;
     private ImageView[] dots;
@@ -75,6 +81,7 @@ public class HomeActivity extends AppCompatActivity implements IHome{
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
         binding.setHome(new HomeVM(getApplicationContext(), this));
 
+        itemLayout = findViewById(R.id.item_layout);
 
         binding.navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
@@ -145,6 +152,13 @@ public class HomeActivity extends AppCompatActivity implements IHome{
         binding.homeRecycler.setHasFixedSize(true);
         binding.homeRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
         binding.homeRecycler.setAdapter(new HomeRecyclerAdapter(this));
+
+        itemLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, ProductDetailActivity.class));
+            }
+        });
     }
 
     private void putStrikeThrough() {
@@ -206,5 +220,10 @@ public class HomeActivity extends AppCompatActivity implements IHome{
     public void onSearchClicked() {
 
         startActivity(new Intent(this, SearchActivity.class));
+    }
+
+    @Override
+    public void onItemClicked() {
+        startActivity(new Intent(this, ProductDetailActivity.class));
     }
 }

@@ -7,10 +7,14 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.ninositsolution.inveleapp.R;
+import com.ninositsolution.inveleapp.cancel_order.CancelOrderActivity;
+import com.ninositsolution.inveleapp.cart.CartActivity;
 import com.ninositsolution.inveleapp.databinding.ActivityAccountBinding;
 import com.ninositsolution.inveleapp.fitme.FitmeActivity;
 import com.ninositsolution.inveleapp.home.HomeActivity;
+import com.ninositsolution.inveleapp.my_order.MyOrderActivity;
 import com.ninositsolution.inveleapp.recently_viewed.RecentlyViewedActivity;
+import com.ninositsolution.inveleapp.review.ReviewActivity;
 import com.ninositsolution.inveleapp.settings.SettingsActivity;
 import com.ninositsolution.inveleapp.wishlist.WishlistActivity;
 
@@ -90,5 +94,25 @@ public class AccountActivity extends AppCompatActivity implements IAccount{
     @Override
     public void onContactUSClicked() {
         Toast.makeText(this, "Under Production", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onCartClicked() {
+        startActivity(new Intent(this, CartActivity.class));
+    }
+
+    @Override
+    public void onOrdersClicked() {
+        startActivity(new Intent(this, MyOrderActivity.class));
+    }
+
+    @Override
+    public void onReviewsClicked() {
+        startActivity(new Intent(this, ReviewActivity.class));
+    }
+
+    @Override
+    public void onCancelClicked() {
+        startActivity(new Intent(this, CancelOrderActivity.class));
     }
 }

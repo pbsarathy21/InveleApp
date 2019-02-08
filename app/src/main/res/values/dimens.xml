@@ -38,5 +38,14 @@
 
     <dimen name="edit_padding">@dimen/_16sdp</dimen>
 
+    <!-- Cancel order Activity-->
+
+    <dimen name="cancel_text_size">@dimen/_11sdp</dimen>
+
+    <dimen name="shipping_points">@dimen/_12sdp</dimen>
+
+
+    <dimen name="prod_text_size">@dimen/_14sdp</dimen>
+
 
 </resources>

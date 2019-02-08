@@ -93,6 +93,10 @@
     <string name="cart_delete_rate">$5000</string>
     <string name="cart_count">1</string>
     <string name="store_name">Store Name</string>
+    <string name="cart_quantity">Quantity</string>
+    <string name="total_stock">(Total Stock 32)</string>
+    <string name="cart_confirm">Confirm</string>
+    <string name="mens_brand">Mens Brand Jeans Fashion Casual</string>
 
     <!--Whishlist Activity-->
 
@@ -215,7 +219,68 @@
     <string name="add_cart">Add to cart</string>
     <string name="buy_now">Buy Now</string>
     <string name="user_view">User View</string>
+    <string name="product_price">$85.80 - $95.50</string>
+    <string name="offer">15% OFF</string>
+    <string name="product_detail_name">Apple IPhone XR 64GB ~ 128 ~ 256GB 6.1 Inch</string>
+    <string name="screen_size">5.1 Inch</string>
+    <string name="product_store_name">Store Name Store Name</string>
     <string name="product_desc">Product Description</string>
+    <string name="product_count">989 Products</string>
+    <string name="view_score">Product Description</string>
+    <string name="specification">Specification</string>
+    <string name="spec_category">Category</string>
+    <string name="spec_brand">Brand</string>
+    <string name="spec_storage">Storage</string>
+    <string name="spec_ram">Ram</string>
+    <string name="spec_electronics">Electronics > Mobiles</string>
+    <string name="spec_apple">Apple</string>
+    <string name="spec_128GB">128GB</string>
+    <string name="spec_64GB">64GB</string>
+    <string name="spec_32GB">32GB</string>
+    <string name="spec_256GB">256GB</string>
+    <string name="spec_4GB">4GB</string>
+    <string name="option_1">Option 1</string>
+    <string name="option_2">Option 2</string>
+    <string name="view_more">View More</string>
+    <string name="description">Description</string>
+    <string name="other_products">Other Products From Seller</string>
+    <string name="helpful_count">114 people found this helpful</string>
+    <string name="delay_delivery">Delay Delivery</string>
+    <string name="delivery_desc">By Radha Jun 20, 2018 &amp; 08.00AM</string>
+    <string name="good_service">Good Service by invele Delivery</string>
+    <string name="product_rating">Product Ratings (10)</string>
+    <string name="desc_explanation">iSight camera, 1.5 Pixels, Auto Focus, Focus Pixels, f/2.2 Aperture, True Tone Flash, Five-element Lens, Hybris IR Filter, Backsize Illumination Sensor, Sapphire Crystal lens Cover.</string>
+
+    <!--Cancel Order activity-->
+
+    <string name="cancel_header">Cancel/Return</string>
+    <string name="order_id">Order ID:</string>
+    <string name="order_id_value">406–08364dl9859509</string>
+    <string name="order_placed">ORDER PLACED on</string>
+    <string name="order_placed_date">27 june 2018</string>
+    <string name="order_item">Women Steel Quartz</string>
+    <string name="order_price">Price :</string>
+    <string name="order_price_value">$ 125</string>
+    <string name="order_quantity">Qty :</string>
+    <string name="order_quantity_value">1</string>
+    <string name="support">Support</string>
+    <string name="print">Print</string>
+    <string name="details">Details</string>
+    <string name="status">Status :</string>
+    <string name="status_value">Order cancelled/Refund Initiated</string>
+    <string name="order_cancel">Cancel</string>
+    <string name="track_order"><u>Track Order</u></string>
+    <string name="delivered">Delivered</string>
+    <string name="store_pickup">Store Pickup</string>
+    <string name="shipment">Shipment Details</string>
+    <string name="onRequest">On Request</string>
+    <string name="confirmed">confirmed</string>
+    <string name="Shipping">Shipping</string>
+    <string name="order_confirmation">Order is confirmed and being ready for dispatch</string>
+    <string name="shipped_date">29 July 2017  01:58 AM</string>
+    <string name="my_order_header">My Order</string>
+
+
 
     <!--Arun's work-->
 
@@ -234,7 +299,7 @@
     <string name="summary_textView">Summary of Your Review</string>
     <string name="hint_summary">Summary of review</string>
     <string name="review_textView">Review</string>
-    <string name="hint_review">write your review here...</string>
+    <string name="hint_review">write your review here…</string>
     <string name="button_label">Choose file</string>
     <string name="no_file">No file chosen</string>
     <string name="submit_button">submit</string>
@@ -311,5 +376,6 @@
         <item>2011</item>
     </string-array>
     <string name="title_activity_product_detail">ProductDetailActivity</string>
+    <string name="view_store">View Store</string>
 
 </resources>

@@ -1,5 +1,6 @@
 package com.ninositsolution.inveleapp.cart;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Paint;
 import android.support.annotation.NonNull;
@@ -7,6 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ninositsolution.inveleapp.R;
@@ -19,6 +24,7 @@ import com.ninositsolution.inveleapp.R;
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
 
     private Context context;
+    private static int currentPosition = -1;
 
     public CartAdapter(Context context) {
         this.context = context;
@@ -33,7 +39,42 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartViewHolder cartViewHolder, int i) {
+    public void onBindViewHolder(@NonNull CartViewHolder cartViewHolder, @SuppressLint("RecyclerView") final int i) {
+
+        if (cartViewHolder.edit_layout.getVisibility() == View.VISIBLE)
+        {
+            Animation slideUp = AnimationUtils.loadAnimation(context, R.anim.slide_up);
+            cartViewHolder.edit_layout.setVisibility(View.GONE);
+            cartViewHolder.edit_layout.startAnimation(slideUp);
+
+        }
+
+        if (currentPosition == i)
+        {
+            if (cartViewHolder.edit_layout.getVisibility() == View.VISIBLE)
+            {
+                Animation slideUp = AnimationUtils.loadAnimation(context, R.anim.slide_up);
+                cartViewHolder.edit_layout.setVisibility(View.GONE);
+                cartViewHolder.edit_layout.startAnimation(slideUp);
+            }
+
+            else {
+                Animation slideDown = AnimationUtils.loadAnimation(context, R.anim.slide_down);
+                cartViewHolder.edit_layout.setVisibility(View.VISIBLE);
+                cartViewHolder.edit_layout.startAnimation(slideDown);
+                cartViewHolder.edit_layout.requestFocus();
+
+            }
+
+        }
+
+        cartViewHolder.edit_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                currentPosition = i;
+                notifyDataSetChanged();
+            }
+        });
 
     }
 
@@ -42,15 +83,19 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         return 10;
     }
 
-    public class CartViewHolder extends RecyclerView.ViewHolder{
+    public class CartViewHolder extends RecyclerView.ViewHolder {
 
         TextView delete;
+        LinearLayout edit_layout;
+        RelativeLayout edit_button;
 
 
         public CartViewHolder(@NonNull View itemView) {
             super(itemView);
 
             delete = itemView.findViewById(R.id.cart_delete_rate);
+            edit_layout = itemView.findViewById(R.id.cart_edit);
+            edit_button = itemView.findViewById(R.id.cart_edit_button1);
 
             delete.setPaintFlags(delete.getPaintFlags()|Paint.STRIKE_THRU_TEXT_FLAG);
         }
