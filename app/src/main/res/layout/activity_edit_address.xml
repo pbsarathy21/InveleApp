@@ -96,6 +96,7 @@
                             android:hint="@string/float_name"
                             android:inputType="textPersonName"
                             tools:ignore="Autofill" />
+
                     </android.support.design.widget.TextInputLayout>
 
 
