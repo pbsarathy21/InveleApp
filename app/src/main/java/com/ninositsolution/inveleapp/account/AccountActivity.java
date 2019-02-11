@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.ninositsolution.inveleapp.R;
 import com.ninositsolution.inveleapp.cancel_order.CancelOrderActivity;
 import com.ninositsolution.inveleapp.cart.CartActivity;
+import com.ninositsolution.inveleapp.coupon.CouponActivity;
 import com.ninositsolution.inveleapp.databinding.ActivityAccountBinding;
 import com.ninositsolution.inveleapp.fitme.FitmeActivity;
 import com.ninositsolution.inveleapp.home.HomeActivity;
@@ -73,7 +74,7 @@ public class AccountActivity extends AppCompatActivity implements IAccount{
 
     @Override
     public void onCouponClicked() {
-        Toast.makeText(this, "Under Production", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, CouponActivity.class));
     }
 
     @Override

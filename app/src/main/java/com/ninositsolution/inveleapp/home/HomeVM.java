@@ -46,4 +46,9 @@ public class HomeVM {
     {
         iHome.onItemClicked();
     }
+
+    public void onUsernameClicked()
+    {
+        iHome.onUsernameClicked();
+    }
 }

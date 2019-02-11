@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".review.ReviewActivity"></activity>
+        <activity android:name=".coupon.CouponActivity"></activity>
+        <activity android:name=".review.ReviewActivity" />
         <activity android:name=".my_order.MyOrderActivity" />
         <activity android:name=".cancel_order.CancelOrderActivity" />
         <activity android:name=".social_media.SocialMediaActivity" />

@@ -226,4 +226,11 @@ public class HomeActivity extends AppCompatActivity implements IHome{
     public void onItemClicked() {
         startActivity(new Intent(this, ProductDetailActivity.class));
     }
+
+    @Override
+    public void onUsernameClicked() {
+
+        startActivity(new Intent(this, ProductDetailActivity.class));
+
+    }
 }

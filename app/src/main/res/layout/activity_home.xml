@@ -48,12 +48,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/username"
+                        android:onClick="@{()->home.onUsernameClicked()}"
                         android:textSize="@dimen/_14sdp"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:layout_centerVertical="true"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="@dimen/_20sdp"/>
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        tools:ignore="RelativeOverlap" />
 
                 </RelativeLayout>
 
@@ -280,7 +282,6 @@
                                     android:text="@string/more"
                                     android:layout_alignParentEnd="true"
                                     android:fontFamily="@font/roboto_regular"
-                                    android:textFontWeight=""
                                     android:textSize="@dimen/_12sdp"
                                     android:textStyle="bold"
                                     tools:ignore="RelativeOverlap" />
