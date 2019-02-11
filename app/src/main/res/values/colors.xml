@@ -32,5 +32,10 @@
     <color name="cart_edit_color">#7f7f7f</color>
 
     <color name="layout_split">#e5e5e5</color>
+    <color name="text_color">#5b5c5b</color>
+    <color name="parent_layout_color">#f6f6f6</color>
+    <color name="layout_bgcolor">#ffffff</color>
+    <color name="button_bg">#e17789</color>
+    <color name="view_bgcolor">#e6e6e6</color>
 
 </resources>

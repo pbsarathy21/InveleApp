@@ -294,6 +294,11 @@
     <string name="button_update">Update</string>
     <string name="product_name">Oneplus 6t Mclaren edition</string>
     <string name="price_textView">Price:</string>
+    <string name="more_details_textView">More Details</string>
+    <string name="product_discount">On Min $250, for all Products  </string>
+    <string name="textView_coupon">NEWCB15</string>
+    <string name="availale_coupons_textView">Availale Coupons</string>
+    <string name="button_text">Apply</string>
     <string name="prices">$215</string>
     <string name="summary_textView">Summary of Your Review</string>
     <string name="hint_summary">Summary of review</string>
@@ -376,5 +381,6 @@
     </string-array>
     <string name="title_activity_product_detail">ProductDetailActivity</string>
     <string name="view_store">View Store</string>
+    <string name="offer_details_textView">15% OFF Products</string>
 
 </resources>
