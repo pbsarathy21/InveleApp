@@ -113,7 +113,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="@dimen/_12sdp"
                 android:layout_marginLeft="@dimen/_10sdp"
-                android:text="@string/availale_coupons_textView"
+                android:text="@string/available_coupons_textView"
                 android:textSize="@dimen/prod_text_size"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"/>

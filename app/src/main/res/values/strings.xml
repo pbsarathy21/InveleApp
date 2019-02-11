@@ -297,7 +297,7 @@
     <string name="more_details_textView">More Details</string>
     <string name="product_discount">On Min $250, for all Products  </string>
     <string name="textView_coupon">NEWCB15</string>
-    <string name="availale_coupons_textView">Availale Coupons</string>
+    <string name="available_coupons_textView">Available Coupons</string>
     <string name="button_text">Apply</string>
     <string name="prices">$215</string>
     <string name="summary_textView">Summary of Your Review</string>

@@ -102,6 +102,13 @@ public class HomeActivity extends AppCompatActivity implements IHome{
         binding.viewPager.setAdapter(viewPagerAdapter);
         binding.viewpagerUnder.setAdapter(underViewPagerAdapter);
 
+        binding.clicks.onClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, ProductDetailActivity.class));
+            }
+        });
+
         /*After setting the adapter use the timer */
         final Handler handler = new Handler();
         final Runnable Update = new Runnable() {

@@ -23,6 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:background="@color/invelebg"
                 android:weightSum="2">
 
                 <RelativeLayout
@@ -40,7 +41,8 @@
                         android:layout_height="@dimen/_150sdp"
                         android:scaleType="centerCrop"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/shop4" />
+                        android:src="@drawable/shop4"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:id="@+id/flash_item_name"

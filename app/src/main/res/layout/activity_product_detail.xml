@@ -21,6 +21,7 @@
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_36sdp"
+                app:layout_scrollFlags="scroll|enterAlways"
                 app:contentInsetStart="0dp"
                 android:background="@color/white"
                 app:popupTheme="@style/AppTheme.PopupOverlay">
@@ -30,6 +31,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
+                        android:onClick="@{()->product.onBackClicked()}"
                         android:id="@+id/account_header_back"
                         android:layout_width="@dimen/_32sdp"
                         android:layout_height="@dimen/_28sdp"
@@ -49,14 +51,21 @@
                         android:textSize="@dimen/toolBarFont"
                         tools:ignore="RelativeOverlap" />
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/grayWhite"
+                        android:layout_alignParentBottom="true"
+                        />
+
                 </RelativeLayout>
+
 
             </android.support.v7.widget.Toolbar>
 
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_36sdp"
-                app:layout_scrollFlags="scroll|enterAlways|snap"
                 app:contentInsetStart="0dp"
                 android:background="@color/white">
 
@@ -1246,6 +1255,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:weightSum="2"
+            app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
             android:background="@color/invelebg"
             android:layout_gravity="bottom"
             android:layout_width="match_parent"
