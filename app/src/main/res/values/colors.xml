@@ -15,6 +15,7 @@
     <!-- fitme Activity -->
 
     <color name="ash_color">#eeeeee</color>
+    <color name="tab_Indicator">#c90828</color>
 
     <color name="add_to_cart">#364255</color>
     <color name="buy_now">#d94255</color>

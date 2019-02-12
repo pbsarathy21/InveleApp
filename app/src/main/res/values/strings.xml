@@ -395,5 +395,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="babies_toys">babies _toys</string>
+    <string name="all_shops_textview">All Shops</string>
 
 </resources>
