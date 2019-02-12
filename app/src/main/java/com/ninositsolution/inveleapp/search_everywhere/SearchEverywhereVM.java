@@ -52,4 +52,19 @@ public class SearchEverywhereVM {
     {
         iSearchEverywhere.onHighClicked();
     }
+
+    public void onFilterClicked()
+    {
+        iSearchEverywhere.onFilterClicked();
+    }
+
+    public void onRelevanceClicked()
+    {
+        iSearchEverywhere.onRelevanceClicked();
+    }
+
+    public void onEveryWhereClicked()
+    {
+        iSearchEverywhere.onEveryWhereClicked();
+    }
 }

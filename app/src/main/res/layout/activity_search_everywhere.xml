@@ -9,8 +9,11 @@
     </data>
 
     <RelativeLayout
+        android:id="@+id/gesture_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
 
         <RelativeLayout
             android:id="@+id/wishlist_toolbar"
@@ -92,9 +95,10 @@
                 android:layout_height="wrap_content">
 
                 <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_weight="25"
-                android:layout_height="@dimen/_36sdp">
+                    android:onClick="@{()->searchEverywhere.onEveryWhereClicked()}"
+                    android:layout_width="0dp"
+                    android:layout_weight="25"
+                    android:layout_height="@dimen/_36sdp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -113,6 +117,7 @@
             </RelativeLayout>
 
                 <RelativeLayout
+                    android:onClick="@{()->searchEverywhere.onRelevanceClicked()}"
                     android:layout_width="0dp"
                     android:layout_weight="25"
                     android:layout_height="@dimen/_36sdp">
@@ -156,6 +161,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:onClick="@{()->searchEverywhere.onFilterClicked()}"
                     android:layout_width="0dp"
                     android:layout_weight="30"
                     android:layout_height="@dimen/_36sdp">
@@ -229,6 +235,14 @@
             </android.support.v7.widget.RecyclerView>
 
         </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/filter_container"
+            android:layout_marginStart="@dimen/_64sdp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
 
 
     </RelativeLayout>
