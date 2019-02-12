@@ -275,7 +275,7 @@
     <string name="shipment">Shipment Details</string>
     <string name="onRequest">On Request</string>
     <string name="confirmed">confirmed</string>
-    <string name="Shipping">Shipping</string>
+    <string name="Shipping">Shipping:</string>
     <string name="order_confirmation">Order is confirmed and being ready for dispatch</string>
     <string name="shipped_date">29 July 2017  01:58 AM</string>
     <string name="my_order_header">My Order</string>
@@ -382,5 +382,14 @@
     <string name="title_activity_product_detail">ProductDetailActivity</string>
     <string name="view_store">View Store</string>
     <string name="offer_details_textView">15% OFF Products</string>
+    <string name="shopping_cart_textView">Shopping Cart</string>
+    <string name="apply_button_text">Apply</string>
+    <string name="all_textView">ALL</string>
+    <string name="total_label_textview">Total :</string>
+    <string name="price_value_textview">$150.20</string>
+    <string name="shipping_textview">Shipping: $10</string>
+    <string name="checkout_textview">Checkout</string>
+    <string name="shipping_price_textView">S$10.25</string>
+    <string name="checkbox_text">ALL</string>
 
 </resources>
