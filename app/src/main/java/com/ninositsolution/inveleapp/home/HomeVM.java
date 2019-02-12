@@ -51,4 +51,9 @@ public class HomeVM {
     {
         iHome.onUsernameClicked();
     }
+
+    public void onBrandMoreClicked()
+    {
+        iHome.onBrandMoreClicked();
+    }
 }

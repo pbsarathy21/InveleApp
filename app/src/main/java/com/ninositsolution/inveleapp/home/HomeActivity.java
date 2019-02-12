@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import com.ninositsolution.inveleapp.R;
 import com.ninositsolution.inveleapp.account.AccountActivity;
+import com.ninositsolution.inveleapp.all_brands.AllBrandsActivity;
 import com.ninositsolution.inveleapp.cart.CartActivity;
 import com.ninositsolution.inveleapp.categories.CategoryActivity;
 import com.ninositsolution.inveleapp.databinding.ActivityHomeBinding;
@@ -239,5 +240,10 @@ public class HomeActivity extends AppCompatActivity implements IHome{
 
         startActivity(new Intent(this, ProductDetailActivity.class));
 
+    }
+
+    @Override
+    public void onBrandMoreClicked() {
+            startActivity(new Intent(this, AllBrandsActivity.class));
     }
 }

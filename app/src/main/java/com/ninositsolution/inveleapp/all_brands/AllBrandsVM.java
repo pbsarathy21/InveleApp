@@ -14,15 +14,9 @@ public class AllBrandsVM {
         this.context = context;
         this.iAllBrands = iAllBrands;
         allBrandsModel = new AllBrandsModel();
-        loadAdapter();
     }
 
 
-    private void loadAdapter(){
-
-        AllBrandsAdapter allBrandsAdapter = new AllBrandsAdapter(context);
-            iAllBrands.setRecyclerAdapter(allBrandsAdapter);
-    }
 
     public void onBackClicked()
     {

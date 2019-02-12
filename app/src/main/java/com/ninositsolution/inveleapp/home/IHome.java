@@ -12,4 +12,5 @@ public interface IHome {
     void onSearchClicked();
     void onItemClicked();
     void onUsernameClicked();
+    void onBrandMoreClicked();
 }

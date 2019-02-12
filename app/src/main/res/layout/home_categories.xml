@@ -46,7 +46,8 @@
                     android:layout_alignParentEnd="true"
                     android:fontFamily="@font/roboto_regular"
                     android:textSize="@dimen/_12sdp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    tools:ignore="RelativeOverlap" />
 
             </RelativeLayout>
 

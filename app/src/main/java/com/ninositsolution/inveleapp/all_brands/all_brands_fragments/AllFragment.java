@@ -2,6 +2,7 @@ package com.ninositsolution.inveleapp.all_brands.all_brands_fragments;
 
 import android.app.Activity;
 import android.content.Context;
+import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,15 +18,14 @@ import java.util.List;
 import com.ninositsolution.inveleapp.R;
 import com.ninositsolution.inveleapp.all_brands.AllBrandsAdapter;
 import com.ninositsolution.inveleapp.all_brands.AllBrandsModel;
+import com.ninositsolution.inveleapp.databinding.FragmentAllBinding;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AllFragment extends Fragment {
-    RecyclerView recyclerView;
-    AllBrandsAdapter recyclerViewAdapter;
-    Activity activity;
-    List<AllBrandsModel> modelList = new ArrayList<>();
+public class AllFragment extends Fragment implements IAllFragment{
+
+    FragmentAllBinding binding;
 
 
     public AllFragment() {
@@ -37,24 +37,24 @@ public class AllFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_all, container, false);
-        activity = getActivity();
-        Initialization(view);
-        return view;
-    }
+       binding = DataBindingUtil.inflate(inflater,R.layout.fragment_all,container,false);
 
-    public void Initialization(View view) {
+       View view = binding.getRoot();
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.all_brands_recyclerView);
+       binding.setAllFragment(new AllFragmentsVM(view.getContext(), this));
 
-
-
-
+       return view;
     }
 
 
+    @Override
+    public void setRecyclerAdapter(AllBrandsAdapter adapter) {
 
+        binding.allBrandsRecyclerView.setHasFixedSize(true);
+        binding.allBrandsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.allBrandsRecyclerView.setAdapter(adapter);
 
+    }
 }
 
 

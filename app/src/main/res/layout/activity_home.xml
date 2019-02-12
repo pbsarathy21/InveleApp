@@ -219,13 +219,15 @@
                                     android:textStyle="bold"/>
 
                                 <TextView
+                                    android:onClick="@{()->home.onBrandMoreClicked()}"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/more"
                                     android:layout_alignParentEnd="true"
                                     android:fontFamily="@font/roboto_regular"
                                     android:textSize="@dimen/_12sdp"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="bold"
+                                    tools:ignore="RelativeOverlap" />
 
                             </RelativeLayout>
 
