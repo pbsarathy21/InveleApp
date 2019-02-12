@@ -383,4 +383,7 @@
     <string name="view_store">View Store</string>
     <string name="offer_details_textView">15% OFF Products</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

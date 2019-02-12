@@ -14,4 +14,7 @@ public interface ISearchEverywhere {
     void onPriceClicked();
     void onLowClicked();
     void onHighClicked();
+    void onFilterClicked();
+    void onRelevanceClicked();
+    void onEveryWhereClicked();
 }
