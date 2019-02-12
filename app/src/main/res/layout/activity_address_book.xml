@@ -9,20 +9,19 @@
             type="com.ninositsolution.inveleapp.address_book.AddressBookVM"/>
     </data>
 
-    <LinearLayout
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <android.support.v4.widget.NestedScrollView
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="@dimen/_36sdp">
 
-
-            <LinearLayout
+            <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                app:contentInsetStart="0dp"
+                android:background="@color/white">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -52,6 +51,21 @@
 
 
                 </RelativeLayout>
+
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <View
                     android:layout_width="match_parent"
@@ -346,41 +360,45 @@
 
                 </RelativeLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_4sdp"
-                    android:background="#e0e0e0"/>
-
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_16sdp" />
-
-                <Button
-                    android:onClick="@{()->addressBook.onAddAddressClicked()}"
-                    android:id="@+id/add_address_button"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="@dimen/_4sdp"
-                    android:layout_width="@dimen/_180sdp"
-                    android:layout_height="@dimen/_42sdp"
-                    android:text="@string/add_address"
-                    android:paddingStart="@dimen/_8sdp"
-                    android:paddingEnd="@dimen/_8sdp"
-                    android:textStyle="bold"
-                    android:background="@color/colorPrimary"
-                    android:textColor="@android:color/white"/>
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_72sdp" />
+                    android:layout_height="@dimen/_88sdp" />
 
 
             </LinearLayout>
 
-
         </android.support.v4.widget.NestedScrollView>
 
+        <RelativeLayout
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_72sdp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_4sdp"
+                android:background="#e0e0e0"/>
+
+            <Button
+                android:onClick="@{()->addressBook.onAddAddressClicked()}"
+                android:id="@+id/add_address_button"
+                android:layout_centerInParent="true"
+                android:layout_width="@dimen/_180sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:text="@string/add_address"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:textStyle="bold"
+                android:background="@color/colorPrimary"
+                android:textColor="@android:color/white"/>
 
 
-    </LinearLayout>
+        </RelativeLayout>
+
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
 
 </layout>

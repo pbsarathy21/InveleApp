@@ -75,6 +75,8 @@
                         android:layout_below="@+id/enter_name"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_36sdp"
+                        android:paddingStart="@dimen/_8sdp"
+                        android:paddingEnd="@dimen/_8sdp"
                         android:background="@drawable/margin"
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginStart="@dimen/_8sdp"

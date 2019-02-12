@@ -184,6 +184,7 @@
     <string name="phone_sample">+65 63801245</string>
     <string name="address_sample">#04\-482, 725 Woodlands Avenue</string>
     <string name="pincode">Singapore \- 730725</string>
+    <string name="postalcode">730725</string>
     <string name="shipping">Shipping Address</string>
     <string name="billing">Billing Address</string>
     <string name="add_address">+ Add Address</string>
