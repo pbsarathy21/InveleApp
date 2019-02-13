@@ -93,6 +93,7 @@
                             android:alpha="10"
                             android:textSize="@dimen/filter_textview_size"
                             android:text="@string/everywhere_textview"
+                            android:layout_marginEnd="@dimen/_4sdp"
                             android:background="@drawable/altered_button_bground"
                             android:textColor="@android:color/black"/>
 
