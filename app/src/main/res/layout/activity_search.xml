@@ -180,7 +180,7 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_32sdp"
             android:afterTextChanged="@{(editable)->search.afterPostalCodeChanged(editable)}"
-            android:drawableEnd="@drawable/location"
+            android:drawableEnd="@drawable/ic_gps_fixed_black_24dp"
             android:padding="@dimen/_8sdp"
             android:hint="Enter Area or Postal Code   "
             android:textSize="@dimen/_12sdp"

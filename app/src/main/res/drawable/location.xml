@@ -6,7 +6,7 @@
         android:drawable="@drawable/locate"
         android:width="@dimen/app_icon"
         android:height="@dimen/app_icon"
-        android:alpha="0.5"
+        android:alpha="0.3"
         tools:ignore="UnusedAttribute" />
 
 </layer-list >
