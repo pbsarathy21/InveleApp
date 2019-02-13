@@ -6,6 +6,7 @@ android {
             {
                 enabled = true
             }
+
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.ninositsolution.inveleapp"
