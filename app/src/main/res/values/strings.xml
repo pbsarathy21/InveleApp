@@ -291,11 +291,13 @@
     <string name="float_floor">Floor/Unit Number</string>
     <string name="textView_shipping">shipping Address </string>
     <string name="textView_billing">Billing Address</string>
+    <string name="review_item_name">OnePlus 6</string>
     <string name="button_save">Save</string>
     <string name="button_update">Update</string>
     <string name="product_name">Oneplus 6t Mclaren edition</string>
     <string name="price_textView">Price:</string>
     <string name="more_details_textView">More Details</string>
+    <string name="review_header">Reviews</string>
     <string name="product_discount">On Min $250, for all Products  </string>
     <string name="textView_coupon">NEWCB15</string>
     <string name="available_coupons_textView">Available Coupons</string>
@@ -311,6 +313,21 @@
     <string name="textView_facebook">Facebook</string>
     <string name="textView_twitter">Twitter</string>
     <string name="textview_instagram">Instagram</string>
+    <string name="or_textview">Or</string>
+    <string name="filter_heading_pricerange">Price Range</string>
+    <string name="filter_heading_categories">Categories</string>
+    <string name="filter_heading_size">Size</string>
+    <string name="show_less_textview">Show Less</string>
+    <string name="offer_details_textView">15% OFF Products</string>
+    <string name="shopping_cart_textView">Shopping Cart</string>
+    <string name="apply_button_text">Apply</string>
+    <string name="all_textView">ALL</string>
+    <string name="total_label_textview">Total :</string>
+    <string name="price_value_textview">$150.20</string>
+    <string name="shipping_textview">Shipping: $10</string>
+    <string name="checkout_textview">Checkout</string>
+    <string name="shipping_price_textView">S$10.25</string>
+    <string name="checkbox_text">ALL</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="babies_toys">babies _toys</string>
@@ -345,6 +362,8 @@
     <string name="filter_size_3XL">3XL</string>
     <string name="filter_color_label">Color</string>
     <string name="color_red_label">Red</string>
+    <string name="dealy_delivery_textview">Dealy Delivery</string>
+
     <string name="color_green_label">Green</string>
     <string name="color_yellow_label">Yellow</string>
     <string name="color_blue_label">Blue</string>
@@ -434,16 +453,8 @@
     </string-array>
     <string name="title_activity_product_detail">ProductDetailActivity</string>
     <string name="view_store">View Store</string>
-    <string name="offer_details_textView">15% OFF Products</string>
-    <string name="shopping_cart_textView">Shopping Cart</string>
-    <string name="apply_button_text">Apply</string>
-    <string name="all_textView">ALL</string>
-    <string name="total_label_textview">Total :</string>
-    <string name="price_value_textview">$150.20</string>
-    <string name="shipping_textview">Shipping: $10</string>
-    <string name="checkout_textview">Checkout</string>
-    <string name="shipping_price_textView">S$10.25</string>
-    <string name="checkbox_text">ALL</string>
+    <string name="delivery_review_textview">Good service by Invele Delivery</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
 

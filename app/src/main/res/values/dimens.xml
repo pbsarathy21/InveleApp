@@ -41,6 +41,7 @@
     <!-- Cancel order Activity-->
 
     <dimen name="cancel_text_size">@dimen/_11sdp</dimen>
+    <dimen name="dellivery_status_textview_size">@dimen/_14sdp</dimen>
 
     <dimen name="shipping_points">@dimen/_12sdp</dimen>
 
@@ -49,6 +50,9 @@
 
     <dimen name="prod_text_small">@dimen/_12sdp</dimen>
     <dimen name="filter_textview_size">@dimen/_12sdp</dimen>
+    <dimen name="filter_heading_textsize">@dimen/_13sdp</dimen>
+    <dimen name="show_less_textview_size">@dimen/_14sdp</dimen>
+    <dimen name="review_button_textsize">@dimen/_9sdp</dimen>
 
 
 </resources>
