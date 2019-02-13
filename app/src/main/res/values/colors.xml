@@ -39,5 +39,6 @@
     <color name="button_bg">#e17789</color>
     <color name="view_bgcolor">#e6e6e6</color>
     <color name="button_bgcolor">#d94255</color>
+    <color name="help_line_color">#c9cac9</color>
 
 </resources>

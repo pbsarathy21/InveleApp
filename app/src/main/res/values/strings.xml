@@ -282,6 +282,38 @@
     <string name="my_order_header">My Order</string>
 
 
+    <!--Help Desk Activity-->
+
+    <string name="help_desk_header">Help Desk</string>
+    <string name="looking_for">Hi Rushiyogar ! what are looking for?</string>
+    <string name="type_your_queries">Please type your queries</string>
+    <string name="apply">Apply</string>
+    <string name="order_tracking">Order Tracking</string>
+    <string name="cancellation">Cancellation</string>
+    <string name="refund_return">Refund/Return</string>
+    <string name="payment">Payment</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="help_ques_1">1. How to place Order?</string>
+    <string name="help_ques_2">2. How ton contact seller?</string>
+    <string name="help_ques_3">3. How to track my order?</string>
+    <string name="help_ques_4">4. How do i get my invoice?</string>
+    <string name="help_ques_5">5. How can i cancel my order?</string>
+    <string name="help_ques_6">6. Can I cancel my order after shipped?</string>
+    <string name="help_ques_7">7. What is Search Nearby?</string>
+    <string name="help_ques_8">8. When will I receive my order</string>
+    <string name="help_ques_9">9. How can I know if my order is confirmed?</string>
+    <string name="help_ques_10">10. How to buy in combo deal?</string>
+    <string name="call_us">Call us 24/7 at</string>
+    <string name="email_us">Email us 24/7 at</string>
+    <string name="num_1">+65–6000–4000</string>
+    <string name="num_2">+65–8555–5555</string>
+    <string name="email_addr">help@invele.in</string>
+    <string name="comma">,</string>
+    <string name="help_ans">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dignissimos excepturi fuga illum, libero natus placeat quas repudiandae sit voluptate? Ducimus eos, nulla provident quae quibusdam sapiente voluptate. Ad culpa cum doloremque ea eos et harum hic, illum incidunt ipsa iusto non obcaecati perferendis porro quod recusandae sit voluptas voluptatibus.</string>
+
+
+
+
     <!--Arun's work-->
 
     <string name="float_name">Name</string>
@@ -383,74 +415,7 @@
     <string name="brand_leeder">Leeder</string>
     <string name="vanhuesen_brand">VanHuesen</string>
 
-    <!--Day Spinner-->
 
-    <string-array name="day">
-        <item>Day</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
-        <item>19</item>
-        <item>20</item>
-        <item>21</item>
-        <item>22</item>
-        <item>23</item>
-        <item>24</item>
-        <item>25</item>
-        <item>26</item>
-        <item>27</item>
-        <item>28</item>
-        <item>29</item>
-        <item>30</item>
-        <item>31</item>
-    </string-array>
-
-    <string-array name="month">
-        <item>Month</item>
-        <item>Jan</item>
-        <item>Feb</item>
-        <item>Mar</item>
-        <item>Apr</item>
-        <item>May</item>
-        <item>Jun</item>
-        <item>Jul</item>
-        <item>Aug</item>
-        <item>Sep</item>
-        <item>Oct</item>
-        <item>Nov</item>
-        <item>Dec</item>
-    </string-array>
-
-    <string-array name="year">
-        <item>Year</item>
-        <item>2000</item>
-        <item>2001</item>
-        <item>2002</item>
-        <item>2003</item>
-        <item>2004</item>
-        <item>2005</item>
-        <item>2006</item>
-        <item>2007</item>
-        <item>2008</item>
-        <item>2009</item>
-        <item>2010</item>
-        <item>2011</item>
-    </string-array>
     <string name="title_activity_product_detail">ProductDetailActivity</string>
     <string name="view_store">View Store</string>
     <string name="delivery_review_textview">Good service by Invele Delivery</string>

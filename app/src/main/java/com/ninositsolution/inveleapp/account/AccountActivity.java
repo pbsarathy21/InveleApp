@@ -12,6 +12,7 @@ import com.ninositsolution.inveleapp.cart.CartActivity;
 import com.ninositsolution.inveleapp.coupon.CouponActivity;
 import com.ninositsolution.inveleapp.databinding.ActivityAccountBinding;
 import com.ninositsolution.inveleapp.fitme.FitmeActivity;
+import com.ninositsolution.inveleapp.help_desk.HelpDeskActivity;
 import com.ninositsolution.inveleapp.home.HomeActivity;
 import com.ninositsolution.inveleapp.my_order.MyOrderActivity;
 import com.ninositsolution.inveleapp.recently_viewed.RecentlyViewedActivity;
@@ -89,7 +90,7 @@ public class AccountActivity extends AppCompatActivity implements IAccount{
 
     @Override
     public void onHelpDeskClicked() {
-        Toast.makeText(this, "Under Production", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, HelpDeskActivity.class));
     }
 
     @Override
