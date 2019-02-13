@@ -34,6 +34,7 @@
     <!-- Category child size-->
 
     <dimen name="catChildSize">@dimen/_10sdp</dimen>
+
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="edit_padding">@dimen/_16sdp</dimen>
@@ -49,6 +50,9 @@
 
     <dimen name="prod_text_small">@dimen/_12sdp</dimen>
     <dimen name="filter_textview_size">@dimen/_12sdp</dimen>
+
+    <dimen name="help_desk_regular">@dimen/_14sdp</dimen>
+    <dimen name="help_desk_small">@dimen/_11sdp</dimen>
 
 
 </resources>
