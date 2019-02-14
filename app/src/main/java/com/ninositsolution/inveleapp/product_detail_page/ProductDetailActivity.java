@@ -1,11 +1,13 @@
 package com.ninositsolution.inveleapp.product_detail_page;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.ninositsolution.inveleapp.R;
 import com.ninositsolution.inveleapp.databinding.ActivityProductDetailBinding;
+import com.ninositsolution.inveleapp.review_all.ReviewAllActivity;
 
 public class ProductDetailActivity extends AppCompatActivity implements IProductDetail{
 
@@ -22,5 +24,10 @@ public class ProductDetailActivity extends AppCompatActivity implements IProduct
     @Override
     public void onBackClicked() {
             super.onBackPressed();
+    }
+
+    @Override
+    public void onViewAllClicked() {
+            startActivity(new Intent(this, ReviewAllActivity.class));
     }
 }

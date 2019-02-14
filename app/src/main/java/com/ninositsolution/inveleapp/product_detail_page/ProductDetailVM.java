@@ -18,4 +18,9 @@ public class ProductDetailVM {
     {
         iProductDetail.onBackClicked();
     }
+
+    public void onViewAllClicked()
+    {
+        iProductDetail.onViewAllClicked();
+    }
 }

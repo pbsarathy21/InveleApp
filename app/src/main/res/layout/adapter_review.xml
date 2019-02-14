@@ -11,17 +11,14 @@
         android:layout_height="match_parent"
         android:layout_margin="@dimen/_8sdp">
 
-
-
         <ImageView
             android:id="@+id/cancel_image"
-            android:layout_alignStart="@+id/cancel_id"
             android:layout_width="@dimen/_72sdp"
             android:layout_height="@dimen/_72sdp"
             android:src="@drawable/man_image"
             android:layout_marginTop="@dimen/_8sdp"
-            android:scaleType="centerCrop"/>
-
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription" />
 
 
         <TextView
@@ -52,12 +49,12 @@
             android:layout_alignBottom="@+id/review_price"
             android:layout_toEndOf="@+id/review_price"
             android:layout_marginStart="@dimen/_8sdp"
-            android:textSize="@dimen/cancel_text_size"            android:layout_width="wrap_content"
+            android:textSize="@dimen/cancel_text_size"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
             android:text="@string/order_price_value"/>
-
 
 
         <RatingBar
@@ -70,18 +67,19 @@
             android:layout_height="wrap_content"
             android:numStars="5"
             android:rating="3.5"
+            android:progressDrawable="@drawable/my_rating_display"
             android:theme="@style/RatingBar"
-            style="?android:attr/ratingBarStyleSmall"/>
+            style="@style/Base.Widget.AppCompat.RatingBar.Small"/>
 
         <TextView
-        android:id="@+id/delivery_status_textview"
-        android:layout_alignStart="@+id/ratingBar"
-        android:layout_below="@+id/ratingBar"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:textSize="@dimen/cancel_text_size"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/dealy_delivery_textview"/>
+            android:id="@+id/delivery_status_textview"
+            android:layout_alignStart="@+id/ratingBar"
+            android:layout_below="@+id/ratingBar"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="@dimen/cancel_text_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dealy_delivery_textview"/>
 
         <TextView
             android:id="@+id/delivery_review_textview"
@@ -108,9 +106,6 @@
             android:drawableStart="@drawable/custom_drawableleft_edit_button"
             android:background="@drawable/button_border_background"/>
 
-
-
-
         <Button
             android:id="@+id/review_delete_button"
             android:layout_width="@dimen/_60sdp"
@@ -119,21 +114,12 @@
             android:layout_marginTop="@dimen/_8sdp"
             android:text="@string/delete"
             android:textSize="@dimen/review_button_textsize"
-            android:paddingLeft="@dimen/_6sdp"
+            android:paddingStart="@dimen/_6sdp"
+            android:paddingEnd="@dimen/_6sdp"
             android:layout_toEndOf="@id/review_edit_button"
-            android:layout_marginLeft="@dimen/_16sdp"
-
+            android:layout_marginStart="@dimen/_16sdp"
             android:drawableStart="@drawable/custom_drawableleft_delete_button"
             android:background="@drawable/button_border_background"/>
-
-
-
-
-
-
-
-
-
 
     </RelativeLayout>
 
@@ -146,14 +132,5 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_1sdp"
         android:background="@color/cancel_split_line"/>
-
-
-
-
-
-
-
-
-
 
 </android.support.v7.widget.CardView>

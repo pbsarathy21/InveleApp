@@ -5,13 +5,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/invele_logo_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/invele_logo_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".help_desk.HelpDeskActivity"></activity>
+        <activity android:name=".review_all.ReviewAllActivity"></activity>
+        <activity android:name=".help_desk.HelpDeskActivity" />
         <activity android:name=".all_brands.AllBrandsActivity" />
         <activity android:name=".coupon.CouponActivity" />
         <activity android:name=".review.ReviewActivity" />

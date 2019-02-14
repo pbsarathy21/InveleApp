@@ -572,13 +572,29 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <TextView
-                            android:layout_marginStart="@dimen/_16sdp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textStyle="bold"
-                            android:text="@string/product_rating"
-                            android:textSize="@dimen/prod_text_size"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_marginStart="@dimen/_16sdp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:text="@string/product_rating"
+                                android:textSize="@dimen/prod_text_size"/>
+
+                            <TextView
+                                android:layout_marginEnd="@dimen/_16sdp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{()->product.onViewAllClicked()}"
+                                android:text="@string/view_all"
+                                android:textSize="@dimen/prod_text_size"
+                                tools:ignore="RelativeOverlap" />
+
+                        </RelativeLayout>
 
                         <View
                             android:layout_marginTop="@dimen/_8sdp"

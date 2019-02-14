@@ -311,7 +311,14 @@
     <string name="comma">,</string>
     <string name="help_ans">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dignissimos excepturi fuga illum, libero natus placeat quas repudiandae sit voluptate? Ducimus eos, nulla provident quae quibusdam sapiente voluptate. Ad culpa cum doloremque ea eos et harum hic, illum incidunt ipsa iusto non obcaecati perferendis porro quod recusandae sit voluptas voluptatibus.</string>
 
+    <!--Review All Activity-->
 
+    <string name="review_all_header">Review All</string>
+    <string name="all_star">All Star</string>
+    <string name="average_user_rating">Average user rating</string>
+    <string name="rating_breakdown">Rating breakdown</string>
+    <string name="rate_43">4.3</string>
+    <string name="rate_5">/5</string>
 
 
     <!--Arun's work-->
