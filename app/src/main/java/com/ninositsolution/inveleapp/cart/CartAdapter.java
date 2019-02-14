@@ -2,6 +2,7 @@ package com.ninositsolution.inveleapp.cart;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Paint;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -13,8 +14,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ninositsolution.inveleapp.R;
+import com.ninositsolution.inveleapp.generated.callback.OnClickListener;
 
 /**
  * Created by Parthasarathy D on 1/22/2019.
@@ -25,9 +28,11 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     private Context context;
     private static int currentPosition = -1;
+    private ICart iCart;
 
-    public CartAdapter(Context context) {
+    public CartAdapter(Context context, ICart iCart) {
         this.context = context;
+        this.iCart = iCart;
         notifyDataSetChanged();
     }
 
@@ -39,8 +44,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartViewHolder cartViewHolder, @SuppressLint("RecyclerView") final int i) {
-
+    public void onBindViewHolder(@NonNull CartViewHolder cartViewHolder, final int i) {
+/*
         if (cartViewHolder.edit_layout.getVisibility() == View.VISIBLE)
         {
             Animation slideUp = AnimationUtils.loadAnimation(context, R.anim.slide_up);
@@ -66,12 +71,12 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
             }
 
-        }
+        }*/
 
         cartViewHolder.edit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                currentPosition = i;
+                iCart.onEditClicked(i);
                 notifyDataSetChanged();
             }
         });
@@ -86,18 +91,18 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     public class CartViewHolder extends RecyclerView.ViewHolder {
 
         TextView delete;
-        LinearLayout edit_layout;
+        //LinearLayout edit_layout;
         RelativeLayout edit_button;
-
 
         public CartViewHolder(@NonNull View itemView) {
             super(itemView);
-
             delete = itemView.findViewById(R.id.cart_delete_rate);
-            edit_layout = itemView.findViewById(R.id.cart_edit);
+            //edit_layout = itemView.findViewById(R.id.cart_edit);
             edit_button = itemView.findViewById(R.id.cart_edit_button1);
-
             delete.setPaintFlags(delete.getPaintFlags()|Paint.STRIKE_THRU_TEXT_FLAG);
+
         }
+
     }
+
 }

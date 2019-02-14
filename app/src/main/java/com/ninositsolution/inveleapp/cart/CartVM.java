@@ -22,7 +22,7 @@ public class CartVM {
 
     private void loadCartRecycler() {
 
-        CartAdapter cartAdapter = new CartAdapter(context);
+        CartAdapter cartAdapter = new CartAdapter(context, iCart);
         iCart.loadCartRecyclerView(cartAdapter);
     }
 

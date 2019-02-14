@@ -9,4 +9,5 @@ public interface ICart {
 
     void loadCartRecyclerView(CartAdapter cartAdapter);
     void onBackClicked();
+    void onEditClicked(int position);
 }
