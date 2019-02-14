@@ -320,6 +320,10 @@
     <string name="rate_43">4.3</string>
     <string name="rate_5">/5</string>
 
+    <!--View Store Activity-->
+
+    <string name="view_store_header">Store Name</string>
+    <string name="joined">Joined : 9 Months</string>
 
     <!--Arun's work-->
 

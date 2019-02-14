@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.ninositsolution.inveleapp.R;
 import com.ninositsolution.inveleapp.databinding.ActivityProductDetailBinding;
 import com.ninositsolution.inveleapp.review_all.ReviewAllActivity;
+import com.ninositsolution.inveleapp.view_store.ViewStoreActivity;
 
 public class ProductDetailActivity extends AppCompatActivity implements IProductDetail{
 
@@ -29,5 +30,10 @@ public class ProductDetailActivity extends AppCompatActivity implements IProduct
     @Override
     public void onViewAllClicked() {
             startActivity(new Intent(this, ReviewAllActivity.class));
+    }
+
+    @Override
+    public void onViewStoreClicked() {
+            startActivity(new Intent(this, ViewStoreActivity.class));
     }
 }

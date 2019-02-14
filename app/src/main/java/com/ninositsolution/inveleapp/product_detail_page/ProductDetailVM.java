@@ -23,4 +23,9 @@ public class ProductDetailVM {
     {
         iProductDetail.onViewAllClicked();
     }
+
+    public void onViewStoreClicked()
+    {
+        iProductDetail.onViewStoreClicked();
+    }
 }

@@ -381,6 +381,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
+                            android:onClick="@{()->product.onViewStoreClicked()}"
                             android:id="@+id/view_store"
                             android:text="@string/view_store"
                             android:layout_alignStart="@+id/store_name"
@@ -613,7 +614,8 @@
                                 android:layout_margin="@dimen/_8sdp"
                                 android:layout_width="@dimen/_36sdp"
                                 android:layout_height="@dimen/_36sdp"
-                                android:src="@drawable/user"/>
+                                android:src="@drawable/user"
+                                tools:ignore="TooManyViews" />
 
                             <RatingBar
                                 android:id="@+id/prod_rat_rating"

@@ -112,7 +112,8 @@
                             android:orientation="horizontal"
                             android:weightSum="5"
                             android:layout_width="@dimen/_120sdp"
-                            android:layout_height="@dimen/_18sdp">
+                            android:layout_height="@dimen/_18sdp"
+                            android:baselineAligned="false">
 
                             <RelativeLayout
                                 android:layout_width="0dp"

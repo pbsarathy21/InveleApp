@@ -4,4 +4,5 @@ public interface IProductDetail {
 
     void onBackClicked();
     void onViewAllClicked();
+    void onViewStoreClicked();
 }
