@@ -82,8 +82,26 @@
             android:layout_height="wrap_content"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-
         </android.support.v7.widget.RecyclerView>
+
+
+        <include
+            android:fitsSystemWindows="true"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="0dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:layout_behavior="@string/bottom_sheet_behavior"
+            android:id="@+id/bottom_sheet_trackorder"
+            layout="@layout/bottom_sheet_trackorder">
+
+        </include>
+
+
+
+
+
+
 
     </android.support.design.widget.CoordinatorLayout>
 

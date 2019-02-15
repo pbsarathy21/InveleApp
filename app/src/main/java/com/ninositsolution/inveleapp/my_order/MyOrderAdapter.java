@@ -38,37 +38,37 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.MyOrderV
     @Override
     public void onBindViewHolder(@NonNull MyOrderViewHolder myOrderViewHolder, final int i) {
 
-        if (myOrderViewHolder.shipmentLayout.getVisibility() == View.VISIBLE)
-        {
-            Animation slideUp = AnimationUtils.loadAnimation(context, R.anim.slide_up);
-            myOrderViewHolder.shipmentLayout.setVisibility(View.GONE);
-            myOrderViewHolder.shipmentLayout.startAnimation(slideUp);
-
-        }
+//        if (myOrderViewHolder.shipmentLayout.getVisibility() == View.VISIBLE)
+//        {
+//            Animation slideUp = AnimationUtils.loadAnimation(context, R.anim.slide_up);
+//            myOrderViewHolder.shipmentLayout.setVisibility(View.GONE);
+//            myOrderViewHolder.shipmentLayout.startAnimation(slideUp);
+//
+//        }
 
         if (currentPosition == i)
         {
-            if (myOrderViewHolder.shipmentLayout.getVisibility() == View.VISIBLE)
-            {
-                myOrderViewHolder.shipmentLayout.setVisibility(View.GONE);
-
-            }
-
-            else {
-                Animation slideDown = AnimationUtils.loadAnimation(context, R.anim.slide_down);
-                myOrderViewHolder.shipmentLayout.setVisibility(View.VISIBLE);
-                myOrderViewHolder.shipmentLayout.startAnimation(slideDown);
-                myOrderViewHolder.shipmentLayout.requestFocus();
-
-            }
+//            if (myOrderViewHolder.shipmentLayout.getVisibility() == View.VISIBLE)
+//            {
+//                myOrderViewHolder.shipmentLayout.setVisibility(View.GONE);
+//
+//            }
+//
+//            else {
+//                Animation slideDown = AnimationUtils.loadAnimation(context, R.anim.slide_down);
+//                myOrderViewHolder.shipmentLayout.setVisibility(View.VISIBLE);
+//                myOrderViewHolder.shipmentLayout.startAnimation(slideDown);
+//                myOrderViewHolder.shipmentLayout.requestFocus();
+//
+//            }
 
         }
 
         myOrderViewHolder.track.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                currentPosition = i;
-                notifyDataSetChanged();
+               iMyOrder.onTrackClicked(i);
+               notifyDataSetChanged();
             }
         });
 
