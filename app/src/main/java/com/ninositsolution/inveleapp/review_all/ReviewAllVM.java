@@ -25,4 +25,30 @@ public class ReviewAllVM {
     {
         iReviewAll.onBackClicked();
     }
+
+
+    public void onTextViewClicked(){
+        iReviewAll.onTextViewClicked();
+    }
+
+    public void onreviewLayout1Clicked(){
+
+        iReviewAll.onreviewLayout1Clicked();
+    }
+    public void onreviewLayout2Clicked(){
+
+        iReviewAll.onreviewLayout2Clicked();
+    }
+    public void onreviewLayout3Clicked(){
+
+        iReviewAll.onreviewLayout3Clicked();
+    }
+    public void onreviewLayout4Clicked(){
+
+        iReviewAll.onreviewLayout4Clicked();
+    }
+    public void onreviewLayout5Clicked(){
+
+        iReviewAll.onreviewLayout5Clicked();
+    }
 }
