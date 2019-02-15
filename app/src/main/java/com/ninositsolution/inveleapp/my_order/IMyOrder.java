@@ -4,4 +4,5 @@ public interface IMyOrder {
 
     void onBackClicked();
     void setRecyclerAdapter(MyOrderAdapter myOrderAdapter);
+    void reviewClicked(int position);
 }

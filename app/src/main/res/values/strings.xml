@@ -362,6 +362,7 @@
     <string name="filter_heading_size">Size</string>
     <string name="show_less_textview">Show Less</string>
     <string name="offer_details_textView">15% OFF Products</string>
+    <string name="review_product_name">Apple iPhone</string>
     <string name="shopping_cart_textView">Shopping Cart</string>
     <string name="apply_button_text">Apply</string>
     <string name="all_textView">ALL</string>
@@ -371,6 +372,8 @@
     <string name="checkout_textview">Checkout</string>
     <string name="shipping_price_textView">S$10.25</string>
     <string name="checkbox_text">ALL</string>
+    <string name="order_review">Review</string>
+
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="babies_toys">babies _toys</string>

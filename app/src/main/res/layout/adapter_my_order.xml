@@ -193,18 +193,18 @@
             android:layout_marginTop="@dimen/_12sdp"
             android:layout_alignStart="@+id/cancel_support_icon"
             android:layout_toEndOf="@+id/cancel_name"
-            android:src="@drawable/cancel"
+            android:src="@drawable/thumb_up"
             tools:ignore="ContentDescription" />
 
         <TextView
-            android:id="@+id/cancel"
+            android:id="@+id/review"
             android:alpha="0.7"
             android:layout_below="@+id/cancel_print_icon"
             android:layout_marginTop="@dimen/_12sdp"
             android:layout_alignStart="@+id/cancel_support"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="@string/order_cancel"
+            android:text="@string/order_review"
             android:layout_toEndOf="@+id/cancel_support_icon"
             android:layout_marginStart="@dimen/_4sdp"/>
 

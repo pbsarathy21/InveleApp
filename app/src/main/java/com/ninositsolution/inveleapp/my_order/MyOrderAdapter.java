@@ -17,17 +17,22 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.MyOrderV
 
     private Context context;
     private static int currentPosition = -1;
+    private IMyOrder iMyOrder;
 
-    public MyOrderAdapter(Context context) {
+    public MyOrderAdapter(Context context, IMyOrder iMyOrder) {
         this.context = context;
+        this.iMyOrder = iMyOrder;
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
     public MyOrderViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new MyOrderViewHolder(LayoutInflater.from(viewGroup.getContext())
-        .inflate(R.layout.adapter_my_order, viewGroup, false));
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.adapter_my_order, viewGroup, false);
+        return new MyOrderViewHolder(view);
+
+
+
     }
 
     @Override
@@ -67,6 +72,15 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.MyOrderV
             }
         });
 
+        myOrderViewHolder.review.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iMyOrder.reviewClicked(i);
+                notifyDataSetChanged();
+
+            }
+        });
+
 
     }
 
@@ -78,6 +92,7 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.MyOrderV
     public class MyOrderViewHolder extends RecyclerView.ViewHolder{
 
         TextView track;
+        TextView review;
         RelativeLayout shipmentLayout;
 
         public MyOrderViewHolder(@NonNull View itemView) {
@@ -85,6 +100,7 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.MyOrderV
 
             track = itemView.findViewById(R.id.track);
             shipmentLayout = itemView.findViewById(R.id.delivered_details_layout);
+            review = itemView.findViewById(R.id.review);
 
         }
     }

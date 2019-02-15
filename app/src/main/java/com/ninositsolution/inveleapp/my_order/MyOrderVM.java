@@ -17,7 +17,7 @@ public class MyOrderVM {
 
     private void loadAdapters() {
 
-        MyOrderAdapter myOrderAdapter = new MyOrderAdapter(context);
+        MyOrderAdapter myOrderAdapter = new MyOrderAdapter(context,iMyOrder);
         iMyOrder.setRecyclerAdapter(myOrderAdapter);
     }
 

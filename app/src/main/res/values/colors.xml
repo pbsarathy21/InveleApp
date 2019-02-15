@@ -30,6 +30,7 @@
 
     <color name="shipmentStatus">#65d074</color>
 
+
     <color name="cart_edit_color">#7f7f7f</color>
 
     <color name="layout_split">#e5e5e5</color>
@@ -41,5 +42,12 @@
     <color name="button_bgcolor">#d94255</color>
     <color name="help_line_color">#c9cac9</color>
     <color name="star_grey">#a8a4a5</color>
+
+
+    <!--- Product Review Activity -->
+
+    <color name="review_choose_file_button_color">#e1e1e1</color>
+    <color name="review_end_view_color">#aaaaaa</color>
+
 
 </resources>

@@ -58,5 +58,10 @@
     <dimen name="help_desk_regular">@dimen/_14sdp</dimen>
     <dimen name="help_desk_small">@dimen/_11sdp</dimen>
 
+    <!-- Product review Activity-->
+
+    <dimen name="review_page_textview_size">@dimen/_12sdp</dimen>
+    <dimen name="review_page_hint_textview_size">@dimen/_12sdp</dimen>
+
 
 </resources>

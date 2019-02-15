@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".view_store.ViewStoreActivity"></activity>
+        <activity android:name=".product_review.ProductReviewActivity"></activity>
+        <activity android:name=".view_store.ViewStoreActivity" />
         <activity android:name=".review_all.ReviewAllActivity" />
         <activity android:name=".help_desk.HelpDeskActivity" />
         <activity android:name=".all_brands.AllBrandsActivity" />
