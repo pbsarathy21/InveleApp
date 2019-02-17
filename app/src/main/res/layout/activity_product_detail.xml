@@ -120,6 +120,7 @@
         </android.support.design.widget.AppBarLayout>
 
         <android.support.v4.widget.NestedScrollView
+            android:id="@+id/product_detail_layout"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -344,6 +345,146 @@
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="@dimen/_8sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_8sdp">
+
+                        <TextView
+                            android:id="@+id/voucher"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:text="@string/voucher"
+                            android:textSize="@dimen/prod_text_size"
+                            android:textColor="@color/colorPrimary"/>
+                        
+                        <TextView
+                            android:id="@+id/off_5"
+                            android:layout_alignStart="@+id/voucher"
+                            android:layout_below="@+id/voucher"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:layout_width="@dimen/_64sdp"
+                            android:layout_height="@dimen/_26sdp"
+                            android:text="@string/off_10"
+                            android:background="@drawable/voucher_button"
+                            android:textSize="@dimen/prod_text_small"
+                            android:gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/off_10"
+                            android:layout_alignBottom="@+id/off_5"
+                            android:layout_toEndOf="@+id/off_5"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_width="@dimen/_64sdp"
+                            android:layout_height="@dimen/_26sdp"
+                            android:text="@string/off_5"
+                            android:background="@drawable/voucher_button"
+                            android:textSize="@dimen/prod_text_small"
+                            android:gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/off_15"
+                            android:layout_alignBottom="@+id/off_5"
+                            android:layout_toEndOf="@+id/off_10"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_width="@dimen/_64sdp"
+                            android:layout_height="@dimen/_26sdp"
+                            android:text="@string/off_15"
+                            android:background="@drawable/voucher_button"
+                            android:textSize="@dimen/prod_text_small"
+                            android:gravity="center"/>
+
+                        <ImageView
+                            android:onClick="@{()->product.onVoucherClicked()}"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_alignTop="@+id/off_15"
+                            android:layout_alignParentEnd="true"
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:src="@drawable/right_arrow"
+                            tools:ignore="ContentDescription" />
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="@dimen/_8sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_8sdp">
+
+                        <TextView
+                            android:id="@+id/shipping_product"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:text="@string/Shipping"
+                            android:textSize="@dimen/prod_text_size"
+                            android:textColor="@color/colorPrimary"/>
+
+                        <ImageView
+                            android:layout_alignStart="@id/shipping_product"
+                            android:id="@+id/shipping_product_image1"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:layout_below="@+id/shipping_product"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_width="@dimen/_44sdp"
+                            android:layout_height="@dimen/_28sdp"
+                            android:src="@drawable/cdelivery"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:id="@+id/shipping_product_image2"
+                            android:layout_below="@+id/shipping_product"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:layout_toEndOf="@+id/shipping_product_image1"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_alignBottom="@+id/shipping_product_image1"
+                            android:layout_width="@dimen/_44sdp"
+                            android:layout_height="@dimen/_28sdp"
+                            android:src="@drawable/cdelivery"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:id="@+id/shipping_product_image3"
+                            android:layout_below="@+id/shipping_product"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:layout_toEndOf="@+id/shipping_product_image2"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_alignBottom="@+id/shipping_product_image1"
+                            android:layout_width="@dimen/_44sdp"
+                            android:layout_height="@dimen/_28sdp"
+                            android:src="@drawable/cdelivery"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:onClick="@{()->product.onShippingClicked()}"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_alignTop="@+id/shipping_product_image3"
+                            android:layout_alignParentEnd="true"
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:src="@drawable/right_arrow"
+                            tools:ignore="ContentDescription" />
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardElevation="@dimen/_8sdp">
@@ -395,6 +536,9 @@
                     </RelativeLayout>
 
                 </android.support.v7.widget.CardView>
+
+
+
 
                 <android.support.v7.widget.CardView
                     app:cardElevation="@dimen/_8sdp"
@@ -1333,6 +1477,196 @@
 
 
         </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_sheet_product"
+            app:layout_behavior="@string/bottom_sheet_behavior"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="0dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" >
+
+            <android.support.v7.widget.CardView
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:cardElevation="@dimen/_8sdp"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="@dimen/_8sdp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/select_shipping_option"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/prod_text_small"/>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_16sdp" />
+
+                    <LinearLayout
+                        android:weightSum="100"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="20"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/prod_img_1"
+                            tools:ignore="ContentDescription" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="60"
+                            android:textSize="@dimen/prod_text_small"
+                            android:text="@string/singpost_smartpac"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="20"
+                            android:textSize="@dimen/prod_text_small"
+                            android:text="@string/sample_rate"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_8sdp" />
+
+                    <LinearLayout
+                        android:weightSum="100"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="20"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/prod_img_2"
+                            tools:ignore="ContentDescription" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="60"
+                            android:textSize="@dimen/prod_text_small"
+                            android:text="@string/standard_delivery"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="20"
+                            android:textSize="@dimen/prod_text_small"
+                            android:text="@string/sample_rate"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_8sdp" />
+
+                    <LinearLayout
+                        android:weightSum="100"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="20"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/prod_img_3"
+                            tools:ignore="ContentDescription" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="60"
+                            android:textSize="@dimen/prod_text_small"
+                            android:text="@string/economic_delivery"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="20"
+                            android:textSize="@dimen/prod_text_small"
+                            android:text="@string/sample_rate"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_8sdp" />
+
+                    <LinearLayout
+                        android:id="@+id/store_pickup"
+                        android:onClick="@{()->product.onStorePickUpClicked()}"
+                        android:weightSum="100"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="20"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/prod_img_4"
+                            tools:ignore="ContentDescription" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="60"
+                            android:drawableEnd="@drawable/info_img"
+                            android:textSize="@dimen/prod_text_small"
+                            android:paddingEnd="@dimen/_48sdp"
+                            android:text="@string/store_pickup"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="20"
+                            android:textSize="@dimen/prod_text_small"
+                            android:text="@string/sample_rate"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_42sdp" />
+
+                    <Button
+                        android:layout_width="@dimen/_120sdp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ok_button"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/white"
+                        android:background="@color/colorPrimary"/>
+
+                </LinearLayout>
+
+
+
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
 
     </android.support.design.widget.CoordinatorLayout>
 

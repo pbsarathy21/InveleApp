@@ -242,6 +242,10 @@
     <string name="spec_4GB">4GB</string>
     <string name="option_1">Option 1</string>
     <string name="option_2">Option 2</string>
+    <string name="voucher">Voucher</string>
+    <string name="off_5">5% OFF</string>
+    <string name="off_10">10% OFF</string>
+    <string name="off_15">15% OFF</string>
     <string name="view_more">View More</string>
     <string name="description">Description</string>
     <string name="other_products">Other Products From Seller</string>
@@ -276,7 +280,7 @@
     <string name="shipment">Shipment Details</string>
     <string name="onRequest">On Request</string>
     <string name="confirmed">confirmed</string>
-    <string name="Shipping">Shipping:</string>
+    <string name="Shipping">Shipping</string>
     <string name="order_confirmation">Order is confirmed and being ready for dispatch</string>
     <string name="shipped_date">29 July 2017  01:58 AM</string>
     <string name="my_order_header">My Order</string>
@@ -324,6 +328,20 @@
 
     <string name="view_store_header">Store Name</string>
     <string name="joined">Joined : 9 Months</string>
+
+
+    <!--Bottom Sheet Product detail-->
+
+    <string name="select_shipping_option">Select Shipping Option</string>
+    <string name="singpost_smartpac">Singpost Smartpac</string>
+    <string name="standard_delivery">Standard Delivery</string>
+    <string name="economic_delivery">Economic Delivery</string>
+    <string name="sample_rate">SGD 2.00</string>
+    <string name="ok_button">OK</string>
+
+    <!--Pop Up Product Detail-->
+
+    <string name="store_location">Store Location</string>
 
     <!--Arun's work-->
 

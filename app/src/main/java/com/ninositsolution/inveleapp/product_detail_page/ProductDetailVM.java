@@ -28,4 +28,19 @@ public class ProductDetailVM {
     {
         iProductDetail.onViewStoreClicked();
     }
+
+    public void onShippingClicked()
+    {
+        iProductDetail.onShippingClicked();
+    }
+
+    public void onVoucherClicked()
+    {
+        iProductDetail.onVoucherClicked();
+    }
+
+    public void onStorePickUpClicked()
+    {
+        iProductDetail.onStorePickUpClicked();
+    }
 }

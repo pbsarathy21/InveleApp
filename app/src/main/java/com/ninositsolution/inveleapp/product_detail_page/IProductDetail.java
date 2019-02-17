@@ -5,4 +5,7 @@ public interface IProductDetail {
     void onBackClicked();
     void onViewAllClicked();
     void onViewStoreClicked();
+    void onShippingClicked();
+    void onVoucherClicked();
+    void onStorePickUpClicked();
 }

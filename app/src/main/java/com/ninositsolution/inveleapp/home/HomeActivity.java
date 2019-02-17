@@ -103,6 +103,13 @@ public class HomeActivity extends AppCompatActivity implements IHome{
         binding.viewPager.setAdapter(viewPagerAdapter);
         binding.viewpagerUnder.setAdapter(underViewPagerAdapter);
 
+        binding.setPresenter(new IHomeClick() {
+            @Override
+            public void onCartClicked() {
+                startActivity(new Intent(HomeActivity.this, CartActivity.class));
+            }
+        });
+
         binding.clicks.onClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -168,6 +175,8 @@ public class HomeActivity extends AppCompatActivity implements IHome{
             }
         });
     }
+
+
 
     private void putStrikeThrough() {
 

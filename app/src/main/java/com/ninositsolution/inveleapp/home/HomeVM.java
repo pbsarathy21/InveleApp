@@ -22,7 +22,6 @@ public class HomeVM {
 
     private void loadHomeScreen() {
 
-
     }
 
     //clickListeners
@@ -34,7 +33,7 @@ public class HomeVM {
 
     public void onCartClicked()
     {
-        iHome.onCartClicked();
+        //iHome.onCartClicked();
     }
 
     public void onSearchClicked()

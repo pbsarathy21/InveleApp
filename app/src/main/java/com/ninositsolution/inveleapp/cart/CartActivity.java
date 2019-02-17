@@ -25,12 +25,6 @@ public class CartActivity extends AppCompatActivity implements ICart {
 
         bottomSheetBehavior = BottomSheetBehavior.from(binding.bottomSheetCart);
 
-       /* CartAdapter cartAdapter = new CartAdapter(getApplicationContext(), this);
-        binding.cartRecyclerview.setHasFixedSize(true);
-        binding.cartRecyclerview.setLayoutManager(new LinearLayoutManager(this));
-        binding.cartRecyclerview.setAdapter(cartAdapter);
-*/
-
     }
 
     @Override
