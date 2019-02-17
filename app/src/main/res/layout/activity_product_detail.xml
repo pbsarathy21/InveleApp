@@ -726,6 +726,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textStyle="bold"
+                                android:layout_marginTop="@dimen/_4sdp"
                                 android:text="@string/product_rating"
                                 android:textSize="@dimen/prod_text_size"/>
 
@@ -736,6 +737,7 @@
                                 android:layout_height="wrap_content"
                                 android:onClick="@{()->product.onViewAllClicked()}"
                                 android:text="@string/view_all"
+                                android:layout_marginTop="@dimen/_4sdp"
                                 android:textSize="@dimen/prod_text_size"
                                 tools:ignore="RelativeOverlap" />
 

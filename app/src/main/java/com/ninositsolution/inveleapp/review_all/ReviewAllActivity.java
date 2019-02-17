@@ -1,16 +1,11 @@
 package com.ninositsolution.inveleapp.review_all;
 
-import android.app.Activity;
 import android.databinding.DataBindingUtil;
-import android.support.annotation.NonNull;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.PopupMenu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ninositsolution.inveleapp.R;
 import com.ninositsolution.inveleapp.databinding.ActivityReviewAllBinding;
@@ -18,6 +13,9 @@ import com.ninositsolution.inveleapp.databinding.ActivityReviewAllBinding;
 public class ReviewAllActivity extends AppCompatActivity implements IReviewAll{
 
     ActivityReviewAllBinding binding;
+
+
+
 
 
 
@@ -87,6 +85,17 @@ public class ReviewAllActivity extends AppCompatActivity implements IReviewAll{
         binding.starCheck4.setVisibility(View.GONE);
         binding.starCheck5.setVisibility(View.GONE);
 
+
+        binding.popUpMenu.postDelayed(new Runnable() {
+    @Override
+    public void run() {
+        binding.popUpMenu.setVisibility(View.GONE);
+    }
+},200);
+
+
+
+
     }
 
     @Override
@@ -97,6 +106,16 @@ public class ReviewAllActivity extends AppCompatActivity implements IReviewAll{
         binding.starCheck4.setVisibility(View.GONE);
         binding.starCheck5.setVisibility(View.GONE);
 
+
+
+
+
+        binding.popUpMenu.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                binding.popUpMenu.setVisibility(View.GONE);
+            }
+        },200);
 
     }
 
@@ -109,6 +128,16 @@ public class ReviewAllActivity extends AppCompatActivity implements IReviewAll{
         binding.starCheck5.setVisibility(View.GONE);
 
 
+
+
+
+        binding.popUpMenu.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                binding.popUpMenu.setVisibility(View.GONE);
+            }
+        },200);
+
     }
 
     @Override
@@ -120,6 +149,16 @@ public class ReviewAllActivity extends AppCompatActivity implements IReviewAll{
         binding.starCheck5.setVisibility(View.GONE);
 
 
+
+
+
+        binding.popUpMenu.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                binding.popUpMenu.setVisibility(View.GONE);
+            }
+        },200);
+
     }
 
     @Override
@@ -130,6 +169,17 @@ public class ReviewAllActivity extends AppCompatActivity implements IReviewAll{
         binding.starCheck4.setVisibility(View.GONE);
         binding.starCheck5.setVisibility(View.VISIBLE);
 
+
+
+
+
+
+        binding.popUpMenu.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                binding.popUpMenu.setVisibility(View.GONE);
+            }
+        },200);
 
     }
 }
