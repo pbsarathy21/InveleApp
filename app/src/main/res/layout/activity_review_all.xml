@@ -49,6 +49,18 @@
                         android:text="@string/review_all_header"
                         android:textSize="@dimen/toolBarFont"
                         tools:ignore="RelativeOverlap" />
+                    
+                    <ImageView
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/_64sdp"
+                        android:layout_marginTop="@dimen/_14sdp"
+                        app:srcCompat = "@drawable/sort_arrow"/>
+                    
+                    
+                    
+                    
 
                     <TextView
                         android:id = "@+id/all_star_tView"
@@ -75,8 +87,8 @@
             android:layout_marginEnd="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_36sdp"
             app:cardElevation="@dimen/_8sdp"
-            android:layout_width="@dimen/_120sdp"
-            android:layout_height="@dimen/_110sdp"
+            android:layout_width="@dimen/_154sdp"
+            android:layout_height="@dimen/_130sdp"
             android:background="@color/white">
 
             <LinearLayout
@@ -88,6 +100,7 @@
                 <RelativeLayout
                     android:onClick="@{()->reviewAll.onreviewLayout1Clicked()}"
                     android:id="@+id/review_layout_1"
+                    android:layout_margin="@dimen/_2sdp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -102,8 +115,8 @@
 
                     <ImageView
                         android:id="@+id/star_check_1"
-                        android:layout_width="@dimen/_16sdp"
-                        android:layout_height="@dimen/_16sdp"
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
                         android:layout_alignParentEnd="true"
                         app:srcCompat = "@drawable/ic_check_black_24dp"/>
@@ -117,14 +130,14 @@
                     android:layout_marginTop="@dimen/_2sdp"
                     android:background="@color/view_bgcolor"/>
 
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_2sdp" />
+
 
                 <RelativeLayout
                     android:id="@+id/review_layout_2"
                     android:onClick="@{()->reviewAll.onreviewLayout2Clicked()}"
                     android:layout_width="match_parent"
+                    android:layout_margin="@dimen/_2sdp"
+
                     android:layout_height="wrap_content">
 
                     <TextView
@@ -152,15 +165,14 @@
                     android:layout_height="@dimen/_1sdp"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:background="@color/view_bgcolor"/>
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_2sdp" />
+
 
 
                 <RelativeLayout
                     android:id="@+id/review_layout_3"
-                    android:onClick="@{()->reviewAll.onreviewLayout3Clicked()}"
+                    android:layout_margin="@dimen/_2sdp"
 
+                    android:onClick="@{()->reviewAll.onreviewLayout3Clicked()}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -190,15 +202,15 @@
                     android:layout_marginTop="@dimen/_2sdp"
                     android:background="@color/view_bgcolor"/>
 
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_2sdp" />
+
 
 
                 <RelativeLayout
                     android:id="@+id/review_layout_4"
                     android:onClick="@{()->reviewAll.onreviewLayout4Clicked()}"
                     android:layout_width="match_parent"
+                    android:layout_margin="@dimen/_2sdp"
+
                     android:layout_height="wrap_content">
 
                     <TextView
@@ -226,13 +238,12 @@
                     android:layout_height="@dimen/_1sdp"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:background="@color/view_bgcolor"/>
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_2sdp" />
+
 
 
                 <RelativeLayout
                     android:id="@+id/review_layout_5"
+                    android:layout_margin="@dimen/_2sdp"
                     android:onClick="@{()->reviewAll.onreviewLayout5Clicked()}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -255,19 +266,6 @@
                         app:srcCompat = "@drawable/ic_check_black_24dp"/>
 
                 </RelativeLayout>
-
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_1sdp"
-                    android:layout_marginTop="@dimen/_2sdp"
-                    android:background="@color/view_bgcolor"/>
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_2sdp" />
-
-
-
 
 
 
