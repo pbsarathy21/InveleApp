@@ -81,20 +81,28 @@ public class MyOrderActivity extends AppCompatActivity implements IMyOrder, OnMa
 
     }
 
-    }
 
     @Override
     public void onPlaceOrderClicked() {
 
         startActivity(new Intent(MyOrderActivity.this, CartActivity.class));
 
+}
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
         LatLng singapore = new LatLng(1.3521, 103.8198);
         mMap.addMarker(new MarkerOptions().position(singapore).title("Singapore"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(singapore));
+
     }
+
 }
+
+
+
+

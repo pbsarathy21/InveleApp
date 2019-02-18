@@ -79,33 +79,33 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <!--<android.support.v7.widget.RecyclerView-->
-            <!--android:id="@+id/order_recycler_view"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/order_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <!--</android.support.v7.widget.RecyclerView>-->
+        </android.support.v7.widget.RecyclerView>
 
 
-        <!--<include-->
-            <!--android:fitsSystemWindows="true"-->
-            <!--app:behavior_hideable="true"-->
-            <!--app:behavior_peekHeight="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_width="match_parent"-->
-            <!--app:layout_behavior="@string/bottom_sheet_behavior"-->
-            <!--android:id="@+id/bottom_sheet_trackorder"-->
-            <!--layout="@layout/bottom_sheet_trackorder">-->
+        <include
+            android:fitsSystemWindows="true"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="0dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:layout_behavior="@string/bottom_sheet_behavior"
+            android:id="@+id/bottom_sheet_trackorder"
+            layout="@layout/bottom_sheet_trackorder">
 
-        <!--</include>-->
+        </include>
 
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/cart_image"
@@ -141,19 +141,6 @@
                 android:textStyle="bold"
                 android:layout_marginTop="@dimen/_40sdp"
                 android:layout_below="@id/empty_cart_textView"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         </RelativeLayout>
 
