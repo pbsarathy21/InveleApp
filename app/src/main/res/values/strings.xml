@@ -470,6 +470,13 @@
     <string name="empty_order_textview">Your order is empty</string>
     <string name="title_activity_maps">Map</string>
     <string name="store_pick">Store Pickup</string>
+    <string name="payment_success_greeting">Thank you Arun !</string>
+    <string name="order_status">Your Order (ORDER ID 12347121100) has been placed succesfully</string>
+    <string name="order_details_line_1">Your Order ID (ORDER ID 12655480) has been</string>
+    <string name="placed_successfully_textview">placed successfully.</string>
+    <string name="please_go_to_my_textview">Please go to my order</string>
+    <string name="track_order_text">section to track your orders</string>
+
 
 
     <!-- TODO: Remove or change this placeholder text -->

@@ -75,7 +75,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/cart_image"
@@ -143,25 +144,86 @@
                 android:textColor="@color/colorPrimary"
                 android:text="@string/continue_shopping_textview"/>
             
-            
 
 
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/thankyou_img"
+                android:layout_width="@dimen/_160sdp"
+                android:layout_height="@dimen/_160sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_150sdp"
+                app:srcCompat = "@drawable/thank_you"/>
 
 
+            <TextView
+                android:id="@+id/thank_you_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/thankyou_img"
+                android:text="@string/payment_success_greeting"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textSize="@dimen/_12sdp"/>
 
 
+            <TextView
+                android:id="@+id/order_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/thank_you_textview"
+                android:text="@string/order_details_line_1"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textSize="@dimen/_12sdp"/>
 
 
+            <TextView
+                android:id="@+id/order_status_line_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/order_status"
+                android:text="@string/placed_successfully_textview"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/_26sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:textSize="@dimen/_12sdp"/>
+
+            <TextView
+                android:id="@+id/last_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_toEndOf="@id/order_status_line_2"
+                android:layout_alignBottom="@id/order_status_line_2"
+                android:text="@string/please_go_to_my_textview"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/_12sdp"/>
 
 
-
-
-
+            <TextView
+                android:id="@+id/track_your_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/last_textview"
+                android:text="@string/track_order_text"/>
 
 
 
 
         </RelativeLayout>
+
+
+
 
 
 
