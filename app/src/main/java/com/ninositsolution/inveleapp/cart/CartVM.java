@@ -32,4 +32,13 @@ public class CartVM {
     {
         iCart.onBackClicked();
     }
+
+    public void onContinueClicked(){
+        iCart.onContinueClicked();
+
+    }
+
+    public void onCheckoutClicked(){
+        iCart.onCheckoutClicked();
+    }
 }

@@ -6,4 +6,5 @@ public interface IMyOrder {
     void setRecyclerAdapter(MyOrderAdapter myOrderAdapter);
     void reviewClicked(int position);
     void onTrackClicked(int position);
+    void onPlaceOrderClicked();
 }

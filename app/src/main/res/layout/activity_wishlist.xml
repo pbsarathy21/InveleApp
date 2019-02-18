@@ -65,6 +65,7 @@
             <RelativeLayout
                 android:layout_below="@+id/wishlist_toolbar"
                 android:padding="@dimen/_6sdp"
+                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -76,6 +77,45 @@
                 </android.support.v7.widget.RecyclerView>
 
             </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/cart_image"
+            android:layout_width="@dimen/_160sdp"
+            android:layout_height="@dimen/_160sdp"
+            android:layout_centerInParent="true"
+            app:srcCompat = "@drawable/wishlist"/>
+
+
+        <TextView
+            android:id="@+id/empty_cart_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cart_image"
+            android:textColor="@color/colorPrimary"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/empty_wishlist"
+
+            android:textSize="@dimen/_14sdp"/>
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
 
 
         </RelativeLayout>

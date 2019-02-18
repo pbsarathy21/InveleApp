@@ -450,6 +450,15 @@
     <string name="view_store">View Store</string>
     <string name="delivery_review_textview">Good service by Invele Delivery</string>
     <string name="all_star_textView">All Star</string>
+    <string name="empty_shopping_cart_textview">Your Shopping Cart is empty</string>
+    <string name="contiune_shopping_button_textView">Contiune Shopping</string>
+    <string name="payment_textview">Payment</string>
+    <string name="payment_unsuccessfull_textview">Payment Unsuccessful !</string>
+    <string name="payment_request_textview">Please re-attempt again to complete the payment</string>
+    <string name="try_again_textview">Try again</string>
+    <string name="continue_shopping_textview">Continue Shopping</string>
+    <string name="empty_wishlist">Your wishlist is empty</string>
+    <string name="empty_order_textview">Your order is empty</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

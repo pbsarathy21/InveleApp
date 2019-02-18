@@ -10,6 +10,10 @@
             name="myOrder"
             type="com.ninositsolution.inveleapp.my_order.MyOrderVM"/>
 
+        <variable
+            name="iMyOrder"
+            type="com.ninositsolution.inveleapp.my_order.IMyOrder"/>
+
     </data>
 
     <android.support.design.widget.CoordinatorLayout
@@ -76,26 +80,83 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/order_recycler_view"
+        <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/order_recycler_view"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
+        <!--</android.support.v7.widget.RecyclerView>-->
+
+
+        <!--<include-->
+            <!--android:fitsSystemWindows="true"-->
+            <!--app:behavior_hideable="true"-->
+            <!--app:behavior_peekHeight="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_width="match_parent"-->
+            <!--app:layout_behavior="@string/bottom_sheet_behavior"-->
+            <!--android:id="@+id/bottom_sheet_trackorder"-->
+            <!--layout="@layout/bottom_sheet_trackorder">-->
+
+        <!--</include>-->
+
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:layout_height="match_parent"
+            android:visibility="visible">
 
-        </android.support.v7.widget.RecyclerView>
+            <ImageView
+                android:id="@+id/cart_image"
+                android:layout_width="@dimen/_160sdp"
+                android:layout_height="@dimen/_160sdp"
+                android:layout_centerInParent="true"
+                app:srcCompat = "@drawable/cart_image"/>
 
 
-        <include
-            android:fitsSystemWindows="true"
-            app:behavior_hideable="true"
-            app:behavior_peekHeight="0dp"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            app:layout_behavior="@string/bottom_sheet_behavior"
-            android:id="@+id/bottom_sheet_trackorder"
-            layout="@layout/bottom_sheet_trackorder">
+            <TextView
+                android:id="@+id/empty_cart_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cart_image"
+                android:textColor="@color/textColor"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/empty_order_textview"
+                android:textSize="@dimen/_14sdp"/>
 
-        </include>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_marginEnd="@dimen/_150sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:onClick="@{()->iMyOrder.onPlaceOrderClicked()}"
+                android:text="Place Order"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_below="@id/empty_cart_textView"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </RelativeLayout>
 
 
 

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 
 import com.ninositsolution.inveleapp.R;
+import com.ninositsolution.inveleapp.cart.CartActivity;
 import com.ninositsolution.inveleapp.databinding.ActivityMyOrderBinding;
 import com.ninositsolution.inveleapp.product_review.ProductReviewActivity;
 
@@ -22,7 +23,7 @@ public class MyOrderActivity extends AppCompatActivity implements IMyOrder{
         /*setContentView(R.layout.activity_my_order);*/
         binding = DataBindingUtil.setContentView(this, R.layout.activity_my_order);
         binding.setMyOrder(new MyOrderVM(getApplicationContext(), this));
-        bottomSheetBehavior = BottomSheetBehavior.from(binding.bottomSheetTrackorder);
+        //bottomSheetBehavior = BottomSheetBehavior.from(binding.bottomSheetTrackorder);
     }
 
     @Override
@@ -32,9 +33,9 @@ public class MyOrderActivity extends AppCompatActivity implements IMyOrder{
 
     @Override
     public void setRecyclerAdapter(MyOrderAdapter myOrderAdapter) {
-            binding.orderRecyclerView.setHasFixedSize(true);
-            binding.orderRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-            binding.orderRecyclerView.setAdapter(myOrderAdapter);
+//            binding.orderRecyclerView.setHasFixedSize(true);
+//            binding.orderRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+//            binding.orderRecyclerView.setAdapter(myOrderAdapter);
     }
 
     @Override
@@ -52,6 +53,13 @@ public class MyOrderActivity extends AppCompatActivity implements IMyOrder{
         else
             bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
 
+
+    }
+
+    @Override
+    public void onPlaceOrderClicked() {
+
+        startActivity(new Intent(MyOrderActivity.this, CartActivity.class));
 
     }
 }

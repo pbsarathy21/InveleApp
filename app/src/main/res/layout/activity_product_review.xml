@@ -131,14 +131,17 @@
 
 
                 <RatingBar
-                    android:id="@+id/ratingBar"
-                    style="@style/RatingBar"
+                    android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
                     android:numStars="5"
-                    android:layout_marginStart="@dimen/_8sdp"
-                    android:rating="5" />
+                    android:rating="3.5"
+                    android:layout_marginStart="@dimen/_10sdp"
+
+                    android:theme="@style/RatingBar"
+
+                    style="?android:attr/ratingBarStyleSmall"/>
 
 
             </LinearLayout>

@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.ninositsolution.inveleapp.R;
 import com.ninositsolution.inveleapp.databinding.ActivityCartBinding;
 import com.ninositsolution.inveleapp.home.HomeActivity;
+import com.ninositsolution.inveleapp.payment.PaymentActivity;
 
 public class CartActivity extends AppCompatActivity implements ICart {
 
@@ -49,5 +50,17 @@ public class CartActivity extends AppCompatActivity implements ICart {
 
         else
             bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+    }
+
+    @Override
+    public void onContinueClicked() {
+        startActivity(new Intent(this, HomeActivity.class));
+    }
+
+    @Override
+    public void onCheckoutClicked() {
+
+        startActivity(new Intent(this, PaymentActivity.class));
+
     }
 }
