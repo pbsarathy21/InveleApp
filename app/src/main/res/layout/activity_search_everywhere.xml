@@ -6,6 +6,10 @@
         <variable
             name="searchEverywhere"
             type="com.ninositsolution.inveleapp.search_everywhere.SearchEverywhereVM"/>
+
+        <variable
+            name="iSearchEveryWhere"
+            type="com.ninositsolution.inveleapp.search_everywhere.ISearchEverywhere"/>
     </data>
 
     <RelativeLayout
@@ -26,7 +30,7 @@
                 android:id="@+id/search_header_back"
                 android:layout_width="36dp"
                 android:layout_height="32dp"
-                android:onClick="@{()->searchEverywhere.onBackClicked()}"
+                android:onClick="@{()->iSearchEveryWhere.onBackClicked()}"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_centerVertical="true"
                 app:srcCompat="@drawable/ic_arrow_back_24dp"
@@ -95,7 +99,7 @@
                 android:layout_height="wrap_content">
 
                 <RelativeLayout
-                    android:onClick="@{()->searchEverywhere.onEveryWhereClicked()}"
+                    android:onClick="@{()->iSearchEveryWhere.onEveryWhereClicked()}"
                     android:layout_width="0dp"
                     android:layout_weight="25"
                     android:layout_height="@dimen/_36sdp">
@@ -117,7 +121,7 @@
             </RelativeLayout>
 
                 <RelativeLayout
-                    android:onClick="@{()->searchEverywhere.onRelevanceClicked()}"
+                    android:onClick="@{()->iSearchEveryWhere.onRelevanceClicked()}"
                     android:layout_width="0dp"
                     android:layout_weight="25"
                     android:layout_height="@dimen/_36sdp">
@@ -141,7 +145,7 @@
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_weight="20"
-                    android:onClick="@{()->searchEverywhere.onPriceClicked()}"
+                    android:onClick="@{()->iSearchEveryWhere.onPriceClicked()}"
                     android:layout_height="@dimen/_36sdp">
 
                     <TextView
@@ -161,7 +165,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:onClick="@{()->searchEverywhere.onFilterClicked()}"
+                    android:onClick="@{()->iSearchEveryWhere.onFilterClicked()}"
                     android:layout_width="0dp"
                     android:layout_weight="30"
                     android:layout_height="@dimen/_36sdp">
@@ -200,7 +204,7 @@
 
                 <TextView
                     android:id="@+id/low"
-                    android:onClick="@{()->searchEverywhere.onLowClicked()}"
+                    android:onClick="@{()->iSearchEveryWhere.onLowClicked()}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/low"
@@ -213,7 +217,7 @@
 
                 <TextView
                     android:id="@+id/high"
-                    android:onClick="@{()->searchEverywhere.onHighClicked()}"
+                    android:onClick="@{()->iSearchEveryWhere.onHighClicked()}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/high"
