@@ -2,6 +2,7 @@ package com.ninositsolution.inveleapp.search_everywhere;
 
 
 import android.annotation.SuppressLint;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,7 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.ninositsolution.inveleapp.R;
+import com.ninositsolution.inveleapp.databinding.FragmentFilterBinding;
 import com.ninositsolution.inveleapp.utils.OnSwipeTouchListener;
 
 import java.util.Objects;
@@ -35,12 +37,14 @@ public class FilterFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        final View view = inflater.inflate(R.layout.fragment_filter, container, false);
+        FragmentFilterBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_filter, container, false);
+
+        final View view = binding.getRoot();
 
 
-        FrameLayout frameLayout = view.findViewById(R.id.filter_frame);
 
-        frameLayout.setOnTouchListener(new OnSwipeTouchListener(view.getContext()) {
+
+        binding.filterFrame.setOnTouchListener(new OnSwipeTouchListener(view.getContext()) {
 
             public void onSwipeRight() {
                 assert getFragmentManager() != null;

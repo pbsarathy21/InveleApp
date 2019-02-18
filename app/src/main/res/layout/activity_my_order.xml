@@ -16,7 +16,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_36sdp"
@@ -97,11 +96,17 @@
 
         </include>
 
+        <include
+            android:fitsSystemWindows="true"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="0dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:layout_behavior="@string/bottom_sheet_behavior"
+            android:id="@+id/bottom_sheet_store"
+            layout="@layout/bottom_sheet_store_pickup">
 
-
-
-
-
+        </include>
 
     </android.support.design.widget.CoordinatorLayout>
 

@@ -343,6 +343,15 @@
 
     <string name="store_location">Store Location</string>
 
+    <!--Bottom Sheet Store Pickup-->
+
+    <string name="store_details">Store Details</string>
+    <string name="mbox">MBOX</string>
+    <string name="store_details_addr_1">169 Uppar Paya Lebar Road,</string>
+    <string name="store_details_addr_2">Singapore 534860, Singapore 534860</string>
+    <string name="seller_contact_no_key">Seller Contact Number</string>
+    <string name="seller_contact_no_value">Rushi Yogar +6541443418516</string>
+
     <!--Arun's work-->
 
     <string name="float_name">Name</string>
@@ -450,6 +459,8 @@
     <string name="view_store">View Store</string>
     <string name="delivery_review_textview">Good service by Invele Delivery</string>
     <string name="all_star_textView">All Star</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="store_pick">Store Pickup</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

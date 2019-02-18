@@ -14,7 +14,7 @@ import com.ninositsolution.inveleapp.product_review.ProductReviewActivity;
 public class MyOrderActivity extends AppCompatActivity implements IMyOrder{
 
     ActivityMyOrderBinding binding;
-    BottomSheetBehavior bottomSheetBehavior;
+    BottomSheetBehavior bottomSheetBehavior_delivered, bottomSheetBehavior_storepick;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,8 @@ public class MyOrderActivity extends AppCompatActivity implements IMyOrder{
         /*setContentView(R.layout.activity_my_order);*/
         binding = DataBindingUtil.setContentView(this, R.layout.activity_my_order);
         binding.setMyOrder(new MyOrderVM(getApplicationContext(), this));
-        bottomSheetBehavior = BottomSheetBehavior.from(binding.bottomSheetTrackorder);
+        bottomSheetBehavior_delivered = BottomSheetBehavior.from(binding.bottomSheetTrackorder);
+        bottomSheetBehavior_storepick = BottomSheetBehavior.from(binding.bottomSheetStore);
     }
 
     @Override
@@ -32,6 +33,7 @@ public class MyOrderActivity extends AppCompatActivity implements IMyOrder{
 
     @Override
     public void setRecyclerAdapter(MyOrderAdapter myOrderAdapter) {
+
             binding.orderRecyclerView.setHasFixedSize(true);
             binding.orderRecyclerView.setLayoutManager(new LinearLayoutManager(this));
             binding.orderRecyclerView.setAdapter(myOrderAdapter);
@@ -39,18 +41,33 @@ public class MyOrderActivity extends AppCompatActivity implements IMyOrder{
 
     @Override
     public void reviewClicked(int position) {
+
         startActivity(new Intent(this, ProductReviewActivity.class));
-
-
     }
 
     @Override
     public void onTrackClicked(int position) {
-        if (bottomSheetBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED)
-            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
 
-        else
-            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+            if (position%2 == 0)
+            {
+                if (bottomSheetBehavior_storepick.getState() == BottomSheetBehavior.STATE_EXPANDED)
+                    bottomSheetBehavior_storepick.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+                else
+                    bottomSheetBehavior_storepick.setState(BottomSheetBehavior.STATE_EXPANDED);
+            }
+               else
+            {
+                if (bottomSheetBehavior_delivered.getState() == BottomSheetBehavior.STATE_EXPANDED)
+                    bottomSheetBehavior_delivered.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+                else
+                    bottomSheetBehavior_delivered.setState(BottomSheetBehavior.STATE_EXPANDED);
+            }
+
+
+
+      /*  startActivity(new Intent(this, MapsActivity.class));*/
 
 
     }

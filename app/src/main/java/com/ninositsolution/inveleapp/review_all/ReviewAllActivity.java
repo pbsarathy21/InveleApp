@@ -15,14 +15,9 @@ public class ReviewAllActivity extends AppCompatActivity implements IReviewAll{
     ActivityReviewAllBinding binding;
 
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_review_all);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_review_all);
         binding.setReviewAll(new ReviewAllVM(getApplicationContext(), this));
         binding.starCheck1.setVisibility(View.GONE);
@@ -53,28 +48,11 @@ public class ReviewAllActivity extends AppCompatActivity implements IReviewAll{
     @Override
     public void onTextViewClicked() {
 
-       /* final PopupMenu popupMenu = new PopupMenu(ReviewAllActivity.this, binding.allStarTView);
-        popupMenu.getMenuInflater().inflate(R.menu.star_popup_menu,popupMenu.getMenu());
-        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
-
-                Toast.makeText(ReviewAllActivity.this, ""+ menuItem.getTitle(),Toast.LENGTH_LONG).show();
-                popupMenu.getMenu().getItem(1).setCheckable(true);
-                return true;
-            }
-        });
-
-        popupMenu.show();
-*/
-
         if (binding.popUpMenu.getVisibility() == View.GONE)
             binding.popUpMenu.setVisibility(View.VISIBLE);
 
         else
             binding.popUpMenu.setVisibility(View.GONE);
-
-
     }
 
     @Override
@@ -85,16 +63,12 @@ public class ReviewAllActivity extends AppCompatActivity implements IReviewAll{
         binding.starCheck4.setVisibility(View.GONE);
         binding.starCheck5.setVisibility(View.GONE);
 
-
         binding.popUpMenu.postDelayed(new Runnable() {
     @Override
     public void run() {
         binding.popUpMenu.setVisibility(View.GONE);
     }
 },200);
-
-
-
 
     }
 
@@ -105,10 +79,6 @@ public class ReviewAllActivity extends AppCompatActivity implements IReviewAll{
         binding.starCheck3.setVisibility(View.GONE);
         binding.starCheck4.setVisibility(View.GONE);
         binding.starCheck5.setVisibility(View.GONE);
-
-
-
-
 
         binding.popUpMenu.postDelayed(new Runnable() {
             @Override
@@ -127,10 +97,6 @@ public class ReviewAllActivity extends AppCompatActivity implements IReviewAll{
         binding.starCheck4.setVisibility(View.GONE);
         binding.starCheck5.setVisibility(View.GONE);
 
-
-
-
-
         binding.popUpMenu.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -148,10 +114,6 @@ public class ReviewAllActivity extends AppCompatActivity implements IReviewAll{
         binding.starCheck4.setVisibility(View.VISIBLE);
         binding.starCheck5.setVisibility(View.GONE);
 
-
-
-
-
         binding.popUpMenu.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -168,11 +130,6 @@ public class ReviewAllActivity extends AppCompatActivity implements IReviewAll{
         binding.starCheck3.setVisibility(View.GONE);
         binding.starCheck4.setVisibility(View.GONE);
         binding.starCheck5.setVisibility(View.VISIBLE);
-
-
-
-
-
 
         binding.popUpMenu.postDelayed(new Runnable() {
             @Override

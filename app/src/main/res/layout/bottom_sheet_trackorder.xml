@@ -10,14 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-
         <RelativeLayout
             android:id="@+id/delivered_details_layout"
             android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_8sdp">
+            android:layout_margin="@dimen/_8sdp"
+            tools:ignore="UselessParent">
 
             <TextView
                 android:id="@+id/shipment_details"
@@ -162,96 +161,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_4sdp"/>
 
-            <!--  <ImageView
-                  android:id="@+id/shipment_circle1"
-                  android:layout_width="@dimen/_12sdp"
-                  android:layout_height="@dimen/_12sdp"
-                  android:layout_below="@+id/shipment_details"
-                  android:layout_marginTop="@dimen/_22sdp"
-                  android:layout_marginStart="@dimen/_41sdp"
-                  app:srcCompat="@drawable/shipment_circle"
-                  tools:ignore="ContentDescription" />
 
-              <ImageView
-                  android:id="@+id/shipment_circle2"
-                  android:layout_toEndOf="@+id/shipment_circle1"
-                  android:layout_width="@dimen/_12sdp"
-                  android:layout_height="@dimen/_12sdp"
-                  android:layout_below="@+id/shipment_details"
-                  android:layout_marginTop="@dimen/_22sdp"
-                  android:layout_marginStart="@dimen/_58sdp"
-                  app:srcCompat="@drawable/shipment_circle"
-                  tools:ignore="ContentDescription" />
-
-              <ImageView
-                  android:id="@+id/shipment_circle3"
-                  android:layout_width="@dimen/_12sdp"
-                  android:layout_height="@dimen/_12sdp"
-                  android:layout_toEndOf="@+id/shipment_circle2"
-                  android:layout_below="@+id/shipment_details"
-                  android:layout_marginTop="@dimen/_22sdp"
-                  android:layout_marginStart="@dimen/_58sdp"
-                  app:srcCompat="@drawable/shipment_circle"
-                  tools:ignore="ContentDescription" />
-
-
-              <ImageView
-                  android:id="@+id/shipment_circle4"
-                  android:layout_width="@dimen/_12sdp"
-                  android:layout_height="@dimen/_12sdp"
-                  android:layout_toEndOf="@+id/shipment_circle3"
-                  android:layout_below="@+id/shipment_details"
-                  android:layout_marginTop="@dimen/_22sdp"
-                  android:layout_marginStart="@dimen/_58sdp"
-                  app:srcCompat="@drawable/shipment_circle"
-                  tools:ignore="ContentDescription" />-->
-
-            <!-- <TextView
-                 android:id="@+id/shipment_onRequest"
-                 android:layout_below="@id/shipment_circle1"
-                 android:layout_marginStart="@dimen/_20sdp"
-                 android:layout_marginTop="@dimen/_4sdp"
-                 android:textSize="@dimen/_9sdp"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="@string/onRequest"
-                 android:textColor="@color/shipmentStatus"/>
-
-             <TextView
-                 android:id="@+id/shipment_confirmed"
-                 android:layout_below="@id/shipment_circle1"
-                 android:layout_toEndOf="@+id/shipment_onRequest"
-                 android:layout_marginStart="@dimen/_26sdp"
-                 android:layout_marginTop="@dimen/_4sdp"
-                 android:textSize="@dimen/_9sdp"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="@string/confirmed"
-                 android:textColor="@color/shipmentStatus"/>
-
-             <TextView
-                 android:id="@+id/shipment_shipping"
-                 android:layout_below="@id/shipment_circle1"
-                 android:layout_toEndOf="@+id/shipment_confirmed"
-                 android:layout_marginStart="@dimen/_30sdp"
-                 android:layout_marginTop="@dimen/_4sdp"
-                 android:textSize="@dimen/_9sdp"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="@string/Shipping"
-                 android:textColor="@color/shipmentStatus"/>
-
-             <TextView
-                 android:id="@+id/shipment_delivered"
-                 android:layout_below="@id/shipment_circle1"
-                 android:layout_toEndOf="@+id/shipment_shipping"
-                 android:layout_marginStart="@dimen/_32sdp"
-                 android:layout_marginTop="@dimen/_4sdp"
-                 android:textSize="@dimen/_9sdp"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="@string/delivered"
-                 android:textColor="@color/shipmentStatus"/>-->
 
             <TableLayout
                 android:id="@+id/shipment_table"

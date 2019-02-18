@@ -65,5 +65,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
             textView = itemView.findViewById(R.id.adapter_search_text);
         }
+
     }
 }
