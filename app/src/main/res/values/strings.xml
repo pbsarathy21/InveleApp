@@ -476,7 +476,8 @@
     <string name="placed_successfully_textview">placed successfully.</string>
     <string name="please_go_to_my_textview">Please go to my order</string>
     <string name="track_order_text">section to track your orders</string>
-
+    <string name="back">Back</string>
+    <string name="internet_connection_lost">Internet Connection Lost</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
