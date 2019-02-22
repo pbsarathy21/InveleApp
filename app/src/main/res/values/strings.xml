@@ -476,7 +476,20 @@
     <string name="placed_successfully_textview">placed successfully.</string>
     <string name="please_go_to_my_textview">Please go to my order</string>
     <string name="track_order_text">section to track your orders</string>
-
+    <string name="size_chart_textview">Size Chart</string>
+    <string name="size_chart_header">Size Chart</string>
+    <string name="table_header_country">Country</string>
+    <string name="table_header_size">Size</string>
+    <string name="table_header_height">Height</string>
+    <string name="table_header_chest">Chest</string>
+    <string name="table_header_Waist">Waist</string>
+    <string name="table_header_neck">Neck</string>
+    <string name="table_header_arm">Arm</string>
+    <string name="height_header_text">Height</string>
+    <string name="chest_header_textview">Chest</string>
+    <string name="header_neck_textview">Neck</string>
+    <string name="table_waist_textview">Waist</string>
+    <string name="table_arm_textview">Arm</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

@@ -48,6 +48,7 @@
 
     <color name="review_choose_file_button_color">#e1e1e1</color>
     <color name="review_end_view_color">#aaaaaa</color>
+    <color name="table_header_background">#ca0a29</color>
 
 
 </resources>

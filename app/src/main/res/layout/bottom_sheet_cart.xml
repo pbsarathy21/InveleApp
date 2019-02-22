@@ -183,6 +183,16 @@
                     android:background="@drawable/margin"
                     android:text="@string/spec_256GB" />
 
+                <TextView
+                    android:id="@+id/size_chart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="@string/size_chart_textview"
+                    android:onClick="@{"
+                    android:textSize="@dimen/_9sdp"/>
+
             </LinearLayout>
 
         </RelativeLayout>

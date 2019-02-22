@@ -59,17 +59,16 @@
 
         <RatingBar
             android:id="@+id/ratingBar"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:layout_alignStart="@id/review_price"
-            android:layout_below="@+id/review_price"
             android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/review_price"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_alignStart="@id/review_price"
             android:numStars="5"
             android:rating="3.5"
-            android:progressDrawable="@drawable/my_rating_display"
             android:theme="@style/RatingBar"
-            style="@style/Base.Widget.AppCompat.RatingBar.Small"/>
+            style="?android:attr/ratingBarStyleSmall"/>
 
         <TextView
             android:id="@+id/delivery_status_textview"
