@@ -42,9 +42,7 @@ public class FilterFragment extends Fragment {
         final View view = binding.getRoot();
 
 
-
-
-        binding.filterFrame.setOnTouchListener(new OnSwipeTouchListener(view.getContext()) {
+        binding.filterContainer.setOnTouchListener(new OnSwipeTouchListener(view.getContext()) {
 
             public void onSwipeRight() {
                 assert getFragmentManager() != null;
@@ -57,6 +55,21 @@ public class FilterFragment extends Fragment {
             }
 
 
+        });
+
+        binding.setIFilter(new IFilter() {
+            @Override
+            public void onCloseClicked() {
+
+                assert getFragmentManager() != null;
+                getFragmentManager()
+                        .beginTransaction()
+                        .setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right)
+                        .remove(Objects.requireNonNull(getFragmentManager()
+                                .findFragmentById(R.id.filter_container)))
+                        .commit();
+
+            }
         });
 
         return view;

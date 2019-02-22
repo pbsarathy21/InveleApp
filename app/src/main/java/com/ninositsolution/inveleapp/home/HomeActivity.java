@@ -97,7 +97,9 @@ public class HomeActivity extends AppCompatActivity implements IHome{
         BrandViewPagerAdapter brandViewPagerAdapter = new BrandViewPagerAdapter(this);
         UnderViewPagerAdapter underViewPagerAdapter = new UnderViewPagerAdapter(this);
         GeneralViewPagerAdapter generalViewPagerAdapter = new GeneralViewPagerAdapter(this);
+        HomeThreeImageViewPagerAdapter homeThreeImageViewPagerAdapter = new HomeThreeImageViewPagerAdapter(this);
 
+        binding.homeThreeImageViewPager.setAdapter(homeThreeImageViewPagerAdapter);
         binding.viewpagerBrands.setAdapter(brandViewPagerAdapter);
         binding.viewpagerMens.setAdapter(generalViewPagerAdapter);
         binding.viewpagerWomens.setAdapter(generalViewPagerAdapter);

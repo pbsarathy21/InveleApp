@@ -17,7 +17,6 @@
     </data>
 
     <FrameLayout
-        android:id="@+id/filter_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/invelebg"
@@ -47,9 +46,11 @@
                 <ImageView
                     android:layout_width="@dimen/_25sdp"
                     android:layout_height="@dimen/_25sdp"
+                    android:onClick="@{()->iFilter.onCloseClicked()}"
                     android:layout_alignParentEnd="true"
                     android:paddingTop="@dimen/_3sdp"
                     android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_18sdp"
                     android:foregroundGravity="center"
                     app:srcCompat="@drawable/ic_close_black_24dp"/>
 
@@ -66,9 +67,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-
-
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -78,9 +76,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
+                        android:gravity="start"
                         android:text="@string/filter_search"
-                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:textStyle="bold"
                         android:textSize="@dimen/filter_heading_textsize"
                         android:textColor="@color/colorAccent"/>
@@ -91,7 +89,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:orientation="horizontal"
-                        android:weightSum="2">
+                        android:weightSum="2"
+                        android:baselineAligned="false">
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -108,11 +107,8 @@
                                 android:layout_marginEnd="@dimen/_4sdp"
                                 android:background="@drawable/altered_button_bground"
                                 android:textColor="@android:color/black"/>
-
-
-
-
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -129,9 +125,6 @@
                                 android:background="@drawable/altered_button_bground"
                                 android:textColor="@android:color/black"/>
 
-
-
-
                         </LinearLayout>
 
 
@@ -141,13 +134,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:weightSum="3"
+                        android:weightSum="5"
                         android:layout_marginTop="@dimen/_20sdp">
 
                         <View
                             android:layout_width="0dp"
+                            android:layout_gravity="center_vertical"
                             android:layout_height="@dimen/_3sdp"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:layout_marginStart="@dimen/_20sdp"
                             android:background="@color/view_color"/>
 
@@ -156,6 +150,7 @@
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@string/or_textview"
                             android:textSize="@dimen/_16sdp"/>
 
@@ -163,17 +158,15 @@
                         <View
                             android:layout_width="0dp"
                             android:layout_height="@dimen/_3sdp"
-                            android:layout_weight="1"
-                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_weight="2"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_gravity="center_vertical"
                             android:background="@color/view_color"/>
-
-
-
-
 
                     </LinearLayout>
 
                     <EditText
+                        android:layout_marginTop="@dimen/_20sdp"
                         android:layout_width="match_parent"
                         android:layout_marginStart="@dimen/_30sdp"
                         android:layout_marginEnd="@dimen/_30sdp"
@@ -210,13 +203,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:orientation="horizontal"
-                        android:weightSum="2">
+                        android:weightSum="100">
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_marginStart="@dimen/_4sdp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1">
+                            android:layout_weight="47.5">
 
                             <EditText
                                 android:layout_width="match_parent"
@@ -224,29 +217,29 @@
                                 android:alpha="10"
                                 android:textSize="@dimen/filter_textview_size"
                                 android:hint="@string/filter_hint_min"
-                                android:paddingLeft="@dimen/_10sdp"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="0dp"
+                                android:inputType="number"
                                 android:background="@drawable/altered_button_bground"
-                                android:textColor="@android:color/black"/>
-
-
-
+                                android:textColor="@android:color/black"
+                                tools:ignore="Autofill" />
 
                         </LinearLayout>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_weight="5"
+                            android:gravity="center"
                             android:textColor="@android:color/black"
                             android:text="@string/filter_range_symbol"/>
-
-
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginEnd="@dimen/_4sdp"
-                            android:layout_marginLeft="@dimen/_10sdp">
+                            android:layout_weight="47.5"
+                            android:layout_marginEnd="@dimen/_4sdp">
 
                             <EditText
                                 android:layout_width="match_parent"
@@ -254,15 +247,13 @@
                                 android:alpha="10"
                                 android:hint="@string/filter_hint_max"
                                 android:textSize="@dimen/filter_textview_size"
-                                android:paddingLeft="@dimen/_10sdp"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="0dp"
                                 android:background="@drawable/altered_button_bground"
-                                android:textColor="@android:color/black"/>
-
-
-
-
+                                android:textColor="@android:color/black"
+                                android:inputType="number"
+                                tools:ignore="Autofill" />
                         </LinearLayout>
-
 
                     </LinearLayout>
 
@@ -270,7 +261,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_2sdp"
                         android:background="@color/view_color"
-                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="0dp"
                         android:layout_marginTop="@dimen/_16sdp"/>
 
 
@@ -278,7 +270,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:textStyle="bold"
                         android:textSize="@dimen/filter_heading_textsize"
                         android:textColor="@color/colorAccent"
@@ -292,7 +284,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:orientation="horizontal"
-                        android:weightSum="2">
+                        android:weightSum="2"
+                        android:baselineAligned="false">
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -308,11 +301,8 @@
                                 android:text="@string/shirt_label_textview"
                                 android:background="@drawable/altered_button_bground"
                                 android:textColor="@android:color/black"/>
-
-
-
-
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -378,8 +368,6 @@
                                 android:textSize="@dimen/filter_textview_size"
                                 android:background="@drawable/altered_button_bground"
                                 android:textColor="@android:color/black"/>
-
-
 
 
                         </LinearLayout>
@@ -495,15 +483,12 @@
                         android:drawableRight="@drawable/ic_expand_more_black_24dp"
                         android:layout_marginTop="@dimen/_15sdp"/>
 
-
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_2sdp"
                         android:background="@color/view_color"
                         android:paddingLeft="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_12sdp"/>
-
-
 
 
                     <TextView
@@ -562,10 +547,7 @@
                                 android:textColor="@android:color/black"/>
 
 
-
-
                         </LinearLayout>
-
 
                     </LinearLayout>
 
