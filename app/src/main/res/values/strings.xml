@@ -490,6 +490,8 @@
     <string name="header_neck_textview">Neck</string>
     <string name="table_waist_textview">Waist</string>
     <string name="table_arm_textview">Arm</string>
+    <string name="back">Back</string>
+    <string name="internet_connection_lost">Internet Connection Lost</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
