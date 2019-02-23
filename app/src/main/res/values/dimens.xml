@@ -69,4 +69,12 @@
     <dimen name="item_text_size">@dimen/_10sdp</dimen>
 
 
+    <dimen name="card_elevation_size">@dimen/_2sdp</dimen>
+
+
+    <dimen name="categories_icon_size">@dimen/_16sdp</dimen>
+
+
+
+
 </resources>
