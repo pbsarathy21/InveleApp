@@ -175,12 +175,12 @@ public class HomeActivity extends AppCompatActivity implements IHome{
         binding.homeRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
         binding.homeRecycler.setAdapter(new HomeRecyclerAdapter(this));*/
 
-        itemLayout.setOnClickListener(new View.OnClickListener() {
+     /*   itemLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this, ProductDetailActivity.class));
             }
-        });
+        });*/
     }
 
 

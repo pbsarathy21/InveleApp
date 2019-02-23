@@ -8,7 +8,7 @@
     <color name="white">#ffffff</color>
     <color name="textColor">#5b5c5b</color>
     <color name="greyBackground">#f4f4f4</color>
-    <color name="invelebg">#f6f6f6</color>
+    <color name="invelebg">#f9f9f9</color>
     <color name="black">#000000</color>
     <color name="shadowColor">#f9f9f9</color>
 
@@ -49,6 +49,11 @@
     <color name="review_choose_file_button_color">#e1e1e1</color>
     <color name="review_end_view_color">#aaaaaa</color>
     <color name="table_header_background">#ca0a29</color>
+
+
+    <color name="icon_colors">#282C3F</color>
+
+
 
 
 </resources>

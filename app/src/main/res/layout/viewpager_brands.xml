@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@color/invelebg"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="wrap_content">
     
     <LinearLayout
     android:weightSum="2"
@@ -19,13 +19,13 @@
             android:layout_width="0dp"
             android:background="@drawable/margin"
             android:layout_weight="1"
-            android:layout_height="@dimen/_80sdp">
+            android:layout_height="@dimen/_60sdp">
 
             <ImageView
                 android:id="@+id/brand_image_1"
                 android:layout_width="match_parent"
                 android:layout_centerInParent="true"
-                android:scaleType="centerInside"
+                android:scaleType="centerCrop"
                 android:layout_height="match_parent"
                 android:src="@drawable/bag2"
                 tools:ignore="ContentDescription" />
@@ -41,13 +41,13 @@
             android:background="@drawable/margin"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="@dimen/_80sdp">
+            android:layout_height="@dimen/_60sdp">
 
             <ImageView
                 android:id="@+id/brand_image_2"
                 android:layout_width="match_parent"
                 android:layout_centerInParent="true"
-                android:scaleType="centerInside"
+                android:scaleType="centerCrop"
                 android:layout_height="match_parent"
                 android:src="@drawable/bag2"
                 tools:ignore="ContentDescription" />
@@ -71,13 +71,13 @@
             android:layout_width="0dp"
             android:background="@drawable/margin"
             android:layout_weight="1"
-            android:layout_height="@dimen/_80sdp">
+            android:layout_height="@dimen/_60sdp">
 
             <ImageView
                 android:id="@+id/brand_image_3"
                 android:layout_width="match_parent"
                 android:layout_centerInParent="true"
-                android:scaleType="centerInside"
+                android:scaleType="centerCrop"
                 android:layout_height="match_parent"
                 android:src="@drawable/bag2"
                 tools:ignore="ContentDescription" />
@@ -93,13 +93,13 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="@drawable/margin"
-            android:layout_height="@dimen/_80sdp">
+            android:layout_height="@dimen/_60sdp">
 
             <ImageView
                 android:id="@+id/brand_image_4"
                 android:layout_width="match_parent"
                 android:layout_centerInParent="true"
-                android:scaleType="centerInside"
+                android:scaleType="centerCrop"
                 android:layout_height="match_parent"
                 android:src="@drawable/bag2"
                 tools:ignore="ContentDescription" />

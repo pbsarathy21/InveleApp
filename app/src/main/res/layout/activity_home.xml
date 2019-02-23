@@ -14,7 +14,6 @@
             type="com.ninositsolution.inveleapp.home.IHomeClick"/>
     </data>
 
-
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
@@ -29,12 +28,11 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_36sdp"
+                android:layout_height="@dimen/_42sdp"
                 app:contentInsetStart="0dp"
                 android:layout_gravity="start"
-                android:background="?attr/colorPrimary"
+                android:background="@color/white"
                 android:gravity="center|start"
-                app:layout_scrollFlags="scroll|enterAlways|snap"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
                 <RelativeLayout
@@ -42,85 +40,44 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/logo_invele"
+                        android:layout_width="@dimen/_80sdp"
                         android:layout_centerVertical="true"
                         android:layout_height="@dimen/_32sdp"
-                        android:src="@drawable/logo_invele"
+                        android:src="@drawable/logo_black"
                         tools:ignore="ContentDescription" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/username"
-                        android:onClick="@{()->home.onUsernameClicked()}"
-                        android:textSize="@dimen/_14sdp"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
+                   <ImageView
+                       android:id="@+id/search_icon"
+                       android:layout_width="@dimen/_20sdp"
+                       android:layout_height="@dimen/_20sdp"
+                       android:layout_toStartOf="@+id/wishlist_icon"
+                       android:layout_marginEnd="@dimen/_16sdp"
+                       android:layout_centerVertical="true"
+                       app:srcCompat="@drawable/ic_search_colored_24dp"
+                       tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:id="@+id/wishlist_icon"
+                        android:layout_toStartOf="@+id/cart_icon"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
                         android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/ic_heart_color"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:id="@+id/cart_icon"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="@dimen/_20sdp"
-                        tools:ignore="RelativeOverlap" />
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/ic_shopping_cart_colored"
+                        tools:ignore="ContentDescription" />
 
                 </RelativeLayout>
-
-
-            </android.support.v7.widget.Toolbar>
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbaar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:id="@+id/home_toolbar2"
-                    android:weightSum="100"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_36sdp"
-                    android:background="@color/colorPrimary"
-                    android:orientation="horizontal"
-                    android:paddingTop="@dimen/_4sdp"
-                    android:paddingBottom="@dimen/_4sdp">
-
-
-                    <EditText
-                        android:id="@+id/home_search"
-                        android:layout_width="0dp"
-                        android:layout_weight="70"
-                        android:layout_height="@dimen/_28sdp"
-                        android:layout_gravity="center_vertical"
-                        android:background="@drawable/rounded_background"
-                        android:textColorHint="@color/textColor"
-                        android:textColor="@android:color/black"
-                        android:textIsSelectable="true"
-                        android:onClick="@{()->home.onSearchClicked()}"
-                        android:hint="@string/search"
-                        android:padding="@dimen/_4sdp"
-                        tools:ignore="Autofill,TextFields" />
-
-                    <ImageView
-                        android:layout_marginEnd="@dimen/_4sdp"
-                        android:onClick="@{()->home.onWishlistClicked()}"
-                        android:layout_width="0dp"
-                        android:layout_weight="18"
-                        android:layout_height="@dimen/_22sdp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="@dimen/_4sdp"
-                        app:srcCompat="@drawable/ic_heart"
-                        tools:ignore="ContentDescription" />
-
-                    <ImageView
-                        android:layout_marginEnd="@dimen/_8sdp"
-                        android:id="@+id/home_cart"
-                        android:onClick="@{()->presenter.onCartClicked()}"
-                        android:layout_width="0dp"
-                        android:layout_weight="10"
-                        android:layout_height="@dimen/_22sdp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="@dimen/_4sdp"
-                        app:srcCompat="@drawable/ic_shopping_white"
-                        tools:ignore="ContentDescription" />
-
-                </LinearLayout>
 
 
             </android.support.v7.widget.Toolbar>
@@ -143,6 +100,7 @@
                 android:background="@color/invelebg">
 
                 <LinearLayout
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:id="@+id/home_banner1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -151,7 +109,7 @@
                     <android.support.v4.view.ViewPager
                         android:id="@+id/view_pager"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_90sdp">
+                        android:layout_height="@dimen/_75sdp">
 
                         <LinearLayout
                             android:id="@+id/slider_dots"
@@ -164,18 +122,11 @@
                     </android.support.v4.view.ViewPager>
                 </LinearLayout>
 
-               <!-- <android.support.v7.widget.RecyclerView
-                    android:id="@+id/home_recycler"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_8sdp">
-
-                </android.support.v7.widget.RecyclerView>-->
-
                 <android.support.v4.view.ViewPager
+
                     android:id="@+id/home_three_image_view_pager"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_90sdp">
+                    android:layout_height="@dimen/_75sdp">
 
                 </android.support.v4.view.ViewPager>
 
@@ -207,7 +158,7 @@
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:cardElevation="@dimen/_8sdp">
+                        app:cardElevation="@dimen/_4sdp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -236,8 +187,7 @@
                                     android:text="@string/more"
                                     android:layout_alignParentEnd="true"
                                     android:fontFamily="@font/roboto_regular"
-                                    android:textSize="@dimen/_12sdp"
-                                    android:textStyle="bold"
+                                    android:textSize="@dimen/more_text_size"
                                     tools:ignore="RelativeOverlap" />
 
                             </RelativeLayout>
@@ -249,9 +199,10 @@
                                 android:background="@color/ash_color"/>
 
                             <android.support.v4.view.ViewPager
+                                android:background="@color/invelebg"
                                 android:id="@+id/viewpager_brands"
                                 android:layout_width="match_parent"
-                                android:layout_height="@dimen/_200sdp">
+                                android:layout_height="@dimen/_160sdp">
 
                             </android.support.v4.view.ViewPager>
 
@@ -269,7 +220,7 @@
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:cardElevation="@dimen/_8sdp">
+                        app:cardElevation="@dimen/_4sdp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -297,8 +248,7 @@
                                     android:text="@string/more"
                                     android:layout_alignParentEnd="true"
                                     android:fontFamily="@font/roboto_regular"
-                                    android:textSize="@dimen/_12sdp"
-                                    android:textStyle="bold"
+                                    android:textSize="@dimen/more_text_size"
                                     tools:ignore="RelativeOverlap" />
 
                             </RelativeLayout>
@@ -310,6 +260,7 @@
                                 android:background="@color/ash_color"/>
 
                             <android.support.v4.view.ViewPager
+                                android:background="@color/invelebg"
                                 android:id="@+id/viewpager_under"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/_110sdp">
@@ -330,7 +281,7 @@
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:cardElevation="@dimen/_8sdp">
+                        app:cardElevation="@dimen/_4sdp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -357,8 +308,7 @@
                                     android:text="@string/more"
                                     android:layout_alignParentEnd="true"
                                     android:fontFamily="@font/roboto_regular"
-                                    android:textSize="@dimen/_12sdp"
-                                    android:textStyle="bold"
+                                    android:textSize="@dimen/more_text_size"
                                     tools:ignore="RelativeOverlap" />
 
                             </RelativeLayout>
@@ -370,9 +320,10 @@
                                 android:background="@color/ash_color"/>
 
                             <android.support.v4.view.ViewPager
+                                android:background="@color/invelebg"
                                 android:id="@+id/viewpager_mens"
                                 android:layout_width="match_parent"
-                                android:layout_height="@dimen/_260sdp">
+                                android:layout_height="@dimen/_232sdp">
 
                             </android.support.v4.view.ViewPager>
 
@@ -390,7 +341,7 @@
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:cardElevation="@dimen/_8sdp">
+                        app:cardElevation="@dimen/_4sdp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -418,8 +369,7 @@
                                     android:text="@string/more"
                                     android:layout_alignParentEnd="true"
                                     android:fontFamily="@font/roboto_regular"
-                                    android:textSize="@dimen/_12sdp"
-                                    android:textStyle="bold"/>
+                                    android:textSize="@dimen/more_text_size" />
 
                             </RelativeLayout>
 
@@ -430,9 +380,10 @@
                                 android:background="@color/ash_color"/>
 
                             <android.support.v4.view.ViewPager
+                                android:background="@color/invelebg"
                                 android:id="@+id/viewpager_womens"
                                 android:layout_width="match_parent"
-                                android:layout_height="@dimen/_260sdp">
+                                android:layout_height="@dimen/_232sdp">
 
                             </android.support.v4.view.ViewPager>
 
@@ -448,7 +399,7 @@
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:cardElevation="@dimen/_8sdp">
+                        app:cardElevation="@dimen/_4sdp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -476,8 +427,7 @@
                                     android:text="@string/more"
                                     android:layout_alignParentEnd="true"
                                     android:fontFamily="@font/roboto_regular"
-                                    android:textSize="@dimen/_12sdp"
-                                    android:textStyle="bold"/>
+                                    android:textSize="@dimen/more_text_size" />
 
                             </RelativeLayout>
 
@@ -488,9 +438,10 @@
                                 android:background="@color/ash_color"/>
 
                             <android.support.v4.view.ViewPager
+                                android:background="@color/invelebg"
                                 android:id="@+id/viewpager_electronics"
                                 android:layout_width="match_parent"
-                                android:layout_height="@dimen/_260sdp">
+                                android:layout_height="@dimen/_232sdp">
 
                             </android.support.v4.view.ViewPager>
 
@@ -503,7 +454,7 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="72dp" />
+                    android:layout_height="@dimen/_56sdp" />
 
             </LinearLayout>
 
