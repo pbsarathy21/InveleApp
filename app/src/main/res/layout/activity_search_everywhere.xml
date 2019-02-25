@@ -23,7 +23,7 @@
             android:id="@+id/wishlist_toolbar"
             android:layout_width="match_parent"
             android:background="@color/white"
-            android:layout_height="@dimen/toolbar_height">
+            android:layout_height="@dimen/toolBar_height">
 
 
             <ImageView

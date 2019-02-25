@@ -6,16 +6,29 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.View;
 
+import com.nhaarman.supertooltips.ToolTip;
+import com.nhaarman.supertooltips.ToolTipRelativeLayout;
+import com.nhaarman.supertooltips.ToolTipView;
 import com.ninositsolution.inveleapp.R;
+import com.ninositsolution.inveleapp.account.AccountActivity;
 import com.ninositsolution.inveleapp.cart.CartActivity;
 import com.ninositsolution.inveleapp.categories.fragments.fragment_all_categories.AllCategoriesFragment;
 import com.ninositsolution.inveleapp.categories.fragments.fragment_other_categories.OtherCategoriesFragment;
 import com.ninositsolution.inveleapp.databinding.ActivityCategoryBinding;
 import com.ninositsolution.inveleapp.home.HomeActivity;
+import com.ninositsolution.inveleapp.login.LoginActivity;
+import com.ninositsolution.inveleapp.my_order.MyOrderActivity;
 import com.ninositsolution.inveleapp.utils.Session;
+import com.ninositsolution.inveleapp.wishlist.WishlistActivity;
 
 public class CategoryActivity extends AppCompatActivity implements ICategory{
+
+    private ToolTipView toolTipView;
+    private ToolTip toolTip;
+    private int count;
 
     private ActivityCategoryBinding binding;
     FragmentManager fragmentManager;
@@ -28,6 +41,11 @@ public class CategoryActivity extends AppCompatActivity implements ICategory{
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_category);
         binding.setCategory(new CategoryVM(getApplicationContext(), this));
+
+        count = 0;
+
+        /*Toolbar toolbar = findViewById(R.id.category);
+        setSupportActionBar(toolbar);*/
 
         //All Categories selected as default
         binding.allCategoriesLayout.setBackgroundColor(getResources().getColor(R.color.white));
@@ -167,6 +185,81 @@ public class CategoryActivity extends AppCompatActivity implements ICategory{
 
     }
 
+    @Override
+    public void onMenuClicked() {
+
+        if (count %2 == 0)
+        {
+            createTooltip();
+            count++;
+        }
+        else
+        {
+            toolTipView.remove();
+            count++;
+        }
+
+    }
+
+    private void createTooltip() {
+
+        toolTip = new ToolTip()
+                //.withText("Hello World!")
+                .withContentView(LayoutInflater.from(CategoryActivity.this).inflate(R.layout.popup_category, null))
+                .withShadow()
+                .withAnimationType(ToolTip.AnimationType.FROM_TOP);
+
+        ToolTipRelativeLayout toolTipRelativeLayout = findViewById(R.id.tooltip_layout);
+
+        toolTipView = toolTipRelativeLayout.showToolTipForView(toolTip, findViewById(R.id.categories_menu));
+        //toolTipView.setOnToolTipViewClickedListener(MainActivity.this);
+
+        toolTipView.findViewById(R.id.review_layout_1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CategoryActivity.this, LoginActivity.class));
+                toolTipView.remove();
+                count++;
+            }
+        });
+
+        toolTipView.findViewById(R.id.review_layout_2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CategoryActivity.this, HomeActivity.class));
+                toolTipView.remove();
+                count++;
+            }
+        });
+
+        toolTipView.findViewById(R.id.review_layout_3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CategoryActivity.this, AccountActivity.class));
+                toolTipView.remove();
+                count++;
+            }
+        });
+
+        toolTipView.findViewById(R.id.review_layout_4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CategoryActivity.this, MyOrderActivity.class));
+                toolTipView.remove();
+                count++;
+            }
+        });
+
+        toolTipView.findViewById(R.id.review_layout_5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CategoryActivity.this, WishlistActivity.class));
+                toolTipView.remove();
+                count++;
+            }
+        });
+    }
+
 
     @Override
     public void ChangePreviousCategoryView() {
@@ -235,7 +328,6 @@ public class CategoryActivity extends AppCompatActivity implements ICategory{
 
 
     }
-
 
     @Override
     protected void onStart() {

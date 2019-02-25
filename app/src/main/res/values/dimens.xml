@@ -7,9 +7,6 @@
     <dimen name="adapter_startMargin">@dimen/_8sdp</dimen>
     <dimen name="adapter_topMargin">@dimen/_8sdp</dimen>
 
-    <!-- Project level toolbar height -->
-
-    <dimen name="toolbar_height">@dimen/_36sdp</dimen>
 
     <!-- App icons sizes -->
 
@@ -29,7 +26,12 @@
 
     <!-- toolbar font size-->
 
-    <dimen name="toolBarFont">@dimen/_14sdp</dimen>
+    <dimen name="toolBarFont">@dimen/_12sdp</dimen>
+
+    <!-- Project level toolbar height -->
+
+    <dimen name="toolBar_height">@dimen/_42sdp</dimen>
+
 
     <!-- Category child size-->
 
@@ -73,6 +75,17 @@
 
 
     <dimen name="categories_icon_size">@dimen/_16sdp</dimen>
+
+
+
+    <dimen name="categories_space_size">@dimen/_10sdp</dimen>
+
+
+    <dimen name="all_brand_photo_width">@dimen/_62sdp</dimen>
+    <dimen name="all_brand_photo_height">@dimen/_66sdp</dimen>
+    <dimen name="all_brand_photo_text">@dimen/_10sdp</dimen>
+
+    <dimen name="cat_left_pane_spacing">0.8dp</dimen>
 
 
 

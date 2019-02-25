@@ -115,4 +115,9 @@ public class CategoryVM {
     {
         iCategory.onCartClicked();
     }
+
+    public void onMenuClicked()
+    {
+        iCategory.onMenuClicked();
+    }
 }

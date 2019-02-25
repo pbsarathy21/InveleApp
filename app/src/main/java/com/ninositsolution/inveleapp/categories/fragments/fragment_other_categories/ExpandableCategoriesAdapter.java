@@ -26,6 +26,7 @@ public class ExpandableCategoriesAdapter extends RecyclerView.Adapter<Expandable
     private List<ExpandableCategoriesPOJO> expandableCategoriesPOJOList;
     private Context context;
     private static int currentPosition = -1;
+    private static int previousPosition = -1;
 
     public ExpandableCategoriesAdapter(List<ExpandableCategoriesPOJO> expandableCategoriesPOJOList, Context context) {
         this.expandableCategoriesPOJOList = expandableCategoriesPOJOList;
@@ -43,15 +44,15 @@ public class ExpandableCategoriesAdapter extends RecyclerView.Adapter<Expandable
     @Override
     public void onBindViewHolder(@NonNull ExpandableCategoriesViewHolder expandableCategoriesViewHolder, final int i) {
 
+
         if (expandableCategoriesViewHolder.childlayout.getVisibility() == View.VISIBLE)
         {
             Animation slideUp = AnimationUtils.loadAnimation(context, R.anim.slide_up);
-            expandableCategoriesViewHolder.childlayout.setVisibility(View.GONE);
             expandableCategoriesViewHolder.childlayout.startAnimation(slideUp);
             expandableCategoriesViewHolder.downArrow.setVisibility(View.VISIBLE);
             expandableCategoriesViewHolder.upArrow.setVisibility(View.GONE);
+            expandableCategoriesViewHolder.childlayout.setVisibility(View.GONE);
         }
-
 
         expandableCategoriesViewHolder.categoriesHeader.setText("Women's Fashion");
 
@@ -67,10 +68,10 @@ public class ExpandableCategoriesAdapter extends RecyclerView.Adapter<Expandable
             if (expandableCategoriesViewHolder.childlayout.getVisibility() == View.VISIBLE)
             {
                 Animation slideUp = AnimationUtils.loadAnimation(context, R.anim.slide_up);
-                expandableCategoriesViewHolder.childlayout.setVisibility(View.GONE);
                 expandableCategoriesViewHolder.childlayout.startAnimation(slideUp);
                 expandableCategoriesViewHolder.downArrow.setVisibility(View.VISIBLE);
                 expandableCategoriesViewHolder.upArrow.setVisibility(View.GONE);
+                expandableCategoriesViewHolder.childlayout.setVisibility(View.GONE);
             }
 
             else {
@@ -100,7 +101,7 @@ public class ExpandableCategoriesAdapter extends RecyclerView.Adapter<Expandable
         return 5;
     }
 
-    public class ExpandableCategoriesViewHolder extends RecyclerView.ViewHolder{
+    public class ExpandableCategoriesViewHolder extends RecyclerView.ViewHolder {
 
             public TextView categoriesHeader;
             public ImageView categoriesImg1, categoriesImg2, categoriesImg3, categoriesImg4, categoriesImg5, categoriesImg6;

@@ -21,6 +21,7 @@ public interface ICategory {
     void onBackClicked();
     void onSearchClicked();
     void onCartClicked();
+    void onMenuClicked();
     void ChangePreviousCategoryView();
 
 }
