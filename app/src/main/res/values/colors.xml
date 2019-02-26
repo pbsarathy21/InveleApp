@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#C90828</color>
-    <color name="colorPrimaryDark">#a3011c</color>
+    <color name="colorPrimaryDark">#C90828</color>
     <color name="colorProject">#f6f6f6</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#C90828</color>
     <color name="grayWhite">#e2e0e2</color>
     <color name="white">#ffffff</color>
     <color name="textColor">#5b5c5b</color>
@@ -29,7 +29,6 @@
     <color name="cancel_split_line">#aaaaaa</color>
 
     <color name="shipmentStatus">#65d074</color>
-
 
     <color name="cart_edit_color">#7f7f7f</color>
 

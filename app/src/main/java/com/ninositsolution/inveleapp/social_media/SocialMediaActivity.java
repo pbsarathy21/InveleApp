@@ -7,7 +7,7 @@ import android.os.Bundle;
 import com.ninositsolution.inveleapp.R;
 import com.ninositsolution.inveleapp.databinding.ActivitySocialMediaBinding;
 
-public class SocialMediaActivity extends AppCompatActivity implements ISocialMedia{
+public class SocialMediaActivity extends AppCompatActivity{
 
     ActivitySocialMediaBinding binding;
 
@@ -16,11 +16,17 @@ public class SocialMediaActivity extends AppCompatActivity implements ISocialMed
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_social_media);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_social_media);
-        binding.setSocial(new SocialMediaVM(getApplicationContext(), this));
+
+        binding.setISocial(new ISocialMedia() {
+            @Override
+            public void onBackClicked() {
+                onBackPressed();
+            }
+        });
     }
 
     @Override
-    public void onBackClicked() {
+    public void onBackPressed() {
         super.onBackPressed();
     }
 }

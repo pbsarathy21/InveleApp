@@ -6,4 +6,6 @@ package com.ninositsolution.inveleapp.change_email;
  * ben@ninositsolution.com
  */
 public interface IChangeEmail {
+
+    void onBackClicked();
 }

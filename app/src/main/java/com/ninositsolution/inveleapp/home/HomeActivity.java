@@ -15,6 +15,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -155,24 +156,16 @@ public class HomeActivity extends AppCompatActivity implements IHome{
             binding.homeScrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
                 @Override
                 public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-/*
-                    if (scrollY>oldScrollY)
-                    {
-                        Animation slideDown = AnimationUtils.loadAnimation(HomeActivity.this, R.anim.up_down);
-                        binding.navigation.setAnimation(slideDown);
-                        binding.navigation.setVisibility(View.VISIBLE);
-                    } else
-                    {
-                        Animation slideUp = AnimationUtils.loadAnimation(HomeActivity.this, R.anim.bottom_up);
-                        binding.navigation.setAnimation(slideUp);
-                        binding.navigation.setVisibility(View.GONE);
-                    }*/
+
+                    Animation fadeIn = AnimationUtils.loadAnimation(HomeActivity.this, R.anim.fade_in);
+                    Animation fadeOut = AnimationUtils.loadAnimation(HomeActivity.this, R.anim.fade_out);
 
                    if (scrollY > 3000)
                    {
                        if (binding.logoInvele1.getVisibility() == View.VISIBLE)
                        {
                            binding.logoInvele1.setVisibility(View.GONE);
+                           binding.logoInvele2.setAnimation(fadeIn);
                            binding.logoInvele2.setVisibility(View.VISIBLE);
                        }
 
@@ -183,6 +176,7 @@ public class HomeActivity extends AppCompatActivity implements IHome{
                        if (binding.logoInvele2.getVisibility() == View.VISIBLE)
                        {
                            binding.logoInvele2.setVisibility(View.GONE);
+                           binding.logoInvele1.setAnimation(fadeIn);
                            binding.logoInvele1.setVisibility(View.VISIBLE);
 
                        }

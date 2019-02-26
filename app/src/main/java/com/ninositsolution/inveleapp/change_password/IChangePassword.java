@@ -6,4 +6,6 @@ package com.ninositsolution.inveleapp.change_password;
  * ben@ninositsolution.com
  */
 public interface IChangePassword {
+
+    void onBackClicked();
 }

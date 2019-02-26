@@ -6,4 +6,6 @@ package com.ninositsolution.inveleapp.add_mobile;
  * ben@ninositsolution.com
  */
 public interface IAddMobile {
+
+    void onBackClicked();
 }
