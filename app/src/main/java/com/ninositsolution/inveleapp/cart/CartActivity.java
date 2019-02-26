@@ -41,15 +41,18 @@ public class CartActivity extends AppCompatActivity implements ICart {
                 if (bottomSheetBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED)
                 {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        binding.cartRecyclerview.setForeground(getResources().getDrawable(R.drawable.window_dim));
-                        binding.cartRecyclerview.getForeground().setAlpha(180);
+                        binding.cartAppbarLayout.setForeground(getResources().getDrawable(R.drawable.window_dim));
+                        binding.cartRelativeLayoutScroll.setForeground(getResources().getDrawable(R.drawable.window_dim));
+                        binding.cartRelativeLayoutScroll.getForeground().setAlpha(180);
+                        binding.cartAppbarLayout.getForeground().setAlpha(180);
                     }
                 }
 
                 else
                 {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        binding.cartRecyclerview.setForeground(null);
+                        binding.cartAppbarLayout.setForeground(null);
+                        binding.cartRelativeLayoutScroll.setForeground(null);
                     }
 
                 }
@@ -62,7 +65,7 @@ public class CartActivity extends AppCompatActivity implements ICart {
             }
         });
 
-        size_chart = (TextView)findViewById(R.id.size_chart);
+        size_chart = findViewById(R.id.size_chart);
 
         size_chart.setOnClickListener(new View.OnClickListener() {
             @Override

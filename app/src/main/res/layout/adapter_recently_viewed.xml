@@ -17,16 +17,17 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/invelebg"
                 android:orientation="horizontal"
+                android:background="@color/invelebg"
                 android:weightSum="2">
 
                 <RelativeLayout
+                    android:id="@+id/onClick"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:padding="@dimen/_4sdp"
@@ -47,8 +48,9 @@
                         android:id="@+id/flash_item_name"
                         android:layout_alignStart="@+id/image_general_1"
                         android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_4sdp"
                         android:layout_below="@+id/image_general_1"
-                        android:textSize="@dimen/_11sdp"
+                        android:textSize="@dimen/item_text_size"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/flash_item" />
@@ -65,6 +67,7 @@
                             android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textSize="@dimen/item_text_size"
                             android:text="@string/flash_rate"
                             android:textColor="@color/colorPrimary" />
 
@@ -73,11 +76,12 @@
                             android:layout_height="match_parent" />
 
                         <TextView
-                            android:textStyle="bold"
                             android:id="@+id/delete_rate_1"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/flash_deleted" />
+                            android:layout_height="match_parent"
+                            android:text="@string/flash_deleted"
+                            android:textSize="@dimen/item_text_size"
+                            android:textStyle="bold" />
 
 
                     </LinearLayout>
@@ -95,24 +99,29 @@
                         <RatingBar
                             android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
+                            android:layout_marginStart="-8dp"
                             android:layout_height="wrap_content"
                             android:numStars="5"
                             android:rating="3.5"
+                            android:scaleX="0.8"
+                            android:scaleY="0.8"
                             android:theme="@style/RatingBar"
                             style="?android:attr/ratingBarStyleSmall"/>
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/rating" />
+                            android:layout_height="@dimen/_12sdp"
+                            android:text="@string/rating"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="@dimen/star_rating_num_size" />
 
                         <Space
                             android:layout_width="@dimen/_18sdp"
                             android:layout_height="match_parent" />
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="@dimen/_8sdp"
+                            android:layout_height="@dimen/_8sdp"
                             app:srcCompat="@drawable/ic_heart_black"
                             android:layout_gravity="center_vertical"/>
 
@@ -123,7 +132,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/heart" />
+                            android:text="@string/heart"
+                            android:textSize="@dimen/star_rating_num_size"/>
 
                     </LinearLayout>
 
@@ -147,14 +157,16 @@
                         android:layout_height="@dimen/_150sdp"
                         android:scaleType="centerCrop"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/shop3" />
+                        android:src="@drawable/shop3"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:id="@+id/flash_item_name2"
                         android:layout_alignStart="@+id/image_general_2"
                         android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_4sdp"
                         android:layout_below="@+id/image_general_2"
-                        android:textSize="@dimen/_11sdp"
+                        android:textSize="@dimen/item_text_size"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/flash_item" />
@@ -172,6 +184,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/flash_rate"
+                            android:textSize="@dimen/item_text_size"
                             android:textColor="@color/colorPrimary" />
 
                         <Space
@@ -181,9 +194,11 @@
                         <TextView
                             android:textStyle="bold"
                             android:id="@+id/delete_rate_2"
+                            android:textSize="@dimen/item_text_size"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/flash_deleted" />
+
 
                     </LinearLayout>
 
@@ -200,25 +215,30 @@
                             android:layout_gravity="center_vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="-8dp"
                             android:numStars="5"
                             android:rating="3.5"
+                            android:scaleX="0.8"
+                            android:scaleY="0.8"
                             android:theme="@style/RatingBar"
                             style="?android:attr/ratingBarStyleSmall"/>
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/rating" />
+                            android:layout_height="@dimen/_12sdp"
+                            android:text="@string/rating"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="@dimen/star_rating_num_size" />
 
                         <Space
                             android:layout_width="@dimen/_18sdp"
                             android:layout_height="match_parent" />
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_vertical"
+                            android:layout_width="@dimen/_8sdp"
+                            android:layout_height="@dimen/_8sdp"
                             app:srcCompat="@drawable/ic_heart_black"
+                            android:layout_gravity="center_vertical"
                             tools:ignore="ContentDescription" />
 
                         <Space
@@ -228,15 +248,18 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/heart" />
+                            android:text="@string/heart"
+                            android:textSize="@dimen/star_rating_num_size"/>
 
                     </LinearLayout>
+
 
 
                 </RelativeLayout>
 
 
             </LinearLayout>
+
 
 
         </LinearLayout>

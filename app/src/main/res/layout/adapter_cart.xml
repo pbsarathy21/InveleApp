@@ -43,7 +43,7 @@
                                 android:layout_toEndOf="@+id/head_checkBox"
                                 android:layout_marginTop="@dimen/adapter_topMargin"
                                 android:text="@string/store_name"
-                                android:textSize="@dimen/_14sdp"
+                                android:textSize="@dimen/_12sdp"
                                 android:layout_centerVertical="true"
                                 android:layout_marginStart="@dimen/adapter_startMargin"
                                 android:textColor="@android:color/black"
@@ -69,7 +69,7 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
-                            android:background="#e0e0e0"/>
+                            android:background="@color/grayWhite"/>
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -222,7 +222,7 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
-                            android:background="#e0e0e0"/>
+                            android:background="@color/grayWhite"/>
 
                         <RelativeLayout
                             android:layout_width="match_parent"

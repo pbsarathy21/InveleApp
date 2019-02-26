@@ -18,7 +18,7 @@
 
     <!-- settings Text size-->
 
-    <dimen name="text_settings">@dimen/_14sdp</dimen>
+    <dimen name="text_settings">@dimen/_12sdp</dimen>
 
     <!-- Card elevation-->
 
@@ -86,6 +86,11 @@
     <dimen name="all_brand_photo_text">@dimen/_10sdp</dimen>
 
     <dimen name="cat_left_pane_spacing">0.8dp</dimen>
+    <dimen name="back_arrow_size">@dimen/_20sdp</dimen>
+    <dimen name="account_page_12sdp">@dimen/_12sdp</dimen>
+    <dimen name="account_page_8sdp">@dimen/_8sdp</dimen>
+    <dimen name="account_page_16sdp">@dimen/_16sdp</dimen>
+    <dimen name="account_page_icon_size">@dimen/_42sdp</dimen>
 
 
 

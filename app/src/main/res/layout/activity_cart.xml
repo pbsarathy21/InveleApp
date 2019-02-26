@@ -15,6 +15,7 @@
         android:layout_height="match_parent">
 
         <android.support.design.widget.AppBarLayout
+            android:id="@+id/cart_appbar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -22,7 +23,7 @@
                 app:contentInsetStart="0dp"
                 android:background="@color/white"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_36sdp">
+                android:layout_height="@dimen/_42sdp">
 
                 <LinearLayout
                     android:id="@+id/cart_tool_bar"
@@ -65,6 +66,7 @@
         </android.support.design.widget.AppBarLayout>
 
         <RelativeLayout
+            android:id="@+id/cart_relative_layout_scroll"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_width="match_parent"
             android:visibility="visible"
@@ -94,7 +96,7 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="@dimen/_20sdp"
+                        android:paddingBottom="@dimen/_14sdp"
                         android:paddingTop="@dimen/_14sdp"
                         android:layout_marginBottom="@dimen/_100sdp"
                         android:background="@android:color/white">
@@ -114,20 +116,20 @@
                             android:layout_marginRight="@dimen/_80sdp"
                             android:layout_marginStart="@dimen/_20sdp"
                             android:layout_marginLeft="@dimen/_20sdp"
-                            tools:ignore="HardcodedText,RtlHardcoded" />
+                            tools:ignore="Autofill,HardcodedText,RtlHardcoded,TextFields" />
 
                         <Button
                             android:id="@+id/button"
-                            android:layout_alignTop="@+id/couponcode_textView"
-                            android:layout_alignBottom="@+id/couponcode_textView"
+                            android:layout_centerVertical="true"
                             android:layout_width="@dimen/_60sdp"
-                            android:layout_height="match_parent"
+                            android:layout_height="@dimen/_26sdp"
                             android:layout_alignParentEnd="true"
                             android:layout_marginEnd="@dimen/_16sdp"
                             android:background="@drawable/outline_button_bg"
                             android:textAllCaps="false"
                             android:textColor="@color/colorPrimary"
-                            android:text="@string/apply_button_text" />
+                            android:text="@string/apply_button_text"
+                            android:textSize="@dimen/_12sdp"/>
                     </RelativeLayout>
 
                 </LinearLayout>
