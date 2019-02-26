@@ -2,11 +2,14 @@ package com.ninositsolution.inveleapp.cart;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +34,34 @@ public class CartActivity extends AppCompatActivity implements ICart {
 
         bottomSheetBehavior = BottomSheetBehavior.from(binding.bottomSheetCart);
 
+        bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+            @Override
+            public void onStateChanged(@NonNull View view, int i) {
+
+                if (bottomSheetBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED)
+                {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        binding.cartRecyclerview.setForeground(getResources().getDrawable(R.drawable.window_dim));
+                        binding.cartRecyclerview.getForeground().setAlpha(180);
+                    }
+                }
+
+                else
+                {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        binding.cartRecyclerview.setForeground(null);
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void onSlide(@NonNull View view, float v) {
+
+            }
+        });
+
         size_chart = (TextView)findViewById(R.id.size_chart);
 
         size_chart.setOnClickListener(new View.OnClickListener() {
@@ -52,11 +83,6 @@ public class CartActivity extends AppCompatActivity implements ICart {
 
     }
 
-
-
-
-
-
     @Override
     public void onBackClicked() {
         startActivity(new Intent(this, HomeActivity.class));
@@ -66,10 +92,14 @@ public class CartActivity extends AppCompatActivity implements ICart {
     public void onEditClicked(int position) {
 
         if (bottomSheetBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED)
+        {
             bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-
+        }
         else
+        {
             bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+        }
+
     }
 
     @Override
