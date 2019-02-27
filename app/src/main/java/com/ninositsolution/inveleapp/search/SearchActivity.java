@@ -52,26 +52,26 @@ public class SearchActivity extends AppCompatActivity implements ISearch{
     @Override
     public void onEverywhereClicked() {
 
-        binding.searchEverywhereLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+       /* binding.searchEverywhereLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         binding.searchEverywhere.setTextColor(getResources().getColor(R.color.white));
         binding.everywhereCheck.setVisibility(View.VISIBLE);
 
         binding.searchNearbyLayout.setBackgroundColor(getResources().getColor(R.color.colorProject));
         binding.searchNearby.setTextColor(getResources().getColor(R.color.textColor));
-        binding.nearbyCheck.setVisibility(View.INVISIBLE);
+        binding.nearbyCheck.setVisibility(View.INVISIBLE);*/
 
     }
 
     @Override
     public void onNearbyClicked() {
 
-        binding.searchNearbyLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+       /* binding.searchNearbyLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         binding.searchNearby.setTextColor(getResources().getColor(R.color.white));
         binding.nearbyCheck.setVisibility(View.VISIBLE);
 
         binding.searchEverywhereLayout.setBackgroundColor(getResources().getColor(R.color.colorProject));
         binding.searchEverywhere.setTextColor(getResources().getColor(R.color.textColor));
-        binding.everywhereCheck.setVisibility(View.INVISIBLE);
+        binding.everywhereCheck.setVisibility(View.INVISIBLE);*/
 
     }
 

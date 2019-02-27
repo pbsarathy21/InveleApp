@@ -11,19 +11,15 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.Scroller;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ninositsolution.inveleapp.R;
 import com.ninositsolution.inveleapp.account.AccountActivity;
@@ -31,7 +27,6 @@ import com.ninositsolution.inveleapp.all_brands.AllBrandsActivity;
 import com.ninositsolution.inveleapp.cart.CartActivity;
 import com.ninositsolution.inveleapp.categories.CategoryActivity;
 import com.ninositsolution.inveleapp.databinding.ActivityHomeBinding;
-import com.ninositsolution.inveleapp.databinding.HomeTrendingBinding;
 import com.ninositsolution.inveleapp.login.LoginActivity;
 import com.ninositsolution.inveleapp.no_internet_connection.InternetConnectionActivity;
 import com.ninositsolution.inveleapp.product_detail_page.ProductDetailActivity;
@@ -90,8 +85,6 @@ public class HomeActivity extends AppCompatActivity implements IHome{
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
         binding.setHome(new HomeVM(getApplicationContext(), this));
-
-        itemLayout = findViewById(R.id.item_layout);
 
         binding.navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
@@ -178,7 +171,6 @@ public class HomeActivity extends AppCompatActivity implements IHome{
                            binding.logoInvele2.setVisibility(View.GONE);
                            binding.logoInvele1.setAnimation(fadeIn);
                            binding.logoInvele1.setVisibility(View.VISIBLE);
-
                        }
                    }
                 }

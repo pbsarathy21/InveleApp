@@ -492,6 +492,10 @@
     <string name="table_arm_textview">Arm</string>
     <string name="back">Back</string>
     <string name="internet_connection_lost">Internet Connection Lost</string>
+    <string name="search_product">Search Product</string>
+    <string name="search_brand">Search brand</string>
+    <string name="formal_shirts">Formal Shirts</string>
+    <string name="reset">Reset</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

@@ -96,7 +96,7 @@ public class RegisterActivity extends AppCompatActivity {
             binding.otpLayout.setVisibility(View.VISIBLE);
 
             ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) binding.cardRegister.getLayoutParams();
-            layoutParams.setMargins(36, 400, 36, 0);
+            layoutParams.setMargins(36, 475, 36, 0);
             binding.cardRegister.requestLayout();
         }
 

@@ -2,7 +2,9 @@ package com.ninositsolution.inveleapp.search_everywhere;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -65,6 +67,7 @@ public class SearchEverywhereActivity extends AppCompatActivity {
                 binding.low.setTextColor(getResources().getColor(R.color.textColor));
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onFilterClicked() {
                 FragmentManager fragmentManager = getSupportFragmentManager();
@@ -73,6 +76,11 @@ public class SearchEverywhereActivity extends AppCompatActivity {
                 fragmentTransaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
                 fragmentTransaction.add(R.id.filter_container, filterFragment);
                 fragmentTransaction.commit();
+
+                binding.searchAppbarLayout.setForeground(getResources().getDrawable(R.drawable.window_dim));
+                binding.searchBodyLayout.setForeground(getResources().getDrawable(R.drawable.window_dim));
+                binding.searchAppbarLayout.getForeground().setAlpha(180);
+                binding.searchBodyLayout.getForeground().setAlpha(180);
 
             }
 

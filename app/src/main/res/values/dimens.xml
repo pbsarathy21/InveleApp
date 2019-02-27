@@ -52,10 +52,11 @@
     <dimen name="prod_text_size">@dimen/_14sdp</dimen>
 
     <dimen name="prod_text_small">@dimen/_12sdp</dimen>
-    <dimen name="filter_textview_size">@dimen/_12sdp</dimen>
-    <dimen name="filter_heading_textsize">@dimen/_13sdp</dimen>
-    <dimen name="show_less_textview_size">@dimen/_14sdp</dimen>
+    <dimen name="filter_textview_size">@dimen/_11sdp</dimen>
+    <dimen name="filter_heading_textsize">@dimen/_11sdp</dimen>
+    <dimen name="show_less_textview_size">@dimen/_11sdp</dimen>
     <dimen name="review_button_textsize">@dimen/_9sdp</dimen>
+    <dimen name="filter_box_margin">@dimen/_8sdp</dimen>
 
     <dimen name="help_desk_regular">@dimen/_14sdp</dimen>
     <dimen name="help_desk_small">@dimen/_11sdp</dimen>
@@ -95,6 +96,9 @@
     <!-- Product review Activity-->
 
     <dimen name="register_page_12sdp">@dimen/_12sdp</dimen>
+
+
+    <dimen name="filter_height">@dimen/_30sdp</dimen>
 
 
 

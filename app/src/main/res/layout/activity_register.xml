@@ -21,7 +21,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_240sdp"
+            android:layout_height="@dimen/_200sdp"
             android:scaleType="fitXY"
             android:src="@drawable/register_bg_image"
             tools:ignore="ContentDescription" />
@@ -58,7 +58,7 @@
                         android:layout_width="@dimen/_72sdp"
                         android:gravity="center_horizontal"
                         android:layout_height="wrap_content"
-                        android:padding="12dp">
+                        android:padding="@dimen/_4sdp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
                         android:layout_width="@dimen/_100sdp"
                         android:gravity="center_horizontal"
                         android:layout_height="wrap_content"
-                        android:padding="12dp">
+                        android:padding="@dimen/_4sdp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -105,8 +105,6 @@
                             android:layout_marginStart="2dp"
                             android:visibility="invisible"
                             android:background="@color/colorPrimary"/>
-
-
                     </LinearLayout>
 
                 </RelativeLayout>
@@ -290,7 +288,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/user2"
+                        android:text="@string/user"
                         android:fontFamily="@font/roboto_regular"
                         android:onClick="@{()->iRegister.onUser2Clicked()}"
                         android:layout_gravity="end"
@@ -313,8 +311,6 @@
                         android:layout_gravity="center"/>
 
                 </LinearLayout>
-
-
 
             </RelativeLayout>
 
@@ -351,9 +347,7 @@
                         android:hint="@string/otp"
                         tools:ignore="Autofill,TextFields" />
 
-
                 </android.support.design.widget.TextInputLayout>
-
 
 
                 <TextView
@@ -394,7 +388,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_width="@dimen/_150sdp"
                     android:layout_height="@dimen/_28sdp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="@dimen/_24sdp"
                     android:text="@string/continue_button"
                     android:textSize="@dimen/register_page_12sdp"
                     android:fontFamily="@font/roboto_regular"
@@ -406,11 +400,9 @@
 
             </RelativeLayout>
 
-
         </android.support.v7.widget.CardView>
 
-
-        <LinearLayout
+        <RelativeLayout
            android:layout_below="@+id/card_register"
             android:layout_marginTop="@dimen/_24sdp"
             android:layout_width="match_parent"
@@ -422,11 +414,11 @@
                 android:id="@+id/reg_with"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
                 android:orientation="horizontal">
 
                 <View
-                    android:layout_width="72dp"
+                    android:layout_width="@dimen/_56sdp"
                     android:layout_height="@dimen/_1sdp"
                     android:background="@color/grayWhite"
                     android:layout_gravity="center"/>
@@ -436,11 +428,11 @@
                     android:layout_height="wrap_content"
                     android:text="@string/register_with"
                     android:fontFamily="@font/roboto_regular"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"/>
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"/>
 
                 <View
-                    android:layout_width="72dp"
+                    android:layout_width="@dimen/_56sdp"
                     android:layout_height="@dimen/_1sdp"
                     android:background="@color/grayWhite"
                     android:layout_gravity="center"/>
@@ -448,11 +440,11 @@
             </LinearLayout>
 
             <RelativeLayout
+                android:layout_alignStart="@+id/reg_with"
+                android:layout_alignEnd="@+id/reg_with"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="42dp"
-                android:layout_marginEnd="42dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="@dimen/_32sdp"
                 android:orientation="horizontal">
 
                 <Button
@@ -462,10 +454,11 @@
                     android:onClick="@{()->iRegister.onFacebookClicked()}"
                     android:fontFamily="@font/roboto_regular"
                     android:background="@drawable/round_margin"
-                    android:layout_marginStart="8dp"
                     android:text="@string/fb"
+                    android:textSize="@dimen/_12sdp"
                     android:paddingStart="@dimen/_8sdp"
                     android:paddingEnd="@dimen/_8sdp"
+                    android:textColor="#7f8787"
                     android:drawablePadding="@dimen/_8sdp"
                     android:drawableStart="@drawable/ic_facebook"/>
 
@@ -476,9 +469,9 @@
                     android:onClick="@{()->iRegister.onGoogleClicked()}"
                     android:fontFamily="@font/roboto_regular"
                     android:paddingStart="@dimen/_8sdp"
+                    android:textSize="@dimen/_12sdp"
                     android:paddingEnd="@dimen/_8sdp"
                     android:drawableStart="@drawable/ic_google"
-                    android:layout_marginEnd="8dp"
                     android:textColor="#7f8787"
                     android:layout_alignParentEnd="true"
                     android:text="@string/google" />
@@ -487,7 +480,7 @@
             </RelativeLayout>
 
 
-        </LinearLayout>
+        </RelativeLayout>
 
 
 

@@ -5,9 +5,12 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_4sdp" />
+
     <TextView
         android:layout_marginStart="@dimen/_18sdp"
-        android:layout_marginTop="@dimen/_12sdp"
         android:id="@+id/adapter_search_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,6 +23,6 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/_1sdp"
-        android:background="#dadada"/>
+        android:background="@color/grayWhite"/>
 
 </LinearLayout>
