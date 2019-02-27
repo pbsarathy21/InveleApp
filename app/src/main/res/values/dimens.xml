@@ -92,6 +92,10 @@
     <dimen name="account_page_16sdp">@dimen/_16sdp</dimen>
     <dimen name="account_page_icon_size">@dimen/_42sdp</dimen>
 
+    <!-- Product review Activity-->
+
+    <dimen name="register_page_12sdp">@dimen/_12sdp</dimen>
+
 
 
 

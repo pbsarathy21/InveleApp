@@ -7,13 +7,16 @@ package com.ninositsolution.inveleapp.registration;
  */
 public interface IRegister {
 
-    void onEmailLayoutClicked();
-    void onMobileLayoutClicked();
-    void onEmailContinueClicked();
-    void onOtpContinueClicked();
-    void onMobileContinueClicked();
-    void updateTimer(String time);
-    void onResendClicked();
-    void onUserClicked();
-    void onUser2Clicked();
+   void onEmailClicked();
+   void onMobileClicked();
+   void onUserClicked();
+   void onEmailContinueClicked();
+   void onUser2Clicked();
+   void onMobileContinueClicked();
+   void onResendClicked();
+   void onOtpContinueClicked();
+   void onFacebookClicked();
+   void onGoogleClicked();
+
+
 }

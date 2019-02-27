@@ -75,4 +75,7 @@ dependencies {
 
     //noinspection GradleDynamicVersion
     implementation 'com.nhaarman.supertooltips:library:3.0.+'
+
+    //percent layout
+    implementation 'com.android.support:percent:28.0.0'
 }

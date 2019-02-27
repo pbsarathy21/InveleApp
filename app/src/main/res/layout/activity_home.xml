@@ -60,6 +60,7 @@
 
                     <ImageView
                         android:id="@+id/search_icon"
+                        android:onClick="@{()->home.onSearchClicked()}"
                         android:layout_width="@dimen/_20sdp"
                         android:layout_height="@dimen/_20sdp"
                         android:layout_centerVertical="true"
@@ -70,6 +71,7 @@
 
                     <ImageView
                         android:id="@+id/wishlist_icon"
+                        android:onClick="@{()->home.onWishlistClicked()}"
                         android:layout_toStartOf="@+id/cart_icon"
                         android:layout_marginEnd="@dimen/_16sdp"
                         android:layout_width="@dimen/_18sdp"
@@ -80,6 +82,7 @@
 
                     <ImageView
                         android:id="@+id/cart_icon"
+                        android:onClick="@{()->home.onCartClicked()}"
                         android:layout_width="@dimen/_18sdp"
                         android:layout_height="@dimen/_18sdp"
                         android:layout_alignParentEnd="true"

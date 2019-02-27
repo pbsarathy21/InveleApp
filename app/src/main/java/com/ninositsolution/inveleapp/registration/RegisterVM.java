@@ -13,7 +13,7 @@ public class RegisterVM extends BaseObservable {
 
     //Declarations
 
-    private RegisterModel registerModel;
+ /*   private RegisterModel registerModel;
     private Context context;
     private IRegister iRegister;
 
@@ -93,7 +93,7 @@ public class RegisterVM extends BaseObservable {
 
     public void onMobileContinueClicked()
     {
-        iRegister.onMobileContinueClicked();
+
         RunTimer();
     }
 
@@ -127,5 +127,5 @@ public class RegisterVM extends BaseObservable {
         }.start();
 
     }
-
+*/
 }

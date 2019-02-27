@@ -8,23 +8,35 @@
         <variable
             name="register"
             type="com.ninositsolution.inveleapp.registration.RegisterVM"/>
+
+        <variable
+            name="iRegister"
+            type="com.ninositsolution.inveleapp.registration.IRegister"/>
     </data>
 
     <RelativeLayout android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_240sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/register_bg_image"
+            tools:ignore="ContentDescription" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/card_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardElevation="16dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginEnd="36dp"
+            app:cardElevation="@dimen/card_elevation_size"
+            android:layout_marginStart="@dimen/_32sdp"
+            android:layout_marginEnd="@dimen/_32sdp"
             android:layout_centerHorizontal="true"
-            android:backgroundTint="#f2f3f4"
-            app:cardCornerRadius="16dp"
-            android:layout_marginTop="100dp">
+            android:background="@color/invelebg"
+            app:cardCornerRadius="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_72sdp">
 
             <RelativeLayout
                 android:id="@+id/register_layout"
@@ -41,9 +53,10 @@
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_alignParentStart="true"
-                        android:layout_marginStart="24dp"
-                        android:onClick="@{()->register.onEmailClicked()}"
-                        android:layout_width="wrap_content"
+                        android:layout_marginStart="@dimen/_24sdp"
+                        android:onClick="@{()->iRegister.onEmailClicked()}"
+                        android:layout_width="@dimen/_72sdp"
+                        android:gravity="center_horizontal"
                         android:layout_height="wrap_content"
                         android:padding="12dp">
 
@@ -52,13 +65,15 @@
                             android:layout_height="wrap_content"
                             android:text="@string/email"
                             android:textStyle="bold"
+                            android:id="@+id/email_head"
+                            android:textColor="@color/colorPrimary"
                             android:fontFamily="@font/roboto_regular"
-                            android:textSize="18sp"/>
+                            android:textSize="@dimen/register_page_12sdp"/>
 
                         <View
                             android:id="@+id/view_email"
                             android:layout_width="match_parent"
-                            android:layout_height="4dp"
+                            android:layout_height="@dimen/_2sdp"
                             android:layout_marginStart="2dp"
                             android:background="@color/colorPrimary"/>
 
@@ -67,9 +82,10 @@
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_alignParentEnd="true"
-                        android:onClick="@{()->register.onMobileClicked()}"
-                        android:layout_marginEnd="24dp"
-                        android:layout_width="wrap_content"
+                        android:onClick="@{()->iRegister.onMobileClicked()}"
+                        android:layout_marginEnd="@dimen/_24sdp"
+                        android:layout_width="@dimen/_100sdp"
+                        android:gravity="center_horizontal"
                         android:layout_height="wrap_content"
                         android:padding="12dp">
 
@@ -78,13 +94,14 @@
                             android:layout_height="wrap_content"
                             android:text="@string/mobile"
                             android:textStyle="bold"
+                            android:id="@+id/mobile_head"
                             android:fontFamily="@font/roboto_regular"
-                            android:textSize="18sp" />
+                            android:textSize="@dimen/register_page_12sdp" />
 
                         <View
                             android:id="@+id/view_mobile"
                             android:layout_width="match_parent"
-                            android:layout_height="4dp"
+                            android:layout_height="@dimen/_2sdp"
                             android:layout_marginStart="2dp"
                             android:visibility="invisible"
                             android:background="@color/colorPrimary"/>
@@ -102,6 +119,13 @@
                     android:layout_height="wrap_content"
                     android:visibility="visible">
 
+                    <LinearLayout
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:layout_width="0px"
+                        android:layout_height="0px"
+                        tools:ignore="UselessLeaf" />
+
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -109,10 +133,10 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/register_page_12sdp"
+                            android:paddingBottom="@dimen/register_page_12sdp"
                             android:fontFamily="@font/roboto_regular"
                             android:inputType="textEmailAddress"
-                            android:afterTextChanged="@{(editable)->register.afterEmailChanged(editable)}"
                             android:hint="@string/email"
                             tools:ignore="Autofill" />
 
@@ -123,7 +147,7 @@
 
                     <Space
                         android:layout_width="match_parent"
-                        android:layout_height="8dp" />
+                        android:layout_height="@dimen/_2sdp" />
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
@@ -132,10 +156,10 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/register_page_12sdp"
+                            android:paddingBottom="@dimen/register_page_12sdp"
                             android:fontFamily="@font/roboto_regular"
                             android:inputType="text"
-                            android:afterTextChanged="@{(editable)->register.afterNameChanged(editable)}"
                             android:hint="@string/name"
                             tools:ignore="Autofill" />
 
@@ -146,7 +170,7 @@
 
                     <Space
                         android:layout_width="match_parent"
-                        android:layout_height="8dp" />
+                        android:layout_height="@dimen/_2sdp" />
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
@@ -155,10 +179,10 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/register_page_12sdp"
+                            android:paddingBottom="@dimen/register_page_12sdp"
                             android:fontFamily="@font/roboto_regular"
                             android:inputType="textPassword"
-                            android:afterTextChanged="@{(editable)->register.afterPasswordChanged(editable)}"
                             android:hint="@string/password"
                             tools:ignore="Autofill" />
 
@@ -168,12 +192,7 @@
 
                     <Space
                         android:layout_width="match_parent"
-                        android:layout_height="8dp" />
-
-                    <CheckBox
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/agree"/>
+                        android:layout_height="@dimen/_4sdp" />
 
                     <Space
                         android:layout_width="match_parent"
@@ -184,7 +203,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/user"
                         android:fontFamily="@font/roboto_regular"
-                        android:onClick="@{()->register.onUserClicked()}"
+                        android:onClick="@{()->iRegister.onUserClicked()}"
                         android:layout_gravity="end"
                         android:textColor="@color/colorPrimary"/>
 
@@ -193,13 +212,15 @@
                         android:layout_height="12dp" />
 
                     <Button
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_28sdp"
                         android:text="@string/continue_button"
+                        android:textSize="@dimen/register_page_12sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
                         android:fontFamily="@font/roboto_regular"
-                        android:onClick="@{()->register.onEmailContinueClicked()}"
+                        android:onClick="@{()->iRegister.onEmailContinueClicked()}"
                         android:textColor="@android:color/white"
-                        android:backgroundTint="@color/colorPrimary"
+                        android:background="@color/colorPrimary"
                         android:layout_gravity="center"/>
 
                 </LinearLayout>
@@ -212,6 +233,13 @@
                     android:layout_height="wrap_content"
                     android:visibility="gone">
 
+                    <LinearLayout
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:layout_width="0px"
+                        android:layout_height="0px"
+                        tools:ignore="UselessLeaf" />
+
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -220,11 +248,34 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_regular"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/register_page_12sdp"
+                            android:paddingBottom="@dimen/register_page_12sdp"
                             android:inputType="phone"
                             android:maxLength="10"
-                            android:afterTextChanged="@{(editable)->register.afterMobile2Changed(editable)}"
                             android:hint="@string/mobile2"
+                            tools:ignore="Autofill" />
+
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textSize="@dimen/register_page_12sdp"
+                            android:paddingBottom="@dimen/register_page_12sdp"
+                            android:inputType="text"
+                            android:hint="@string/name"
                             tools:ignore="Autofill" />
 
 
@@ -241,7 +292,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/user2"
                         android:fontFamily="@font/roboto_regular"
-                        android:onClick="@{()->register.onUser2Clicked()}"
+                        android:onClick="@{()->iRegister.onUser2Clicked()}"
                         android:layout_gravity="end"
                         android:textColor="@color/colorPrimary"/>
 
@@ -250,13 +301,15 @@
                         android:layout_height="12dp" />
 
                     <Button
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_28sdp"
                         android:text="@string/continue_button"
+                        android:textSize="@dimen/register_page_12sdp"
                         android:fontFamily="@font/roboto_regular"
-                        android:onClick="@{()->register.onMobileContinueClicked()}"
+                        android:onClick="@{()->iRegister.onMobileContinueClicked()}"
                         android:textColor="@android:color/white"
-                        android:backgroundTint="@color/colorPrimary"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:background="@color/colorPrimary"
                         android:layout_gravity="center"/>
 
                 </LinearLayout>
@@ -272,17 +325,25 @@
                 android:padding="8dp"
                 android:visibility="gone">
 
+                <LinearLayout
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="0px"
+                    android:layout_height="0px"
+                    tools:ignore="UselessLeaf" />
+
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/otp_input_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:paddingBottom="@dimen/register_page_12sdp"
                         android:id="@+id/otp"
                         android:layout_marginTop="48dp"
                         android:paddingStart="4dp"
                         android:paddingEnd="4dp"
-                        android:afterTextChanged="@{(editable)->register.afterOtpChanged(editable)}"
+                        android:textSize="@dimen/register_page_12sdp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_regular"
@@ -299,8 +360,8 @@
                     android:id="@+id/resend"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/otp_input_layout"
-                    android:onClick="@{()->register.onResendClicked()}"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:onClick="@{()->iRegister.onResendClicked()}"
                     android:layout_alignParentEnd="true"
                     android:enabled="false"
                     android:fontFamily="@font/roboto_regular"
@@ -331,14 +392,16 @@
                 <Button
                     android:layout_below="@+id/line_view"
                     android:layout_centerHorizontal="true"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_28sdp"
                     android:layout_marginTop="24dp"
                     android:text="@string/continue_button"
+                    android:textSize="@dimen/register_page_12sdp"
                     android:fontFamily="@font/roboto_regular"
-                    android:onClick="@{()->register.onOtpContinueClicked()}"
+                    android:onClick="@{()->iRegister.onOtpContinueClicked()}"
                     android:textColor="@android:color/white"
-                    android:backgroundTint="@color/colorPrimary"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:background="@color/colorPrimary"
                     android:layout_gravity="center"/>
 
             </RelativeLayout>
@@ -348,25 +411,24 @@
 
 
         <LinearLayout
-           android:layout_alignParentBottom="true"
+           android:layout_below="@+id/card_register"
+            android:layout_marginTop="@dimen/_24sdp"
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_marginBottom="24dp"
             android:layout_height="wrap_content">
 
             <LinearLayout
-
                 android:id="@+id/reg_with"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="42dp"
-                android:layout_marginEnd="42dp"
+                android:layout_gravity="center_horizontal"
                 android:orientation="horizontal">
 
                 <View
                     android:layout_width="72dp"
-                    android:layout_height="4dp"
-                    android:background="#dbdbdb"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/grayWhite"
                     android:layout_gravity="center"/>
 
                 <TextView
@@ -379,8 +441,8 @@
 
                 <View
                     android:layout_width="72dp"
-                    android:layout_height="4dp"
-                    android:background="#dbdbdb"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/grayWhite"
                     android:layout_gravity="center"/>
 
             </LinearLayout>
@@ -394,27 +456,27 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:layout_width="120dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="36dp"
                     android:layout_alignParentStart="true"
-                    android:onClick="@{()->register.onFacebookClicked()}"
+                    android:onClick="@{()->iRegister.onFacebookClicked()}"
                     android:fontFamily="@font/roboto_regular"
-                    android:background="#4867aa"
+                    android:background="@drawable/round_margin"
                     android:layout_marginStart="8dp"
                     android:text="@string/fb"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="0dp"
-                    android:textColor="@android:color/white"
-                    android:drawableStart="@drawable/ic_fb2"/>
+                    android:paddingStart="@dimen/_8sdp"
+                    android:paddingEnd="@dimen/_8sdp"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:drawableStart="@drawable/ic_facebook"/>
 
                 <Button
-                    android:layout_width="120dp"
+                    android:layout_width="@dimen/_100sdp"
                     android:layout_height="36dp"
-                    android:background="#f2f3f4"
-                    android:onClick="@{()->register.onGoogleClicked()}"
+                    android:background="@drawable/round_margin"
+                    android:onClick="@{()->iRegister.onGoogleClicked()}"
                     android:fontFamily="@font/roboto_regular"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="0dp"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:paddingEnd="@dimen/_8sdp"
                     android:drawableStart="@drawable/ic_google"
                     android:layout_marginEnd="8dp"
                     android:textColor="#7f8787"
