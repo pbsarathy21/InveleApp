@@ -418,8 +418,8 @@
     <string name="half_sleeve_label">Half Sleeve(100)</string>
     <string name="formals_textView_label">Formals(10)</string>
     <string name="dhoties_label_textView">Dhoties(25)</string>
-    <string name="coat_label_textview">COATS(200)</string>
-    <string name="suits_label_textview">SUITS(10)</string>
+    <string name="coat_label_textview">Coats(200)</string>
+    <string name="suits_label_textview">Suits(10)</string>
     <string name="singpost_label_textview">Singpost</string>
     <string name="standard_label_textview">Standard</string>
     <string name="economy_label_textview">Economy</string>

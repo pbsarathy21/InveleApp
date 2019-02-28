@@ -278,7 +278,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="left"
+                                android:layout_gravity="start"
                                 android:layout_marginStart="@dimen/filter_box_margin"
                                 android:textStyle="bold"
                                 android:textSize="@dimen/filter_heading_textsize"
@@ -301,7 +301,7 @@
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_marginStart="@dimen/_4sdp"
-
+                                    android:layout_marginEnd="@dimen/_4sdp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1">
 
@@ -312,6 +312,7 @@
                                         android:textSize="@dimen/filter_textview_size"
                                         android:text="@string/shirt_label_textview"
                                         android:background="@drawable/altered_button_bground" />
+
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -329,11 +330,7 @@
                                         android:textSize="@dimen/filter_textview_size"
                                         android:background="@drawable/altered_button_bground" />
 
-
-
-
                                 </LinearLayout>
-
 
                             </LinearLayout>
 
@@ -349,6 +346,7 @@
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_marginStart="@dimen/_4sdp"
+                                    android:layout_marginEnd="@dimen/_4sdp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1">
 
@@ -360,11 +358,8 @@
                                         android:text="@string/full_sleve_label"
                                         android:background="@drawable/altered_button_bground"
                                         />
-
-
-
-
                                 </LinearLayout>
+
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
@@ -398,6 +393,7 @@
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_marginStart="@dimen/_4sdp"
+                                    android:layout_marginEnd="@dimen/_4sdp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1">
 
@@ -450,6 +446,7 @@
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_marginStart="@dimen/_4sdp"
+                                    android:layout_marginEnd="@dimen/_4sdp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1">
 
@@ -531,6 +528,7 @@
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_marginStart="@dimen/_4sdp"
+                                    android:layout_marginEnd="@dimen/_4sdp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1">
 
@@ -580,6 +578,7 @@
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_marginStart="@dimen/_4sdp"
+                                    android:layout_marginEnd="@dimen/_4sdp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1">
 
@@ -631,6 +630,7 @@
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_marginStart="@dimen/_4sdp"
+                                    android:layout_marginEnd="@dimen/_4sdp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1">
 
@@ -678,6 +678,7 @@
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_marginStart="@dimen/_4sdp"
+                                    android:layout_marginEnd="@dimen/_4sdp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1">
 
@@ -688,11 +689,8 @@
                                         android:textSize="@dimen/filter_textview_size"
                                         android:text="@string/track_order_label_textview"
                                         android:background="@drawable/altered_button_bground" />
-
-
-
-
                                 </LinearLayout>
+
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
@@ -1027,6 +1025,7 @@
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_marginStart="@dimen/_4sdp"
+                                    android:layout_marginEnd="@dimen/_4sdp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1">
 
@@ -1086,6 +1085,7 @@
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_marginStart="@dimen/_4sdp"
+                                    android:layout_marginEnd="@dimen/_4sdp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1">
 
@@ -1129,6 +1129,7 @@
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_marginStart="@dimen/_4sdp"
+                                    android:layout_marginEnd="@dimen/_4sdp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1">
 
@@ -1174,6 +1175,7 @@
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_marginStart="@dimen/_4sdp"
+                                    android:layout_marginEnd="@dimen/_4sdp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1">
 
@@ -1216,6 +1218,7 @@
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_marginStart="@dimen/_4sdp"
+                                    android:layout_marginEnd="@dimen/_4sdp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1">
 
