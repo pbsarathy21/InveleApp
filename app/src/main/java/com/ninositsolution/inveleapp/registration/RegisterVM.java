@@ -1,131 +1,87 @@
 package com.ninositsolution.inveleapp.registration;
 
-import android.content.Context;
-import android.databinding.BaseObservable;
-import android.os.CountDownTimer;
+import android.arch.lifecycle.MutableLiveData;
+import android.arch.lifecycle.ViewModel;
+import android.databinding.ObservableField;
+
+import com.ninositsolution.inveleapp.pojo.POJOClass;
+import com.ninositsolution.inveleapp.registration.pojo.RegistartionRequest;
 
 /**
  * Created by Parthasarathy D on 1/11/2019.
  * Ninos IT Solution
  * parthasarathy.d@ninositsolution.com
  */
-public class RegisterVM extends BaseObservable {
+public class RegisterVM extends ViewModel {
 
-    //Declarations
+    private RegisterRepo registerRepo;
+  //  private MutableLiveData<RegisterVM> registerVMMutableLiveData = new MutableLiveData<>();
+    private MutableLiveData<POJOClass> pojoClassMutableLiveData = new MutableLiveData<>();
+    private MutableLiveData<String> stringMutableLiveData = new MutableLiveData<>();
 
- /*   private RegisterModel registerModel;
-    private Context context;
-    private IRegister iRegister;
+    // UI fields
 
-    //Constructors
+    public ObservableField<String> email = new ObservableField<>("");
+    public ObservableField<String> email_name = new ObservableField<>("");
+    public ObservableField<String> password = new ObservableField<>("");
+    public ObservableField<String> mobile = new ObservableField<>("");
+    public ObservableField<String> mobile_name = new ObservableField<>("");
 
-    public RegisterVM(Context context, IRegister iRegister ) {
-        this.context = context;
-        this.iRegister = iRegister;
-        registerModel = new RegisterModel();
-    }
+    // POJO fields
 
-    //Edit text Listeners
+   /* public ObservableField<String> status = new ObservableField<>();
+    public ObservableField<String> msg = new ObservableField<>();
+    public ObservableField<Users> users = new ObservableField<>();
+    public ObservableField<Integer> otp = new ObservableField<>();
 
-    public void afterEmailChanged(CharSequence sequence)
+    public RegisterVM(RegistrationPOJO registrationPOJO)
     {
-        registerModel.setEmail(sequence.toString());
-    }
+        this.status.set(registrationPOJO.getStatus());
+        this.msg.set(registrationPOJO.getMsg());
+        this.users.set(registrationPOJO.getUsers());
+        this.otp.set(registrationPOJO.getOtp());
+    }*/
 
-    public void afterNameChanged(CharSequence sequence)
+    public RegisterVM()
     {
-        registerModel.setName(sequence.toString());
+        registerRepo = new RegisterRepo();
     }
 
-    public void afterPasswordChanged(CharSequence sequence)
+    public int emailValidation()
     {
-        registerModel.setPassword(sequence.toString());
+        return registerRepo.emailValidations(email.get(), email_name.get(), password.get());
     }
 
-    public void afterMobile2Changed(CharSequence sequence)
+    public int mobileValidation()
     {
-        registerModel.setMobile(sequence.toString());
+        return registerRepo.mobileValidations(mobile.get(), mobile_name.get());
     }
 
-    public void afterOtpChanged(CharSequence sequence)
+    public void registerViaEmail(String device_id)
     {
-        registerModel.setOtp(sequence.toString());
+        RegistartionRequest registartionRequest = new RegistartionRequest(email_name.get(), "",email.get(),
+                password.get(), "email", "", device_id, "android");
+
+        registerRepo = new RegisterRepo();
+
+        pojoClassMutableLiveData = registerRepo.getRegisterVMMutableLiveData(registartionRequest);
+
+        //String message = registerVMMutableLiveData.getValue().status.get();
+
+          //  stringMutableLiveData.setValue(message);
+
     }
 
-    //onClick Listeners
-
-    public void onEmailClicked()
+    public void registerViaMobile (String device_id)
     {
-          iRegister.onEmailLayoutClicked();
-    }
+        RegistartionRequest registartionRequest = new RegistartionRequest(mobile_name.get(), mobile.get(),"",
+                "", "mobile", "", device_id, "android");
 
-    public void onMobileClicked()
-    {
-       iRegister.onMobileLayoutClicked();
-    }
-
-    public void onResendClicked()
-    {
-        RunTimer();
-        iRegister.onResendClicked();
-    }
-
-    public void onUserClicked()
-    {
-        iRegister.onUserClicked();
-    }
-
-    public void onEmailContinueClicked()
-    {
-        iRegister.onEmailContinueClicked();
-        RunTimer();
-    }
-
-    public void onOtpContinueClicked()
-    {
+        //registerVMMutableLiveData = registerRepo.getRegisterVMMutableLiveData(registartionRequest);
+        pojoClassMutableLiveData = registerRepo.getRegisterVMMutableLiveData(registartionRequest);
 
     }
-
-    public void onUser2Clicked()
-    {
-        iRegister.onUser2Clicked();
+    public MutableLiveData<POJOClass> getPojoClassMutableLiveData() {
+        return pojoClassMutableLiveData;
     }
-
-    public void onMobileContinueClicked()
-    {
-
-        RunTimer();
-    }
-
-    public void onFacebookClicked()
-    {
-
-    }
-
-    public void onGoogleClicked()
-    {
-
-    }
-
-    //background process
-
-    private void RunTimer()
-    {
-        final int[] time = {45};
-
-        new CountDownTimer(45000, 1000)
-        {
-            public void onTick(long millisUntilFinished) {
-                iRegister.updateTimer(millisUntilFinished/1000+ " Sec");
-                time[0]--;
-            }
-
-            public void onFinish() {
-                iRegister.updateTimer("Try Again");
-            }
-
-        }.start();
-
-    }
-*/
 }

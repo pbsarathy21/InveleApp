@@ -16,6 +16,8 @@ public class Session {
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
 
+    private static final String device_id = "device_id";
+
     public Session(Context context)
     {
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -28,5 +30,13 @@ public class Session {
 
     public void setCategoryPosition(int categoryPosition) {
         editor.putInt(CategoryPosition, categoryPosition).apply();
+    }
+
+    public static String getDevice_id(Context context) {
+        return context.getSharedPreferences("Session", Context.MODE_PRIVATE).getString(device_id, "0");
+    }
+
+    public static void setDevice_id(String values, Context context) {
+        context.getSharedPreferences("Session", Context.MODE_PRIVATE).edit().putString(device_id, values).apply();
     }
 }

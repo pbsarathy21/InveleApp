@@ -1,23 +1,40 @@
 package com.ninositsolution.inveleapp.registration;
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.ninositsolution.inveleapp.R;
 import com.ninositsolution.inveleapp.databinding.ActivityRegisterBinding;
 import com.ninositsolution.inveleapp.login.LoginActivity;
+import com.ninositsolution.inveleapp.pojo.POJOClass;
+import com.ninositsolution.inveleapp.utils.Constants;
+import com.ninositsolution.inveleapp.utils.Session;
 
 public class RegisterActivity extends AppCompatActivity {
 
     ActivityRegisterBinding binding;
+    RegisterVM registerVM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_register);
+
+
+        registerVM = ViewModelProviders.of(this).get(RegisterVM.class);
+
+
+        binding.setRegister(registerVM);
+
+        binding.setLifecycleOwner(this);
+
 
         binding.setIRegister(new IRegister() {
             @Override
@@ -38,7 +55,49 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onEmailContinueClicked() {
-                getOtpLayout();
+
+                int status = registerVM.emailValidation();
+
+                if (status == Constants.EMAIL_EMPTY)
+                {
+                    binding.emailEdit.setError("required");
+                    binding.emailEdit.requestFocus();
+
+                } else if (status == Constants.NO_EMAIL_PATTERN)
+                {
+                    binding.emailEdit.setError("not a valid Email address");
+                    binding.emailEdit.requestFocus();
+
+                } else if (status == Constants.EMAIL_NAME_EMPTY)
+                {
+                    binding.emailNameEdit.setError("required");
+                    binding.emailNameEdit.requestFocus();
+
+                } else if (status == Constants.PASSWORD_EMPTY)
+                {
+                    binding.passwordRegister.setError("required");
+                    binding.passwordRegister.requestFocus();
+
+                } else if (status == Constants.SUCCESS)
+                {
+                    showProgressBar();
+                    registerVM.registerViaEmail(Session.getDevice_id(RegisterActivity.this));
+
+                    registerVM.getPojoClassMutableLiveData().observe(RegisterActivity.this, new Observer<POJOClass>() {
+                        @Override
+                        public void onChanged(@Nullable POJOClass pojoClass) {
+                            hideProgressBar();
+
+                            Toast.makeText(RegisterActivity.this, ""+pojoClass.msg, Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                } else
+                {
+
+                    Toast.makeText(RegisterActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                }
+
             }
 
             @Override
@@ -49,7 +108,34 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onMobileContinueClicked() {
-                getOtpLayout();
+
+                int status = registerVM.mobileValidation();
+
+                if (status == Constants.MOBILE_NO_EMPTY)
+                {
+                    binding.mobileNoEdit.setError("required");
+                    binding.mobileNoEdit.requestFocus();
+                } else if (status == Constants.MOBILE_NAME_EMPTY)
+                {
+                    binding.mobileNameEdit.setError("required");
+                    binding.mobileNameEdit.requestFocus();
+                } else if (status == Constants.SUCCESS)
+                {
+                    showProgressBar();
+                    registerVM.registerViaMobile(Session.getDevice_id(RegisterActivity.this));
+
+                    registerVM.getPojoClassMutableLiveData().observe(RegisterActivity.this, new Observer<POJOClass>() {
+                        @Override
+                        public void onChanged(@Nullable POJOClass pojoClass) {
+                            hideProgressBar();
+
+                            Toast.makeText(RegisterActivity.this, ""+pojoClass.msg, Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                }
+
+                //getOtpLayout();
             }
 
             @Override
@@ -81,6 +167,7 @@ public class RegisterActivity extends AppCompatActivity {
         {
             binding.otpLayout.setVisibility(View.GONE);
             binding.registerLayout.setVisibility(View.VISIBLE);
+
 
             ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) binding.cardRegister.getLayoutParams();
             layoutParams.setMargins(36, 250, 36, 0);
@@ -121,6 +208,18 @@ public class RegisterActivity extends AppCompatActivity {
             binding.emailRegister.setVisibility(View.VISIBLE);
             binding.viewEmail.setVisibility(View.VISIBLE);
         }
+    }
+
+    private void showProgressBar()
+    {
+        if (binding.registerProgress.getVisibility() == View.GONE)
+            binding.registerProgress.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBar()
+    {
+        if (binding.registerProgress.getVisibility() == View.VISIBLE)
+            binding.registerProgress.setVisibility(View.GONE);
     }
 
    /*

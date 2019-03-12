@@ -1,16 +1,21 @@
 package com.ninositsolution.inveleapp.home;
 
+import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.telecom.TelecomManager;
+import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -32,12 +37,15 @@ import com.ninositsolution.inveleapp.no_internet_connection.InternetConnectionAc
 import com.ninositsolution.inveleapp.product_detail_page.ProductDetailActivity;
 import com.ninositsolution.inveleapp.search.SearchActivity;
 import com.ninositsolution.inveleapp.utils.NetworkUtil;
+import com.ninositsolution.inveleapp.utils.Session;
 import com.ninositsolution.inveleapp.wishlist.WishlistActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class HomeActivity extends AppCompatActivity implements IHome{
+
+    private static final String TAG = "HomeActivity";
 
     ActivityHomeBinding binding;
 
@@ -85,6 +93,8 @@ public class HomeActivity extends AppCompatActivity implements IHome{
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
         binding.setHome(new HomeVM(getApplicationContext(), this));
+
+        saveDeviceId();
 
         binding.navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
@@ -205,6 +215,16 @@ public class HomeActivity extends AppCompatActivity implements IHome{
 
     }
 
+    private void saveDeviceId() {
+
+        TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+
+        String android_id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+
+        Session.setDevice_id(android_id, getApplicationContext());
+
+        Log.i(TAG, "Device_id -> "+android_id);
+    }
 
 
     private void putStrikeThrough() {
