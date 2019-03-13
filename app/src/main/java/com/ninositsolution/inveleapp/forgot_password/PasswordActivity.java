@@ -18,7 +18,7 @@ public class PasswordActivity extends AppCompatActivity implements IPassword {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_password);
-        binding.setPassword(new PasswordVM(getApplicationContext(), this));
+        //binding.setPassword(new PasswordVM(getApplicationContext(), this));
         binding.executePendingBindings();
 
     }

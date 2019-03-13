@@ -9,6 +9,8 @@ import com.ninositsolution.inveleapp.pojo.Users;
 
 public class LoginVM extends ViewModel {
 
+    private LoginRepo loginRepo;
+
     public ObservableField<String> username = new ObservableField<>();
     public ObservableField<String> password = new ObservableField<>();
 
@@ -28,6 +30,27 @@ public class LoginVM extends ViewModel {
         this.otp_verify.set(pojoClass.otp_verify);
         this.users.set(pojoClass.users);
     }
+
+    public LoginVM()
+    {
+        loginRepo = new LoginRepo();
+    }
+
+    public void loginViaEmail()
+    {
+        LoginRequest loginRequest = new LoginRequest(username.get(), password.get());
+        loginVMMutableLiveData = loginRepo.getLoginVMMutableLiveData(loginRequest);
+    }
+
+   public Integer emailValidations()
+   {
+       return loginRepo.emailValidations(username.get(), password.get());
+   }
+
+  /* public Integer mobileValidations()
+   {
+       //return loginRepo.mobileValidations();
+   }*/
 
     public MutableLiveData<LoginVM> getLoginVMMutableLiveData() {
         return loginVMMutableLiveData;

@@ -3,13 +3,11 @@ package com.ninositsolution.inveleapp.forgot_password;
 import android.content.Context;
 import android.databinding.BaseObservable;
 
-import com.ninositsolution.inveleapp.registration.RegisterModel;
-
 public class PasswordVM extends BaseObservable {
 
     //Declarations
 
-    private RegisterModel registerModel;
+    //private RegisterModel registerModel;
     private Context context;
     private IPassword iPassword;
 
@@ -19,7 +17,7 @@ public class PasswordVM extends BaseObservable {
     public PasswordVM(Context context, IPassword iPassword) {
         this.context = context;
         this.iPassword = iPassword;
-        registerModel = new RegisterModel();
+        //registerModel = new RegisterModel();
     }
 
     //Edit text Listeners
