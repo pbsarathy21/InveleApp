@@ -1,91 +1,35 @@
 package com.ninositsolution.inveleapp.login;
 
-import android.content.Context;
-import android.databinding.BaseObservable;
+import android.arch.lifecycle.MutableLiveData;
+import android.arch.lifecycle.ViewModel;
+import android.databinding.ObservableField;
 
-import com.ninositsolution.inveleapp.registration.RegisterModel;
+import com.ninositsolution.inveleapp.pojo.POJOClass;
+import com.ninositsolution.inveleapp.pojo.Users;
 
-public class LoginVM extends BaseObservable {
+public class LoginVM extends ViewModel {
 
-    //Declarations
+    public ObservableField<String> username = new ObservableField<>();
+    public ObservableField<String> password = new ObservableField<>();
 
-    private RegisterModel registerModel;
-    private Context context;
-    private ILogin iLogin;
+    private MutableLiveData<LoginVM> loginVMMutableLiveData = new MutableLiveData<>();
 
-    //constructors
+    public ObservableField<String> status = new ObservableField<>();
+    public ObservableField<String> msg = new ObservableField<>();
+    public ObservableField<Integer> otp = new ObservableField<>();
+    public ObservableField<Integer> otp_verify = new ObservableField<>();
+    public ObservableField<Users> users = new ObservableField<>();
 
-
-    public LoginVM(Context context, ILogin iLogin) {
-        this.context = context;
-        this.iLogin = iLogin;
-        registerModel = new RegisterModel();
-    }
-
-    //Edit text Listeners
-
-    public void afterEmailChanged(CharSequence sequence)
+    public LoginVM(POJOClass pojoClass)
     {
-
+        this.status.set(pojoClass.status);
+        this.msg.set(pojoClass.msg);
+        this.otp.set(pojoClass.otp);
+        this.otp_verify.set(pojoClass.otp_verify);
+        this.users.set(pojoClass.users);
     }
 
-    public void afterPasswordChanged(CharSequence sequence)
-    {
-
+    public MutableLiveData<LoginVM> getLoginVMMutableLiveData() {
+        return loginVMMutableLiveData;
     }
-
-    public void afterPhoneChanged(CharSequence sequence)
-    {
-
-    }
-
-    public void afterSMSChanged(CharSequence sequence)
-    {
-
-    }
-
-   //OnClick Listeners
-
-    public void onForgotClicked()
-    {
-        iLogin.onForgotClicked();
-    }
-
-    public void onLoginEmailClicked()
-    {
-        iLogin.onLoginEmailClicked();
-    }
-
-    public void onResendCodeClicked()
-    {
-        iLogin.onResendCodeClicked();
-    }
-
-    public void onLoginPhoneClicked()
-    {
-        iLogin.onLoginPhoneClicked();
-    }
-
-    public void onNewUserClicked()
-    {
-        iLogin.onNewUserClicked();
-    }
-
-    public void onLoginWithClicked()
-    {
-        iLogin.onLoginWithClicked();
-    }
-
-    public void onFacebookClicked()
-    {
-        iLogin.onFacebookClicked();
-    }
-
-    public void onGoogleClicked()
-    {
-        iLogin.onGoogleClicked();
-    }
-
-
-
 }

@@ -13,7 +13,7 @@ import com.ninositsolution.inveleapp.forgot_password.PasswordActivity;
 import com.ninositsolution.inveleapp.home.HomeActivity;
 import com.ninositsolution.inveleapp.registration.RegisterActivity;
 
-public class LoginActivity extends AppCompatActivity implements ILogin{
+public class LoginActivity extends AppCompatActivity {
 
     ActivityLoginBinding binding;
 
@@ -21,68 +21,65 @@ public class LoginActivity extends AppCompatActivity implements ILogin{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
-        binding.setLogin(new LoginVM(getApplicationContext(), this));
-        binding.executePendingBindings();
-    }
 
-    @Override
-    public void onForgotClicked() {
 
-        startActivity(new Intent(this, PasswordActivity.class));
-    }
 
-    @Override
-    public void onLoginEmailClicked() {
 
-        startActivity(new Intent(this, CartActivity.class));
 
-    }
 
-    @Override
-    public void onResendCodeClicked() {
+        binding.setILogin(new ILogin() {
+            @Override
+            public void onForgotClicked() {
+                startActivity(new Intent(LoginActivity.this, PasswordActivity.class));
+            }
 
-    }
+            @Override
+            public void onLoginEmailClicked() {
+                startActivity(new Intent(LoginActivity.this, CartActivity.class));
+            }
 
-    @Override
-    public void onLoginPhoneClicked() {
+            @Override
+            public void onResendCodeClicked() {
+                startActivity(new Intent(LoginActivity.this, CartActivity.class));
+            }
 
-        startActivity(new Intent(this, CartActivity.class));
+            @Override
+            public void onLoginPhoneClicked() {
 
-    }
+            }
 
-    @Override
-    public void onNewUserClicked() {
+            @Override
+            public void onNewUserClicked() {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+            }
 
-        startActivity(new Intent(this, RegisterActivity.class));
+            @Override
+            public void onLoginWithClicked() {
+                if (binding.loginWith.getText().toString().equalsIgnoreCase("login with sms"))
+                {
+                    binding.loginEmail.setVisibility(View.GONE);
+                    binding.loginMobile.setVisibility(View.VISIBLE);
+                    binding.loginWith.setText("Login with Email");
+                }
 
-    }
+                else
+                {
+                    binding.loginEmail.setVisibility(View.VISIBLE);
+                    binding.loginMobile.setVisibility(View.GONE);
+                    binding.loginWith.setText("Login with SMS");
+                }
+            }
 
-    @Override
-    public void onLoginWithClicked() {
+            @Override
+            public void onFacebookClicked() {
 
-        if (binding.loginWith.getText().toString().equalsIgnoreCase("login with sms"))
-        {
-            binding.loginEmail.setVisibility(View.GONE);
-            binding.loginMobile.setVisibility(View.VISIBLE);
-            binding.loginWith.setText("Login with Email");
-        }
+            }
 
-        else
-        {
-            binding.loginEmail.setVisibility(View.VISIBLE);
-            binding.loginMobile.setVisibility(View.GONE);
-            binding.loginWith.setText("Login with SMS");
-        }
+            @Override
+            public void onGoogleClicked() {
 
-    }
-
-    @Override
-    public void onFacebookClicked() {
-
-    }
-
-    @Override
-    public void onGoogleClicked() {
+            }
+        });
 
     }
 }

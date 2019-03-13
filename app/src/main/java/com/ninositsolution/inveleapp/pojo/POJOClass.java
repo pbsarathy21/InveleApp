@@ -6,6 +6,8 @@ public class POJOClass {
     public String msg;
     public Integer otp;
 
+    public Integer otp_verify;
+
     public Users users;
 
 }

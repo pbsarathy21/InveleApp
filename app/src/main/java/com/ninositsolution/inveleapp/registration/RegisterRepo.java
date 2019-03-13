@@ -19,9 +19,11 @@ public class RegisterRepo {
 
     private static final String TAG = "RegisterRepo";
 
-    private MutableLiveData<POJOClass> pojoClassMutableLiveData = new MutableLiveData<>();
+   // private MutableLiveData<POJOClass> pojoClassMutableLiveData = new MutableLiveData<>();
 
-    public MutableLiveData<POJOClass> getRegisterVMMutableLiveData(RegistartionRequest registartionRequest) {
+    private MutableLiveData<RegisterVM> registerVMMutableLiveData = new MutableLiveData<>();
+
+    public MutableLiveData<RegisterVM> getRegisterVMMutableLiveData(RegistartionRequest registartionRequest) {
 
         ApiService apiService = RetrofitClient.getApiService();
 
@@ -39,7 +41,11 @@ public class RegisterRepo {
 
                 Log.i(TAG, "onNext - > "+pojoClass.msg);
 
-                pojoClassMutableLiveData.setValue(pojoClass);
+                //pojoClassMutableLiveData.setValue(pojoClass);
+
+                RegisterVM registerVM = new RegisterVM(pojoClass);
+
+                registerVMMutableLiveData.setValue(registerVM);
             }
 
             @Override
@@ -56,7 +62,7 @@ public class RegisterRepo {
         });
 
 
-        return pojoClassMutableLiveData;
+        return registerVMMutableLiveData;
     }
 
 

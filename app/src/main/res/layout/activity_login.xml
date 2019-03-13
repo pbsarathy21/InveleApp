@@ -4,6 +4,10 @@
 
     <data>
         <variable
+            name="iLogin"
+            type="com.ninositsolution.inveleapp.login.ILogin"/>
+
+        <variable
             name="login"
             type="com.ninositsolution.inveleapp.login.LoginVM"/>
     </data>
@@ -66,7 +70,7 @@
                     android:textSize="16sp"
                     android:fontFamily="@font/roboto_regular"
                     android:inputType="text"
-                    android:afterTextChanged="@{(editable)->login.afterEmailChanged(editable)}"
+                    android:text="@={login.username}"
                     android:hint="@string/email_enter"
                     tools:ignore="Autofill" />
 
@@ -87,7 +91,7 @@
                     android:fontFamily="@font/roboto_regular"
                     android:inputType="textPassword"
                     android:textSize="16sp"
-                    android:afterTextChanged="@{(editable)->login.afterPasswordChanged(editable)}"
+                    android:text="@={login.password}"
                     android:hint="@string/password"
                     tools:ignore="Autofill" />
 
@@ -103,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/forgot"
                 android:fontFamily="@font/roboto_regular"
-                android:onClick="@{()->login.onForgotClicked()}"
+                android:onClick="@{()->iLogin.onForgotClicked()}"
                 android:layout_gravity="end"
                 android:textColor="@color/colorPrimary"/>
 
@@ -116,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/login"
                 android:fontFamily="@font/roboto_regular"
-                android:onClick="@{()->login.onLoginEmailClicked()}"
+                android:onClick="@{()->iLogin.onLoginEmailClicked()}"
                 android:textColor="@android:color/white"
                 android:backgroundTint="@color/colorPrimary"
                 android:layout_gravity="center"/>
@@ -187,7 +191,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/resend_code"
                 android:fontFamily="@font/roboto_regular"
-                android:onClick="@{()->login.onResendCodeClicked()}"
+                android:onClick="@{()->iLogin.onResendCodeClicked()}"
                 android:layout_gravity="end"
                 android:textColor="@color/colorPrimary"/>
 
@@ -200,7 +204,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/login"
                 android:fontFamily="@font/roboto_regular"
-                android:onClick="@{()->login.onLoginPhoneClicked()}"
+                android:onClick="@{()->iLogin.onLoginPhoneClicked()}"
                 android:textColor="@android:color/white"
                 android:backgroundTint="@color/colorPrimary"
                 android:layout_gravity="center"/>
@@ -218,7 +222,7 @@
             android:layout_height="wrap_content"
             android:text="@string/new_user"
             android:fontFamily="@font/roboto_regular"
-            android:onClick="@{()->login.onNewUserClicked()}"
+            android:onClick="@{()->iLogin.onNewUserClicked()}"
             android:layout_centerHorizontal="true"
             android:textColor="@color/colorPrimary"/>
 
@@ -271,7 +275,7 @@
                 android:layout_marginRight="16dp"
                 android:text="@string/login_sms"
                 android:fontFamily="@font/roboto_regular"
-                android:onClick="@{()->login.onLoginWithClicked()}"
+                android:onClick="@{()->iLogin.onLoginWithClicked()}"
                 android:textColor="#7f7f7f"
                 android:backgroundTint="@android:color/white"
                 android:layout_gravity="center"/>
@@ -291,7 +295,7 @@
                     android:layout_width="120dp"
                     android:layout_height="36dp"
                     android:layout_alignParentStart="true"
-                    android:onClick="@{()->login.onFacebookClicked()}"
+                    android:onClick="@{()->iLogin.onFacebookClicked()}"
                     android:fontFamily="@font/roboto_regular"
                     android:background="#4867aa"
                     android:layout_marginStart="8dp"
@@ -305,7 +309,7 @@
                     android:layout_width="120dp"
                     android:layout_height="36dp"
                     android:background="#f2f3f4"
-                    android:onClick="@{()->login.onGoogleClicked()}"
+                    android:onClick="@{()->iLogin.onGoogleClicked()}"
                     android:fontFamily="@font/roboto_regular"
                     android:paddingStart="12dp"
                     android:paddingEnd="0dp"

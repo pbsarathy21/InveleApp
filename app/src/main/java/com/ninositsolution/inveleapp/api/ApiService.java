@@ -12,6 +12,8 @@ public interface ApiService {
     @POST("users/mobile_register")
     Observable<POJOClass> registerApi(@Body RegistartionRequest registartionRequest);
 
+
+
   /*  @FormUrlEncoded
     @POST("Users/mobile_register")
     Observable<RegistrationPOJO> registerApi(

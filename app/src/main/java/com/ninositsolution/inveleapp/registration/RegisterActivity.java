@@ -81,16 +81,17 @@ public class RegisterActivity extends AppCompatActivity {
                 } else if (status == Constants.SUCCESS)
                 {
                     showProgressBar();
+
                     registerVM.registerViaEmail(Session.getDevice_id(RegisterActivity.this));
 
-                    registerVM.getPojoClassMutableLiveData().observe(RegisterActivity.this, new Observer<POJOClass>() {
-                        @Override
-                        public void onChanged(@Nullable POJOClass pojoClass) {
-                            hideProgressBar();
+                   registerVM.getRegisterVMMutableLiveData().observe(RegisterActivity.this, new Observer<RegisterVM>() {
+                       @Override
+                       public void onChanged(@Nullable RegisterVM registerVM) {
+                           hideProgressBar();
 
-                            Toast.makeText(RegisterActivity.this, ""+pojoClass.msg, Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                           Toast.makeText(RegisterActivity.this, ""+registerVM.msg.get(), Toast.LENGTH_SHORT).show();
+                       }
+                   });
 
                 } else
                 {
@@ -124,12 +125,12 @@ public class RegisterActivity extends AppCompatActivity {
                     showProgressBar();
                     registerVM.registerViaMobile(Session.getDevice_id(RegisterActivity.this));
 
-                    registerVM.getPojoClassMutableLiveData().observe(RegisterActivity.this, new Observer<POJOClass>() {
+                    registerVM.getRegisterVMMutableLiveData().observe(RegisterActivity.this, new Observer<RegisterVM>() {
                         @Override
-                        public void onChanged(@Nullable POJOClass pojoClass) {
+                        public void onChanged(@Nullable RegisterVM registerVM) {
                             hideProgressBar();
 
-                            Toast.makeText(RegisterActivity.this, ""+pojoClass.msg, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, ""+registerVM.msg.get(), Toast.LENGTH_SHORT).show();
                         }
                     });
 
