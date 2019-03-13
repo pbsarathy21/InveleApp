@@ -1,9 +1,11 @@
 package com.ninositsolution.inveleapp.forgot_password;
 
+import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
@@ -26,8 +28,6 @@ public class PasswordActivity extends AppCompatActivity{
         binding.setPassword(passwordVM);
         binding.setLifecycleOwner(this);
 
-
-
         binding.setIPassword(new IPassword() {
             @Override
             public void onResetClicked() {
@@ -40,9 +40,27 @@ public class PasswordActivity extends AppCompatActivity{
                     binding.forgotPasswordEmail.requestFocus();
                 }
 
-                else
+                else if (status == Constants.SUCCESS)
                 {
+                    showProgressBar();
+                    passwordVM.forgotPasswordApi();
 
+                    passwordVM.getPasswordVMMutableLiveData().observe(PasswordActivity.this, new Observer<PasswordVM>() {
+                        @Override
+                        public void onChanged(@Nullable PasswordVM passwordVM) {
+
+                            if (!passwordVM.status.get().isEmpty())
+                            {
+                                hideProgressBar();
+                                Toast.makeText(PasswordActivity.this, ""+passwordVM.status.get(), Toast.LENGTH_SHORT).show();
+                                passwordVM.status.set("");
+                            }
+                        }
+                    });
+
+                } else
+                {
+                    Toast.makeText(PasswordActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -66,6 +84,18 @@ public class PasswordActivity extends AppCompatActivity{
         });
 
 
+    }
+
+    private void showProgressBar()
+    {
+        if (binding.forgotProgress.getVisibility() == View.GONE)
+            binding.forgotProgress.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBar()
+    {
+        if (binding.forgotProgress.getVisibility() == View.VISIBLE)
+            binding.forgotProgress.setVisibility(View.GONE);
     }
 
 

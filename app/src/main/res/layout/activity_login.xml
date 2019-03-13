@@ -39,14 +39,14 @@
                         android:src="@drawable/ic_arrow_back_24dp"/>-->
 
                     <Space
-                        android:layout_width="36dp"
+                        android:layout_width="@dimen/_28sdp"
                         android:layout_height="match_parent" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/login"
-                        android:textSize="22sp"
+                        android:textSize="@dimen/toolBarFont"
                         />
 
 
@@ -67,7 +67,6 @@
             <LinearLayout
                 android:id="@+id/login_email"
                 android:layout_margin="24dp"
-                android:layout_marginTop="24dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="visible"
@@ -233,7 +232,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/new_user"
-                android:fontFamily="@font/roboto_regular"
                 android:onClick="@{()->iLogin.onNewUserClicked()}"
                 android:layout_centerHorizontal="true"
                 android:textColor="@color/colorPrimary"/>

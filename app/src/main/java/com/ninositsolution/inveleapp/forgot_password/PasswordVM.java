@@ -44,6 +44,11 @@ public class PasswordVM extends ViewModel{
         return passwordRepo.forgotEmailValidation(email.get());
     }
 
+    public void forgotPasswordApi()
+    {
+        passwordVMMutableLiveData =  passwordRepo.getPasswordVMMutableLiveData(email.get());
+    }
+
 
 
     public MutableLiveData<PasswordVM> getPasswordVMMutableLiveData() {

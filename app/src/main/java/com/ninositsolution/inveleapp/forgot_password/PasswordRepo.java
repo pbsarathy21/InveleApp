@@ -21,6 +21,44 @@ public class PasswordRepo {
     private MutableLiveData<PasswordVM> passwordVMMutableLiveData = new MutableLiveData<>();
 
 
+    public MutableLiveData<PasswordVM> getPasswordVMMutableLiveData(String email) {
+
+
+        ApiService apiService = RetrofitClient.getApiService();
+
+        apiService.forgotPasswordApi(email).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<POJOClass>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(POJOClass pojoClass) {
+
+                        Log.i(TAG, "onNext : "+pojoClass.status);
+
+                        PasswordVM passwordVM = new PasswordVM(pojoClass);
+
+                        passwordVMMutableLiveData.setValue(passwordVM);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.i(TAG, "onError : "+e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+        return passwordVMMutableLiveData;
+    }
+
     public int forgotEmailValidation(String forgotemail) {
         if (forgotemail.isEmpty())
         {
