@@ -15,6 +15,7 @@ public class HomeThreeImageViewPagerAdapter extends PagerAdapter {
     private Context context;
     private LayoutInflater layoutInflater;
 
+
     public HomeThreeImageViewPagerAdapter(Context context) {
         this.context = context;
     }

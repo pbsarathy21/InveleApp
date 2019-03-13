@@ -15,6 +15,10 @@ public interface ApiService {
     @POST("users/mobile_register")
     Observable<POJOClass> registerApi(@Body RegistartionRequest registartionRequest);
 
+    @FormUrlEncoded
+    @POST("users/forgot_password")
+    Observable<POJOClass> forgotPasswordApi (@Field("forgot_name")String forgotname);
+
     @POST("users/login")
     Observable<POJOClass> loginApi(@Body LoginRequest loginRequest);
 

@@ -11,6 +11,7 @@ public class Users {
     public String dob;
     public String image;
     public String device_id;
+    public String fcm_id;
     public String userid;
     public String login_type;
     public String device_type;
