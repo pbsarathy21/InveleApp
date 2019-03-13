@@ -30,7 +30,6 @@ public class AddAddressActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_add_address);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_add_address);
-       // binding.setAddAddress(new AddAddressVM(getApplicationContext(), this));
 
         addAddressVM = ViewModelProviders.of(this).get(AddAddressVM.class);
 

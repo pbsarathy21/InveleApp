@@ -44,6 +44,9 @@ public class AddAddressVM extends ViewModel {
 
     }
 
+    public AddAddressVM() {
+
+    }
 
     public int postalCodeValidation(){
         return addAddressRepo.postalCodeValidation(postal_code.get());
@@ -54,6 +57,8 @@ public class AddAddressVM extends ViewModel {
     {
         return addAddressRepo.addressValidation(Name.get(), contact_number.get(), postal_code.get(),floor_unit_numer.get(),address.get(),city.get(),address_type.get());
     }
+
+
 
 
 

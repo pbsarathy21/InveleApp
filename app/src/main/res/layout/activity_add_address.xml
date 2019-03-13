@@ -20,6 +20,7 @@
 
 
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:background="@color/invelebg"
             android:layout_height="wrap_content">
@@ -345,15 +346,17 @@
 
             </LinearLayout>
 
+            <ProgressBar
+                android:id="@+id/register_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+
 
         </LinearLayout>
 
-        <ProgressBar
-            android:id="@+id/register_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_gravity="center"/>
+
 
 
 
