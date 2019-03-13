@@ -358,11 +358,13 @@
     <string name="float_contact">Contact Number</string>
     <string name="float_postal">Postal Code</string>
     <string name="float_address">Address</string>
+    <string name="float_city">City</string>
     <string name="float_floor">Floor/Unit Number</string>
     <string name="textView_shipping">shipping Address </string>
     <string name="textView_billing">Billing Address</string>
     <string name="review_item_name">OnePlus 6</string>
     <string name="button_save">Save</string>
+    <string name="locate">Locate</string>
     <string name="button_update">Update</string>
     <string name="product_name">Oneplus 6t Mclaren edition</string>
     <string name="price_textView">Price:</string>

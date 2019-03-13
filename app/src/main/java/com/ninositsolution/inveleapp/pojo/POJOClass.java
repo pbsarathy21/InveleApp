@@ -1,13 +1,14 @@
 package com.ninositsolution.inveleapp.pojo;
 
+import java.util.List;
+
 public class POJOClass {
 
     public String status;
     public String msg;
     public Integer otp;
-
     public Integer otp_verify;
-
     public Users users;
+    public List<AddressList>address_list;
 
 }

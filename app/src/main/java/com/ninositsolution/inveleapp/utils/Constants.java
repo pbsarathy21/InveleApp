@@ -12,5 +12,13 @@ public class Constants {
     public static final Integer NO_EMAIL_PATTERN = 6;
     public static final Integer OTP_EMPTY = 7;
 
+    public static final Integer NAME_EMPTY = 7;
+    public static final Integer CONTACT_NUMBER_EMPTY = 8;
+    public static final Integer POSTAL_CODE =9;
+    public static final Integer ADDRESS = 10;
+    public static final Integer ADDRESS1 = 11;
+    public static final Integer CITY = 12;
+    public static final Integer ADDRESS_TYPE = 13;
+
 }
 

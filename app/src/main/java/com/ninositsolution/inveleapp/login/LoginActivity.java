@@ -16,6 +16,7 @@ import com.ninositsolution.inveleapp.databinding.ActivityLoginBinding;
 import com.ninositsolution.inveleapp.forgot_password.PasswordActivity;
 import com.ninositsolution.inveleapp.registration.RegisterActivity;
 import com.ninositsolution.inveleapp.utils.Constants;
+import com.ninositsolution.inveleapp.utils.Session;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -71,6 +72,8 @@ public class LoginActivity extends AppCompatActivity {
                             hideProgressBar();
 
                             Toast.makeText(LoginActivity.this, ""+loginVM.msg.get(), Toast.LENGTH_SHORT).show();
+
+                            Session.setUserId(String.valueOf(loginVM.users.get().id),LoginActivity.this);
                         }
                     });
 
