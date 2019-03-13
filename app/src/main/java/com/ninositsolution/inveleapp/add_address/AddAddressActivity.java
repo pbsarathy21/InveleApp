@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.ninositsolution.inveleapp.R;
 import com.ninositsolution.inveleapp.databinding.ActivityAddAddressBinding;
+import com.ninositsolution.inveleapp.registration.RegisterVM;
 import com.ninositsolution.inveleapp.utils.Constants;
 import com.ninositsolution.inveleapp.utils.Session;
 
@@ -64,9 +65,15 @@ public class AddAddressActivity extends AppCompatActivity {
                         public void onChanged(@Nullable AddAddressVM addAddressVM) {
                             hideProgressBar();
 
-                            Toast.makeText(AddAddressActivity.this, ""+addAddressVM.msg.get(), Toast.LENGTH_SHORT).show();
-                            addAddressVM.floor_unit_numer.set("");
-                            addAddressVM.address.set("");
+                            if(addAddressVM.msg.get().equalsIgnoreCase("success")) {
+
+                                Toast.makeText(AddAddressActivity.this, "" + addAddressVM.msg.get(), Toast.LENGTH_SHORT).show();
+                                addAddressVM.floor_unit_numer.set(addAddressVM.address_list.get().ADDRESS);
+                                addAddressVM.address.set(addAddressVM.address_list.get().ADDRESS);
+                                addAddressVM.city_name.set(String.valueOf(addAddressVM.city));
+                            }else if(addAddressVM.msg.get().equalsIgnoreCase("error")){
+                                Toast.makeText(AddAddressActivity.this, "" + addAddressVM.msg.get(), Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
 

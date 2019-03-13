@@ -23,7 +23,7 @@ public class AddAddressVM extends ViewModel {
     public ObservableField<String>postal_code = new ObservableField<>("");
     public ObservableField<String>floor_unit_numer = new ObservableField<>("");
     public ObservableField<String>address = new ObservableField<>("");
-    public ObservableField<String>city = new ObservableField<>("");
+    public ObservableField<String>city_name = new ObservableField<>("");
     public ObservableField<String>address_type = new ObservableField<>();
     public ObservableField<String>is_billing = new ObservableField<>();
     public ObservableField<String>is_shipping = new ObservableField<>();
@@ -34,17 +34,20 @@ public class AddAddressVM extends ViewModel {
     //pojo fields
     public ObservableField<String> status = new ObservableField<>();
     public ObservableField<String> msg = new ObservableField<>();
+    public ObservableField<String>city = new ObservableField<>();
     public ObservableField<AddressList>address_list = new ObservableField<>();
 
     public AddAddressVM(POJOClass pojoClass)
     {
         this.status.set(pojoClass.status);
         this.msg.set(pojoClass.msg);
+        this.city.set(pojoClass.city);
         this.address_list.set((AddressList) pojoClass.address_list);
 
     }
 
     public AddAddressVM() {
+        addAddressRepo = new AddAddressRepo();
 
     }
 
@@ -55,7 +58,7 @@ public class AddAddressVM extends ViewModel {
 
     public int addressValidation()
     {
-        return addAddressRepo.addressValidation(Name.get(), contact_number.get(), postal_code.get(),floor_unit_numer.get(),address.get(),city.get(),address_type.get());
+        return addAddressRepo.addressValidation(Name.get(), contact_number.get(), postal_code.get(),floor_unit_numer.get(),address.get(),city_name.get(),address_type.get());
     }
 
 
@@ -65,7 +68,7 @@ public class AddAddressVM extends ViewModel {
     public void saveAddress(String user_id)
     {
         AddAddressRequest addAddressRequest = new AddAddressRequest(user_id, address_type.get(),Name.get(),
-               postal_code.get(), floor_unit_numer.get(), address.get(), city.get(), contact_number.get(),is_billing.get(),is_shipping.get());
+               postal_code.get(), floor_unit_numer.get(), address.get(), city_name.get(), contact_number.get(),is_billing.get(),is_shipping.get());
 
         addAddressRepo = new AddAddressRepo();
 
