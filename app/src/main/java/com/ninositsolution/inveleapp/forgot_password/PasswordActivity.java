@@ -7,6 +7,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -14,9 +15,11 @@ import com.ninositsolution.inveleapp.login.LoginActivity;
 import com.ninositsolution.inveleapp.R;
 import com.ninositsolution.inveleapp.databinding.ActivityPasswordBinding;
 import com.ninositsolution.inveleapp.utils.Constants;
+import com.ninositsolution.inveleapp.utils.Session;
 
 public class PasswordActivity extends AppCompatActivity{
 
+    private static final String TAG = "PasswordActivity";
     ActivityPasswordBinding binding;
     PasswordVM passwordVM;
 
@@ -63,12 +66,45 @@ public class PasswordActivity extends AppCompatActivity{
                     Toast.makeText(PasswordActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                 }
 
-
-
             }
 
             @Override
             public void onSubmitClicked() {
+
+                int status = passwordVM.resetPasswordValidation();
+                if (status == Constants.PASSWORD_EMPTY)
+                {
+                    binding.resetPassword.setError("required");
+                    binding.resetPassword.requestFocus();
+
+                }else if (status == Constants.CONFIRM_PASSWORD_EMPTY)
+                {
+                    binding.confirmResetPassword.setError("required");
+                    binding.confirmResetPassword.requestFocus();
+                }
+
+                else if (status == Constants.SUCCESS)
+                {
+                    showProgressBar();
+                    passwordVM.resetPasswordApi(Integer.parseInt(Session.getUserId(PasswordActivity.this)));
+                    passwordVM.getResetPasswordMutableLiveData().observe(PasswordActivity.this, new Observer<PasswordVM>() {
+                        @Override
+                        public void onChanged(@Nullable PasswordVM passwordVM) {
+                            if (!passwordVM.status.get().isEmpty())
+                            {
+                                hideProgressBar();
+                                Toast.makeText(PasswordActivity.this, ""+passwordVM.status.get(), Toast.LENGTH_SHORT).show();
+                                Log.i(TAG, "message : "+passwordVM.msg.get());
+                                passwordVM.status.set("");
+                            }
+
+                        }
+                    });
+                }
+                else{
+                    Toast.makeText(PasswordActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+
+                }
 
             }
 

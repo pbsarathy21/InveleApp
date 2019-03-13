@@ -1,13 +1,11 @@
 package com.ninositsolution.inveleapp.forgot_password;
 import android.arch.lifecycle.MutableLiveData;
 import android.util.Log;
-import android.util.Patterns;
-
 import com.ninositsolution.inveleapp.api.ApiService;
 import com.ninositsolution.inveleapp.api.RetrofitClient;
+import com.ninositsolution.inveleapp.forgot_password.pojo.ResetPasswordRequest;
 import com.ninositsolution.inveleapp.pojo.POJOClass;
-import com.ninositsolution.inveleapp.registration.RegisterVM;
-import com.ninositsolution.inveleapp.registration.pojo.RegistartionRequest;
+
 import com.ninositsolution.inveleapp.utils.Constants;
 
 import io.reactivex.Observer;
@@ -19,6 +17,8 @@ public class PasswordRepo {
 
     private static final String TAG = "PasswordRepo";
     private MutableLiveData<PasswordVM> passwordVMMutableLiveData = new MutableLiveData<>();
+
+    private MutableLiveData<PasswordVM> resetPasswordMutableLiveData = new MutableLiveData<>();
 
 
     public MutableLiveData<PasswordVM> getPasswordVMMutableLiveData(String email) {
@@ -59,6 +59,42 @@ public class PasswordRepo {
         return passwordVMMutableLiveData;
     }
 
+    public MutableLiveData<PasswordVM> getResetPasswordMutableLiveData(ResetPasswordRequest resetPasswordRequest) {
+
+        ApiService apiService = RetrofitClient.getApiService();
+        apiService.resetPasswordApi(resetPasswordRequest).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<POJOClass>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(POJOClass pojoClass) {
+                        Log.i(TAG, "onNext : "+pojoClass.status);
+
+                        PasswordVM passwordVM = new PasswordVM(pojoClass);
+                        resetPasswordMutableLiveData.setValue(passwordVM);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.i(TAG, "onError : "+e.getMessage());
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+
+
+        return resetPasswordMutableLiveData;
+    }
+
     public int forgotEmailValidation(String forgotemail) {
         if (forgotemail.isEmpty())
         {
@@ -68,5 +104,23 @@ public class PasswordRepo {
 
             return Constants.SUCCESS;
         }
+    }
+
+
+    public int resetValidation(String password, String confirmPassword){
+
+        if (password.isEmpty())
+        {
+            return Constants.PASSWORD_EMPTY;
+        }
+
+
+        if (confirmPassword.isEmpty())
+            {
+            return Constants.CONFIRM_PASSWORD_EMPTY;
+        }
+
+        return Constants.SUCCESS;
+
     }
 }

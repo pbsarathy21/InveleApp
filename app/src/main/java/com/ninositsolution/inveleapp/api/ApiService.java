@@ -1,5 +1,6 @@
 package com.ninositsolution.inveleapp.api;
 
+import com.ninositsolution.inveleapp.forgot_password.pojo.ResetPasswordRequest;
 import com.ninositsolution.inveleapp.login.LoginRequest;
 import com.ninositsolution.inveleapp.add_address.pojo.AddAddressRequest;
 import com.ninositsolution.inveleapp.pojo.POJOClass;
@@ -26,6 +27,11 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("users/forgot_password")
     Observable<POJOClass> forgotPasswordApi (@Field("forgot_name")String forgotName);
+
+    @POST("users/reset_password")
+    Observable<POJOClass> resetPasswordApi (@Body ResetPasswordRequest resetPasswordRequest);
+
+
 
     @POST("users/login")
     Observable<POJOClass> loginApi(@Body LoginRequest loginRequest);

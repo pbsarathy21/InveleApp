@@ -7,6 +7,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ import com.ninositsolution.inveleapp.utils.Session;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private static final String TAG = "LoginActivity";
     ActivityLoginBinding binding;
     LoginVM loginVM;
 
@@ -73,7 +75,8 @@ public class LoginActivity extends AppCompatActivity {
 
                             Toast.makeText(LoginActivity.this, ""+loginVM.msg.get(), Toast.LENGTH_SHORT).show();
 
-                            Session.setUserId(String.valueOf(loginVM.users.get().id),LoginActivity.this);
+                            Session.setUserId(String.valueOf(loginVM.user.get().id),LoginActivity.this);
+                            Log.i(TAG, "User_id : "+loginVM.user.get().id);
                         }
                     });
 
