@@ -64,171 +64,178 @@
             android:layout_height="match_parent"
             android:padding="@dimen/_8sdp">
 
-            <LinearLayout
-                android:id="@+id/login_email"
-                android:layout_margin="24dp"
+            <RelativeLayout
+                android:id="@+id/login_container"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="visible"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:id="@+id/login_username"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="16sp"
-                        android:fontFamily="@font/roboto_regular"
-                        android:inputType="text"
-                        android:text="@={login.username}"
-                        android:hint="@string/email_enter"
-                        tools:ignore="Autofill" />
-
-
-                </android.support.design.widget.TextInputLayout>
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="12dp" />
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:id="@+id/login_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_regular"
-                        android:inputType="textPassword"
-                        android:textSize="16sp"
-                        android:text="@={login.password}"
-                        android:hint="@string/password"
-                        tools:ignore="Autofill" />
-
-
-                </android.support.design.widget.TextInputLayout>
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="4dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/forgot"
-                    android:fontFamily="@font/roboto_regular"
-                    android:onClick="@{()->iLogin.onForgotClicked()}"
-                    android:layout_gravity="end"
-                    android:textColor="@color/colorPrimary"/>
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="24dp" />
-
-                <Button
+                <LinearLayout
+                    android:id="@+id/login_email"
+                    android:layout_margin="24dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/login"
-                    android:fontFamily="@font/roboto_regular"
-                    android:onClick="@{()->iLogin.onLoginEmailClicked()}"
-                    android:textColor="@android:color/white"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:layout_gravity="center"/>
+                    android:visibility="visible"
+                    android:orientation="vertical">
 
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="24dp" />
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-            </LinearLayout>
+                        <EditText
+                            android:id="@+id/login_username"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:inputType="text"
+                            android:text="@={login.username}"
+                            android:hint="@string/email_enter"
+                            tools:ignore="Autofill" />
 
-            <LinearLayout
-                android:id="@+id/login_mobile"
-                android:layout_margin="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:orientation="vertical">
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    </android.support.design.widget.TextInputLayout>
 
-                    <EditText
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="12dp" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/login_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:inputType="textPassword"
+                            android:textSize="16sp"
+                            android:text="@={login.password}"
+                            android:hint="@string/password"
+                            tools:ignore="Autofill" />
+
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/forgot"
+                        android:fontFamily="@font/roboto_regular"
+                        android:onClick="@{()->iLogin.onForgotClicked()}"
+                        android:layout_gravity="end"
+                        android:textColor="@color/colorPrimary"/>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp" />
+
+                    <Button
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="16sp"
+                        android:text="@string/login"
                         android:fontFamily="@font/roboto_regular"
-                        android:inputType="text"
-                        android:hint="@string/phone_no"
-                        tools:ignore="Autofill" />
+                        android:onClick="@{()->iLogin.onLoginEmailClicked()}"
+                        android:textColor="@android:color/white"
+                        android:background="@color/colorPrimary"
+                        android:layout_gravity="center"/>
 
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp" />
 
-                </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
 
-
-
-                <Space
+                <LinearLayout
+                    android:id="@+id/login_mobile"
+                    android:layout_margin="24dp"
+                    android:layout_marginTop="24dp"
                     android:layout_width="match_parent"
-                    android:layout_height="12dp" />
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-                    <EditText
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:inputType="text"
+                            android:hint="@string/phone_no"
+                            tools:ignore="Autofill" />
+
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="12dp" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:inputType="textPassword"
+                            android:textSize="16sp"
+                            android:hint="@string/sms_code"
+                            tools:ignore="Autofill" />
+
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/resend_code"
+                        android:fontFamily="@font/roboto_regular"
+                        android:onClick="@{()->iLogin.onResendCodeClicked()}"
+                        android:layout_gravity="end"
+                        android:textColor="@color/colorPrimary"/>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp" />
+
+                    <Button
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="@string/login"
                         android:fontFamily="@font/roboto_regular"
-                        android:inputType="textPassword"
-                        android:textSize="16sp"
-                        android:hint="@string/sms_code"
-                        tools:ignore="Autofill" />
+                        android:onClick="@{()->iLogin.onLoginPhoneClicked()}"
+                        android:textColor="@android:color/white"
+                        android:background="@color/colorPrimary"
+                        android:layout_gravity="center"/>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp" />
 
 
-                </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
 
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="4dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/resend_code"
-                    android:fontFamily="@font/roboto_regular"
-                    android:onClick="@{()->iLogin.onResendCodeClicked()}"
-                    android:layout_gravity="end"
-                    android:textColor="@color/colorPrimary"/>
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="24dp" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/login"
-                    android:fontFamily="@font/roboto_regular"
-                    android:onClick="@{()->iLogin.onLoginPhoneClicked()}"
-                    android:textColor="@android:color/white"
-                    android:background="@color/colorPrimary"
-                    android:layout_gravity="center"/>
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="24dp" />
-
-
-            </LinearLayout>
+            </RelativeLayout>
 
             <TextView
-                android:layout_below="@+id/login_email"
+                android:layout_below="@+id/login_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/new_user"
