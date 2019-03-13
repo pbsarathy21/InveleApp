@@ -65,11 +65,6 @@ public class PasswordActivity extends AppCompatActivity{
 
 
 
-
-
-
-
-
             }
 
             @Override

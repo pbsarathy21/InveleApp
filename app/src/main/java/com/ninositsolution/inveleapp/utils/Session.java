@@ -17,6 +17,7 @@ public class Session {
     private SharedPreferences.Editor editor;
 
     private static final String device_id = "device_id";
+    private static final String user_id = "user_id";
 
     public Session(Context context)
     {
@@ -38,5 +39,15 @@ public class Session {
 
     public static void setDevice_id(String values, Context context) {
         context.getSharedPreferences("Session", Context.MODE_PRIVATE).edit().putString(device_id, values).apply();
+    }
+
+    public static String getUserId(Context context)
+    {
+        return context.getSharedPreferences("Session", Context.MODE_PRIVATE).getString(user_id, null);
+    }
+
+    public static void setUserId(String value, Context context)
+    {
+        context.getSharedPreferences("Session", Context.MODE_PRIVATE).edit().putString(user_id, value).apply();
     }
 }
