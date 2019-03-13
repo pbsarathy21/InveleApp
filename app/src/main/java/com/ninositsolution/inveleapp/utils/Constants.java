@@ -11,6 +11,7 @@ public class Constants {
     public static final Integer MOBILE_NAME_EMPTY = 5;
     public static final Integer NO_EMAIL_PATTERN = 6;
     public static final Integer OTP_EMPTY = 7;
+    public static final Integer CONFIRM_PASSWORD_EMPTY = 8;
 
     public static final Integer NAME_EMPTY = 7;
     public static final Integer CONTACT_NUMBER_EMPTY = 8;

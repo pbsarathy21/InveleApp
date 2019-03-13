@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModel;
 import android.databinding.ObservableField;
 import android.view.View;
 
+import com.ninositsolution.inveleapp.forgot_password.pojo.ResetPasswordRequest;
 import com.ninositsolution.inveleapp.login.LoginVM;
 import com.ninositsolution.inveleapp.pojo.POJOClass;
 import com.ninositsolution.inveleapp.pojo.Users;
@@ -12,8 +13,15 @@ public class PasswordVM extends ViewModel{
     private PasswordRepo passwordRepo;
 
     public ObservableField<String> email = new ObservableField<>();
+    public ObservableField<String> newPassword = new ObservableField<>();
+    public ObservableField<String> confirmPassword = new ObservableField<>();
+
+
+
 
     private MutableLiveData<PasswordVM> passwordVMMutableLiveData = new MutableLiveData<>();
+
+    private MutableLiveData<PasswordVM> resetPasswordMutableLiveData = new MutableLiveData<>();
 
     public ObservableField<String> status = new ObservableField<>();
     public ObservableField<String> msg = new ObservableField<>();
@@ -44,9 +52,24 @@ public class PasswordVM extends ViewModel{
         return passwordRepo.forgotEmailValidation(email.get());
     }
 
+
+
+    public int resetPasswordValidation(){
+
+        return passwordRepo.resetValidation(newPassword.get(),confirmPassword.get());
+    }
+
     public void forgotPasswordApi()
     {
         passwordVMMutableLiveData =  passwordRepo.getPasswordVMMutableLiveData(email.get());
+    }
+
+
+    public void resetPasswordApi(Integer user_id){
+
+
+        ResetPasswordRequest resetPasswordRequest = new ResetPasswordRequest(user_id, newPassword.get(), confirmPassword.get());
+        resetPasswordMutableLiveData = passwordRepo.getResetPasswordMutableLiveData(resetPasswordRequest);
     }
 
 
@@ -55,6 +78,9 @@ public class PasswordVM extends ViewModel{
         return passwordVMMutableLiveData;
     }
 
+    public MutableLiveData<PasswordVM> getResetPasswordMutableLiveData() {
+        return resetPasswordMutableLiveData;
+    }
 }
 
 
