@@ -4,6 +4,7 @@ import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.content.Context;
 import android.databinding.ObservableField;
+import android.util.Log;
 
 import com.ninositsolution.inveleapp.add_address.pojo.AddAddressRequest;
 import com.ninositsolution.inveleapp.pojo.AddressList;
@@ -11,6 +12,8 @@ import com.ninositsolution.inveleapp.pojo.POJOClass;
 import com.ninositsolution.inveleapp.registration.RegisterRepo;
 import com.ninositsolution.inveleapp.registration.RegisterVM;
 import com.ninositsolution.inveleapp.registration.pojo.RegistartionRequest;
+
+import java.util.List;
 
 public class AddAddressVM extends ViewModel {
     private AddAddressRepo addAddressRepo;
@@ -35,14 +38,14 @@ public class AddAddressVM extends ViewModel {
     public ObservableField<String> status = new ObservableField<>();
     public ObservableField<String> msg = new ObservableField<>();
     public ObservableField<String>city = new ObservableField<>();
-    public ObservableField<AddressList>address_list = new ObservableField<>();
+    public ObservableField  <List<AddressList>> address_list = new ObservableField<>();
 
     public AddAddressVM(POJOClass pojoClass)
     {
         this.status.set(pojoClass.status);
         this.msg.set(pojoClass.msg);
         this.city.set(pojoClass.city);
-        this.address_list.set((AddressList) pojoClass.address_list);
+        this.address_list.set(pojoClass.address_list);
 
     }
 
@@ -52,6 +55,7 @@ public class AddAddressVM extends ViewModel {
     }
 
     public int postalCodeValidation(){
+        Log.e("AddAddressVM==>","postal_code==>"+postal_code.get());
         return addAddressRepo.postalCodeValidation(postal_code.get());
 
     }
@@ -83,6 +87,7 @@ public class AddAddressVM extends ViewModel {
 
     public void LocateAddress()
     {
+        Log.e("postal_code","postal_code==>"+postal_code.get());
         AddAddressRequest addAddressRequest = new AddAddressRequest(postal_code.get());
 
         addAddressRepo = new AddAddressRepo();

@@ -62,16 +62,18 @@ public class AddAddressActivity extends AppCompatActivity {
 
                     addAddressVM.getSearchAddressVMMutableLiveData().observe(AddAddressActivity.this, new Observer<AddAddressVM>() {
                         @Override
-                        public void onChanged(@Nullable AddAddressVM addAddressVM) {
+                        public void onChanged(@Nullable AddAddressVM addressVM) {
                             hideProgressBar();
 
-                            if(addAddressVM.msg.get().equalsIgnoreCase("success")) {
+                            if(addressVM.status.get().equalsIgnoreCase("success")) {
 
-                                Toast.makeText(AddAddressActivity.this, "" + addAddressVM.msg.get(), Toast.LENGTH_SHORT).show();
-                                addAddressVM.floor_unit_numer.set(addAddressVM.address_list.get().ADDRESS);
-                                addAddressVM.address.set(addAddressVM.address_list.get().ADDRESS);
-                                addAddressVM.city_name.set(String.valueOf(addAddressVM.city));
-                            }else if(addAddressVM.msg.get().equalsIgnoreCase("error")){
+                              //  addAddressVM = addressVM;
+
+                                Toast.makeText(AddAddressActivity.this, "" + addressVM.msg.get(), Toast.LENGTH_SHORT).show();
+                                Log.e(TAG,"address==>"+addressVM.address_list.get().get(0).ADDRESS+"\ncity==>"+addressVM.city.get());
+                                addAddressVM.address.set(addressVM.address_list.get().get(0).ADDRESS);
+                                addAddressVM.city_name.set(addressVM.city.get());
+                            }else if(addressVM.status.get().equalsIgnoreCase("error")){
                                 Toast.makeText(AddAddressActivity.this, "" + addAddressVM.msg.get(), Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -91,11 +93,14 @@ public class AddAddressActivity extends AppCompatActivity {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         if(isChecked){
+                            Log.e(TAG,"checked==>");
                             addAddressVM.is_shipping.set("1");
 
                         }else {
+                            Log.e(TAG,"checked==>");
                             addAddressVM.is_shipping.set("0");
                         }
+                        Log.e(TAG,"is_shipping==>"+addAddressVM.is_shipping.get());
                     }
                 });
 
@@ -108,11 +113,14 @@ public class AddAddressActivity extends AppCompatActivity {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         if(isChecked){
+                            Log.e(TAG,"checked==>");
                             addAddressVM.is_billing.set("1");
 
                         }else {
+                            Log.e(TAG,"checked==>");
                             addAddressVM.is_billing.set("0");
                         }
+                        Log.e(TAG,"is_billing==>"+addAddressVM.is_billing.get());
                     }
                 });
 
@@ -183,7 +191,16 @@ public class AddAddressActivity extends AppCompatActivity {
                     @Override
                     public void onCheckedChanged(RadioGroup group, int checkedId) {
                         int id = group.getCheckedRadioButtonId();
-                        Log.e(TAG,"selected_id==>"+id);
+                        if(id == binding.homeRadioBtn.getId()) {
+                            Log.e(TAG, "selected_id==>" + id);
+                            addAddressVM.address_type.set("Home");
+                        }else if(id == binding.officeRadioBtn.getId()){
+                            addAddressVM.address_type.set("Office");
+
+                        }else if(id == binding.otherRadioBtn.getId()){
+                            addAddressVM.address_type.set("Others");
+
+                        }
 
                     }
                 });

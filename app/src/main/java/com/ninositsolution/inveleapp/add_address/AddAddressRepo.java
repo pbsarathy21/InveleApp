@@ -119,7 +119,7 @@ public class AddAddressRepo {
                     @Override
                     public void onNext(POJOClass pojoClass) {
 
-                        Log.i(TAG, "onNext - > "+pojoClass.msg);
+                        Log.e(TAG, "onNext - > "+pojoClass.msg);
 
                         //pojoClassMutableLiveData.setValue(pojoClass);
 
