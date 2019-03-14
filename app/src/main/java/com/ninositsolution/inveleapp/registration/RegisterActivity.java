@@ -90,6 +90,7 @@ public class RegisterActivity extends AppCompatActivity {
                            hideProgressBar();
 
                            Toast.makeText(RegisterActivity.this, ""+registerVM.msg.get(), Toast.LENGTH_SHORT).show();
+                           Session.setUserId(String.valueOf(registerVM.otp.get()), RegisterActivity.this);
                        }
                    });
 
@@ -131,6 +132,7 @@ public class RegisterActivity extends AppCompatActivity {
                             hideProgressBar();
 
                             Toast.makeText(RegisterActivity.this, ""+registerVM.msg.get(), Toast.LENGTH_SHORT).show();
+                            Session.setUserId(String.valueOf(registerVM.otp.get()), RegisterActivity.this);
                         }
                     });
 

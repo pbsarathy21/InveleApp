@@ -7,6 +7,7 @@ import android.util.Log;
 import com.ninositsolution.inveleapp.api.ApiService;
 import com.ninositsolution.inveleapp.api.RetrofitClient;
 import com.ninositsolution.inveleapp.pojo.POJOClass;
+import com.ninositsolution.inveleapp.registration.pojo.RegistartionRequest;
 import com.ninositsolution.inveleapp.utils.Constants;
 
 import io.reactivex.Observer;
@@ -19,6 +20,8 @@ public class LoginRepo {
     private static final String TAG = "LoginRepo";
 
     private MutableLiveData<LoginVM> loginVMMutableLiveData = new MutableLiveData<>();
+
+    private MutableLiveData<LoginVM> mobileSendOtpLiveData = new MutableLiveData<>();
 
     public MutableLiveData<LoginVM> getLoginVMMutableLiveData(LoginRequest loginRequest) {
 
@@ -56,6 +59,41 @@ public class LoginRepo {
         return loginVMMutableLiveData;
     }
 
+    public MutableLiveData<LoginVM> getMobileSendOtpLiveData(RegistartionRequest registartionRequest) {
+
+        ApiService apiService = RetrofitClient.getApiService();
+
+        apiService.registerApi(registartionRequest).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<POJOClass>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(POJOClass pojoClass) {
+
+                        LoginVM loginVM = new LoginVM(pojoClass);
+                        mobileSendOtpLiveData.setValue(loginVM);
+                        Log.i(TAG, "onNext : "+pojoClass.msg);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.i(TAG, "onError : "+e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+        return mobileSendOtpLiveData;
+    }
+
     public Integer emailValidations(String username, String password)
     {
         if (username.isEmpty())
@@ -85,5 +123,7 @@ public class LoginRepo {
 
         return Constants.SUCCESS;
     }
+
+
 
 }

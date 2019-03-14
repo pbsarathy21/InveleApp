@@ -36,16 +36,8 @@ public interface ApiService {
     @POST("users/login")
     Observable<POJOClass> loginApi(@Body LoginRequest loginRequest);
 
-  /*  @FormUrlEncoded
-    @POST("Users/mobile_register")
-    Observable<RegistrationPOJO> registerApi(
-            @Field("first_name") String first_name,
-            @Field("mobile") String mobile,
-            @Field("email") String email,
-            @Field("password") String password,
-            @Field("login_type") String login_type,
-            @Field("uid") String uid,
-            @Field("device_id") String device_id,
-            @Field("device_type") String device_type
-    );*/
+    @FormUrlEncoded
+    @POST("users/otp_verify")
+    Observable<POJOClass> otpVerifyApi(@Field("user_id") String user_id,
+                                       @Field("otp") String otp);
 }

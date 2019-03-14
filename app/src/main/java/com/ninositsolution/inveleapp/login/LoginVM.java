@@ -14,14 +14,19 @@ public class LoginVM extends ViewModel {
 
     public ObservableField<String> username = new ObservableField<>("");
     public ObservableField<String> password = new ObservableField<>("");
+    public ObservableField<String> mobile = new ObservableField<>("");
+    public ObservableField<String> otp_code = new ObservableField<>("");
 
     private MutableLiveData<LoginVM> loginVMMutableLiveData = new MutableLiveData<>();
+    private MutableLiveData<LoginVM> mobileSendOtpLiveData = new MutableLiveData<>();
+    private MutableLiveData<LoginVM> googleLoginLiveData = new MutableLiveData<>();
 
     public ObservableField<String> status = new ObservableField<>();
     public ObservableField<String> msg = new ObservableField<>();
     public ObservableField<Integer> otp = new ObservableField<>();
     public ObservableField<Integer> otp_verify = new ObservableField<>();
     public ObservableField<Users> user = new ObservableField<>();
+    public ObservableField<Users> users = new ObservableField<>();
 
     public LoginVM(POJOClass pojoClass)
     {
@@ -48,15 +53,40 @@ public class LoginVM extends ViewModel {
        return loginRepo.emailValidations(username.get(), password.get());
    }
 
-  /* public Integer mobileAloneValidations()
+   public Integer mobileAloneValidations()
    {
 
-       //RegistartionRequest registartionRequest = new RegistartionRequest("", )
+       return loginRepo.mobileValidations(mobile.get(), "0000");
+   }
 
-       //return loginRepo.mobileValidations();
-   }*/
+   public Integer mobileValidations()
+   {
+       return loginRepo.mobileValidations(mobile.get(), otp_code.get());
+   }
+
+   public void sendOtpApi(String device_id)
+   {
+       RegistartionRequest registartionRequest = new RegistartionRequest("", mobile.get(), "", "", "mobile", "", device_id, "android");
+       mobileSendOtpLiveData = loginRepo.getMobileSendOtpLiveData(registartionRequest);
+
+   }
+
+   public void googleLoginApi(String name, String phone, String email,String uid, String deviceId)
+   {
+       RegistartionRequest registartionRequest = new RegistartionRequest(name, phone, email, "","google", uid, deviceId, "Android");
+
+       googleLoginLiveData = loginRepo.getMobileSendOtpLiveData(registartionRequest);
+   }
 
     public MutableLiveData<LoginVM> getLoginVMMutableLiveData() {
         return loginVMMutableLiveData;
+    }
+
+    public MutableLiveData<LoginVM> getMobileSendOtpLiveData() {
+        return mobileSendOtpLiveData;
+    }
+
+    public MutableLiveData<LoginVM> getGoogleLoginLiveData() {
+        return googleLoginLiveData;
     }
 }

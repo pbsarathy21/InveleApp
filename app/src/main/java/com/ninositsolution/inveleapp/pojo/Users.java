@@ -21,8 +21,10 @@ public class Users {
     public String gender;
     public String updated_at;
     public String created_at;
+    public String success_token;
     public Integer id;
     public String image_path;
     public String order_date;
     public ArrayList<Orders> orders;
+
 }
