@@ -16,7 +16,7 @@
     <string name="google">Google</string>
     <string name="mobile2">Enter your mobile no</string>
     <string name="otp">OTP</string>
-    <string name="resend">Resend</string>
+    <string name="resend">RESEND</string>
     <string name="timer">45 Sec</string>
 
     <!--Login Activity-->
@@ -498,7 +498,7 @@
     <string name="search_brand">Search brand</string>
     <string name="formal_shirts">Formal Shirts</string>
     <string name="reset">Reset</string>
-
+    <string name="send_otp">SEND OTP</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

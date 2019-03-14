@@ -74,7 +74,7 @@
                     android:layout_margin="24dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                     <android.support.design.widget.TextInputLayout
@@ -85,7 +85,7 @@
                             android:id="@+id/login_username"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/toolBarFont"
                             android:fontFamily="@font/roboto_regular"
                             android:inputType="text"
                             android:text="@={login.username}"
@@ -109,7 +109,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_regular"
                             android:inputType="textPassword"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/toolBarFont"
                             android:text="@={login.password}"
                             android:hint="@string/password"
                             tools:ignore="Autofill" />
@@ -152,70 +152,116 @@
 
                 <LinearLayout
                     android:id="@+id/login_mobile"
-                    android:layout_margin="24dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_margin="@dimen/_20sdp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:orientation="vertical">
 
-                    <android.support.design.widget.TextInputLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <EditText
+                        <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/mobile_login_edit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/toolBarFont"
+                                android:fontFamily="@font/roboto_regular"
+                                android:paddingBottom="@dimen/_12sdp"
+                                android:inputType="phone"
+                                android:hint="@string/phone_no"
+                                tools:ignore="Autofill" />
+
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/send_otp"
+                            android:layout_centerVertical="true"
+                            android:enabled="false"
+                            android:onClick="@{()->iLogin.onSendOtpClicked()}"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/roboto_regular"
-                            android:inputType="text"
-                            android:hint="@string/phone_no"
-                            tools:ignore="Autofill" />
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:textColor="@color/star_grey"
+                            android:textSize="@dimen/_10sdp"
+                            android:text="@string/send_otp"/>
+
+                    </RelativeLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_10sdp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/otp_login_edit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:inputType="numberPassword"
+                                android:maxLength="4"
+                                android:paddingBottom="@dimen/_12sdp"
+                                android:textSize="@dimen/toolBarFont"
+                                android:hint="@string/sms_code"
+                                tools:ignore="Autofill" />
 
 
-                    </android.support.design.widget.TextInputLayout>
+                        </android.support.design.widget.TextInputLayout>
 
+                        <TextView
+                            android:id="@+id/login_timer"
+                            android:layout_centerVertical="true"
+                            android:enabled="false"
+                            android:onClick="@{()->iLogin.onResendClicked()}"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:textColor="@color/star_grey"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:textSize="@dimen/_10sdp"
+                            android:text="@string/timer"/>
+
+
+                    </RelativeLayout>
 
 
                     <Space
                         android:layout_width="match_parent"
-                        android:layout_height="12dp" />
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_regular"
-                            android:inputType="textPassword"
-                            android:textSize="16sp"
-                            android:hint="@string/sms_code"
-                            tools:ignore="Autofill" />
-
-
-                    </android.support.design.widget.TextInputLayout>
-
-
-                    <Space
-                        android:layout_width="match_parent"
-                        android:layout_height="4dp" />
+                        android:layout_height="@dimen/_4sdp" />
 
                     <TextView
+                        android:id="@+id/resend_timer_text"
+                        android:enabled="false"
+                        android:onClick="@{()->iLogin.onResendClicked()}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/resend_code"
-                        android:fontFamily="@font/roboto_regular"
-                        android:onClick="@{()->iLogin.onResendCodeClicked()}"
                         android:layout_gravity="end"
-                        android:textColor="@color/colorPrimary"/>
+                        android:textColor="@color/star_grey"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textSize="@dimen/_10sdp"
+                        android:text="@string/resend"/>
 
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="24dp" />
 
                     <Button
+                        android:id="@+id/mobile_login_button"
+                        android:enabled="false"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/login"

@@ -6,13 +6,14 @@ import android.databinding.ObservableField;
 
 import com.ninositsolution.inveleapp.pojo.POJOClass;
 import com.ninositsolution.inveleapp.pojo.Users;
+import com.ninositsolution.inveleapp.registration.pojo.RegistartionRequest;
 
 public class LoginVM extends ViewModel {
 
     private LoginRepo loginRepo;
 
-    public ObservableField<String> username = new ObservableField<>();
-    public ObservableField<String> password = new ObservableField<>();
+    public ObservableField<String> username = new ObservableField<>("");
+    public ObservableField<String> password = new ObservableField<>("");
 
     private MutableLiveData<LoginVM> loginVMMutableLiveData = new MutableLiveData<>();
 
@@ -47,8 +48,11 @@ public class LoginVM extends ViewModel {
        return loginRepo.emailValidations(username.get(), password.get());
    }
 
-  /* public Integer mobileValidations()
+  /* public Integer mobileAloneValidations()
    {
+
+       //RegistartionRequest registartionRequest = new RegistartionRequest("", )
+
        //return loginRepo.mobileValidations();
    }*/
 

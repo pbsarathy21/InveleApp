@@ -7,12 +7,13 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.ninositsolution.inveleapp.R;
-import com.ninositsolution.inveleapp.cart.CartActivity;
 import com.ninositsolution.inveleapp.databinding.ActivityLoginBinding;
 import com.ninositsolution.inveleapp.forgot_password.PasswordActivity;
 import com.ninositsolution.inveleapp.registration.RegisterActivity;
@@ -29,6 +30,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
+
+        binding.mobileLoginEdit.addTextChangedListener(new GenericTextWatcher(binding.mobileLoginEdit));
+        binding.otpLoginEdit.addTextChangedListener(new GenericTextWatcher(binding.otpLoginEdit));
 
         loginVM = ViewModelProviders.of(this).get(LoginVM.class);
 
@@ -71,12 +75,19 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onChanged(@Nullable LoginVM loginVM) {
 
-                            hideProgressBar();
+                            if (loginVM.status.get().equalsIgnoreCase("success"))
+                            {
+                                hideProgressBar();
 
-                            Toast.makeText(LoginActivity.this, ""+loginVM.msg.get(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, ""+loginVM.msg.get(), Toast.LENGTH_SHORT).show();
 
-                            Session.setUserId(String.valueOf(loginVM.user.get().id),LoginActivity.this);
-                            Log.i(TAG, "User_id : "+loginVM.user.get().id);
+                                Session.setUserId(String.valueOf(loginVM.user.get().id),LoginActivity.this);
+                                Log.i(TAG, "User_id : "+loginVM.user.get().id);
+                            } else
+                            {
+                                hideProgressBar();
+                                Toast.makeText(LoginActivity.this, ""+loginVM.msg.get(), Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
 
@@ -86,11 +97,11 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
 
-            @Override
+          /*  @Override
             public void onResendCodeClicked() {
                 startActivity(new Intent(LoginActivity.this, CartActivity.class));
             }
-
+*/
             @Override
             public void onLoginPhoneClicked() {
 
@@ -127,6 +138,18 @@ public class LoginActivity extends AppCompatActivity {
             public void onGoogleClicked() {
 
             }
+
+            @Override
+            public void onSendOtpClicked() {
+
+                int status = loginVM.mobileAloneValidations();
+
+            }
+
+            @Override
+            public void onResendClicked() {
+
+            }
         });
 
     }
@@ -141,5 +164,57 @@ public class LoginActivity extends AppCompatActivity {
     {
         if (binding.loginProgress.getVisibility() == View.VISIBLE)
             binding.loginProgress.setVisibility(View.GONE);
+    }
+
+    public class GenericTextWatcher implements TextWatcher
+    {
+
+        private View view;
+
+        public GenericTextWatcher(View view) {
+            this.view = view;
+        }
+
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+            String text = s.toString();
+
+           if (view.getId() == R.id.mobile_login_edit)
+           {
+               if (text.length() > 4)
+               {
+                   binding.sendOtp.setEnabled(true);
+                   binding.sendOtp.setTextColor(getResources().getColor(R.color.colorPrimary));
+               }
+               else {
+                   binding.sendOtp.setEnabled(false);
+                   binding.sendOtp.setTextColor(getResources().getColor(R.color.star_grey));
+               }
+           }
+
+         /*   if (view.getId() == R.id.otp_login_edit)
+            {
+                if (text.length() == 4)
+                {
+                    binding.resendTimerText.setEnabled(true);
+                    binding.resendTimerText.setTextColor(getResources().getColor(R.color.colorPrimary));
+                } else {
+                    binding.resendTimerText.setEnabled(false);
+                    binding.resendTimerText.setTextColor(getResources().getColor(R.color.star_grey));
+                }
+            }
+*/
+        }
     }
 }
