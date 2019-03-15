@@ -3,6 +3,7 @@ import android.arch.lifecycle.MutableLiveData;
 import android.util.Log;
 import com.ninositsolution.inveleapp.api.ApiService;
 import com.ninositsolution.inveleapp.api.RetrofitClient;
+import com.ninositsolution.inveleapp.forgot_password.pojo.OTPRequest;
 import com.ninositsolution.inveleapp.forgot_password.pojo.ResetPasswordRequest;
 import com.ninositsolution.inveleapp.pojo.POJOClass;
 
@@ -16,7 +17,15 @@ import io.reactivex.schedulers.Schedulers;
 public class PasswordRepo {
 
     private static final String TAG = "PasswordRepo";
+
+     final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
     private MutableLiveData<PasswordVM> passwordVMMutableLiveData = new MutableLiveData<>();
+
+
+
+    private MutableLiveData<PasswordVM> otpMutableLiveData = new MutableLiveData<>();
+
 
     private MutableLiveData<PasswordVM> resetPasswordMutableLiveData = new MutableLiveData<>();
 
@@ -58,6 +67,40 @@ public class PasswordRepo {
 
         return passwordVMMutableLiveData;
     }
+
+    public MutableLiveData<PasswordVM> getOtpMutableLiveData(OTPRequest otpRequest) {
+        ApiService apiService = RetrofitClient.getApiService();
+        apiService.otpVerifyApi(otpRequest).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<POJOClass>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(POJOClass pojoClass) {
+                        Log.i(TAG, "onNext : "+pojoClass.status);
+
+                        PasswordVM passwordVM = new PasswordVM(pojoClass);
+                        otpMutableLiveData.setValue(passwordVM);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+
+        return otpMutableLiveData;
+    }
+
 
     public MutableLiveData<PasswordVM> getResetPasswordMutableLiveData(ResetPasswordRequest resetPasswordRequest) {
 
@@ -106,6 +149,35 @@ public class PasswordRepo {
         }
     }
 
+    public int forgotEmailPatternValidation(String forgotemail){
+        if (forgotemail.matches(emailPattern))
+        {
+            return Constants.EMAIL_VALID;
+        } else
+        {
+            return Constants.EMAIL_INVALID;
+        }
+    }
+
+
+
+
+
+
+    public int otpValidation(String otp){
+
+        if (otp.isEmpty())
+        {
+            return Constants.OTP_EMPTY;
+        }
+        else
+            {
+            return Constants.SUCCESS;
+        }
+
+
+
+    }
 
     public int resetValidation(String password, String confirmPassword){
 
