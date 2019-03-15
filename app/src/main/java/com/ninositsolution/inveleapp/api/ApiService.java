@@ -1,10 +1,13 @@
 package com.ninositsolution.inveleapp.api;
 
+import com.ninositsolution.inveleapp.address_book.pojo.AddressBookRequest;
 import com.ninositsolution.inveleapp.forgot_password.pojo.ResetPasswordRequest;
 import com.ninositsolution.inveleapp.login.LoginRequest;
 import com.ninositsolution.inveleapp.add_address.pojo.AddAddressRequest;
 import com.ninositsolution.inveleapp.pojo.POJOClass;
 import com.ninositsolution.inveleapp.registration.pojo.RegistartionRequest;
+
+import java.util.ArrayList;
 
 import io.reactivex.Observable;
 import retrofit2.http.Body;
@@ -23,6 +26,11 @@ public interface ApiService {
     @POST("postal-code-search")
     Observable<POJOClass> locateAddressApi(@Body AddAddressRequest addAddressRequest);
 
+    @POST("users/addresses")
+    Observable<POJOClass>addressList(@Body AddressBookRequest addressBookRequest);
+
+    @POST("users/address/default")
+    Observable<POJOClass> defaultAddressUpdate(@Body AddressBookRequest addressBookRequest);
 
     @FormUrlEncoded
     @POST("users/forgot_password")

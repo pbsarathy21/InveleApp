@@ -1,7 +1,6 @@
 package com.ninositsolution.inveleapp.add_address;
 
 import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.support.annotation.Nullable;
@@ -15,7 +14,6 @@ import android.widget.Toast;
 
 import com.ninositsolution.inveleapp.R;
 import com.ninositsolution.inveleapp.databinding.ActivityAddAddressBinding;
-import com.ninositsolution.inveleapp.registration.RegisterVM;
 import com.ninositsolution.inveleapp.utils.Constants;
 import com.ninositsolution.inveleapp.utils.Session;
 
@@ -36,12 +34,13 @@ public class AddAddressActivity extends AppCompatActivity {
 
         binding.setAddAddress(addAddressVM);
         binding.setLifecycleOwner(this);
+        Log.e(TAG,"user_id==>"+Session.getUserId(AddAddressActivity.this));
 
         binding.setIAddAddress(new IAddAddress() {
             @Override
             public void onBackClicked() {
 
-
+                finish();
             }
 
             @Override
@@ -70,8 +69,8 @@ public class AddAddressActivity extends AppCompatActivity {
                               //  addAddressVM = addressVM;
 
                                 Toast.makeText(AddAddressActivity.this, "" + addressVM.msg.get(), Toast.LENGTH_SHORT).show();
-                                Log.e(TAG,"address==>"+addressVM.address_list.get().get(0).ADDRESS+"\ncity==>"+addressVM.city.get());
-                                addAddressVM.address.set(addressVM.address_list.get().get(0).ADDRESS);
+                                Log.e(TAG,"address==>"+addressVM.address_list.get().get(0).ROAD_NAME+"\ncity==>"+addressVM.city.get());
+                                addAddressVM.address.set(addressVM.address_list.get().get(0).ROAD_NAME);
                                 addAddressVM.city_name.set(addressVM.city.get());
                             }else if(addressVM.status.get().equalsIgnoreCase("error")){
                                 Toast.makeText(AddAddressActivity.this, "" + addAddressVM.msg.get(), Toast.LENGTH_SHORT).show();

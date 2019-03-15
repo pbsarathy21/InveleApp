@@ -93,7 +93,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Select Address Type :"
+                            android:text="Address Type :"
                             android:textColor="@android:color/black"
                             android:textSize="@dimen/_12sdp"
                             tools:ignore="HardcodedText"/>
@@ -211,10 +211,11 @@
 
 
                     </LinearLayout>
-                   <!-- <view
+
+                    <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_1sdp"
-                        android:background="@color/grayWhite"/>-->
+                        android:background="@color/cart_edit_color"/>
                     <android.support.design.widget.TextInputLayout
                         android:id="@+id/address_input_layout_unitNo"
                         android:layout_width="match_parent"

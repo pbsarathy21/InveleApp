@@ -142,7 +142,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onSendOtpClicked() {
 
-                int status = loginVM.mobileAloneValidations();
+               // int status = loginVM.mobileAloneValidations();
 
             }
 

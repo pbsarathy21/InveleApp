@@ -72,7 +72,7 @@ public class AddAddressVM extends ViewModel {
     public void saveAddress(String user_id)
     {
         AddAddressRequest addAddressRequest = new AddAddressRequest(user_id, address_type.get(),Name.get(),
-               postal_code.get(), floor_unit_numer.get(), address.get(), city_name.get(), contact_number.get(),is_billing.get(),is_shipping.get());
+                floor_unit_numer.get(), address.get(),postal_code.get(),city_name.get(), contact_number.get(),is_billing.get(),is_shipping.get());
 
         addAddressRepo = new AddAddressRepo();
 
