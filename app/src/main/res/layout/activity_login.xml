@@ -171,6 +171,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:textSize="@dimen/toolBarFont"
+                                android:text="@={login.mobile}"
                                 android:fontFamily="@font/roboto_regular"
                                 android:paddingBottom="@dimen/_12sdp"
                                 android:inputType="phone"
@@ -211,9 +212,10 @@
                                 android:id="@+id/otp_login_edit"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:text="@={login.otp_code}"
                                 android:fontFamily="@font/roboto_regular"
                                 android:inputType="numberPassword"
-                                android:maxLength="4"
+                                android:maxLength="6"
                                 android:paddingBottom="@dimen/_12sdp"
                                 android:textSize="@dimen/toolBarFont"
                                 android:hint="@string/sms_code"
@@ -261,7 +263,6 @@
 
                     <Button
                         android:id="@+id/mobile_login_button"
-                        android:enabled="false"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/login"
